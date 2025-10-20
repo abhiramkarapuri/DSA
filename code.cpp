@@ -11,6 +11,7 @@
 #include<set>
 #include<unordered_set>
 #include<cstring>
+#include <string>
 using namespace std;
 
 // int main()
@@ -1852,25 +1853,58 @@ using namespace std;
 // }
 
 //REVERSE WORDS IN A STRING
-string reverseWords(string s) {
-        int n = s.length();
-        string ans = "";
+// string reverseWords(string s) {
+//         int n = s.length();
+//         string ans = "";
+//         reverse(s.begin(),s.end());
+//         for(int i=0;i<n;i++){
+//             string word = "";
+//             while(i<n && s[i]!=' '){
+//                 word +=s[i];
+//                 i++;
+//             }
+//             reverse(word.begin(),word.end());
+//             if(word.length()>0){
+//                 ans +=" " + word;
+//             }
+//         }
+//         return ans.substr(1);
+//     }
+// int main(){
+//     string s = "the sky is blue";
+//     cout<< reverseWords(s);
+// }
 
-        reverse(s.begin(),s.end());
-        for(int i=0;i<n;i++){
-            string word = "";
-            while(i<n && s[i]!=' '){
-                word +=s[i];
-                i++;
-            }
-            reverse(word.begin(),word.end());
-            if(word.length()>0){
-                ans +=" " + word;
-            }
-        }
-        return ans.substr(1);
-    }
-int main(){
-    string s = "the sky is blue";
-    cout<< reverseWords(s);
-}
+//Compress an Array of Characters
+//     int compress(vector<char>& chars) {
+//         int n = chars.size();
+//         int idx =0;
+//         for(int i=0;i<n;i++){
+//             char ch = chars[i];
+//             int count =0;
+//             while(i<n && chars[i] == ch){
+//                 count++;i++;
+//             }
+//         if(count ==1){
+//             chars[idx++] = ch;
+//         }
+//         else{
+//             chars[idx++]=ch;
+//             string str = to_string(count);
+//             for(char dig : str){
+//                 chars[idx++]=dig;
+//             }
+//         }i--;
+//     } chars.resize(idx);
+//         return idx;}
+// int main(){ 
+//     vector<char> chars ={'a','a','b','b','c','c','c'};
+//     int newLength = compress(chars);
+//     cout << "[";
+//     for (int i = 0; i < newLength; i++) {
+//         cout << "\"" << chars[i] << "\"";
+//         if (i < newLength - 1) cout << ",";
+//     }
+//     cout << "]" << endl;
+//     return 0;
+// }
