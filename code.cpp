@@ -2,16 +2,17 @@
 #include <algorithm>
 #include <climits>
 #include <vector>
-#include<list>
-#include<deque>
-#include<stack>
-#include<queue>
-#include<map>
-#include<unordered_map>
-#include<set>
-#include<unordered_set>
-#include<cstring>
+#include <list>
+#include <deque>
+#include <stack>
+#include <queue>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <unordered_set>
+#include <cstring>
 #include <string>
+#include <cmath>
 using namespace std;
 
 // int main()
@@ -28,51 +29,51 @@ using namespace std;
 // }
 // int main()
 // {
-    // double price = 100.99;
-    // int newPrice = (int)price; imp**
-    // // cout<< newPrice << endl;
-    // int age;
-    // cout << "Enter the price :";
-    // cin >> price;
+// double price = 100.99;
+// int newPrice = (int)price; imp**
+// // cout<< newPrice << endl;
+// int age;
+// cout << "Enter the price :";
+// cin >> price;
 
-    // cout << "your price is " << price << endl;
-    // int a= 10, b= 5;
-    // // int sum = a+b;
-    // cout << "sum = " << (a+b)<< endl;
-    // cout << "difference = " << (a-b)<< endl;
-    // cout << "product = " << (a*b)<< endl;
-    // cout << "quotient = " << (a/b)<< endl;
-    // cout << "modulo = " << (a%b)<< endl;
-    // int a =10;
+// cout << "your price is " << price << endl;
+// int a= 10, b= 5;
+// // int sum = a+b;
+// cout << "sum = " << (a+b)<< endl;
+// cout << "difference = " << (a-b)<< endl;
+// cout << "product = " << (a*b)<< endl;
+// cout << "quotient = " << (a/b)<< endl;
+// cout << "modulo = " << (a%b)<< endl;
+// int a =10;
 
-    // int b = a++; // a is getting updated after work
-    // int b = ++a; // first update and then work
-    // int b = --a;
-    //    int b = a-- ;
-    //     cout <<"b = " << b << endl;
-    //     cout <<"a = " << a << endl;
-    // Conditional statements :
-    // int age;
-    // cout << "enter the age: ";
-    // cin >> age;
-    // if (age >= 18)
-    // {
-    //     cout << "valid age";
-    // }else{
-    //     cout<< "under age";
-    // char ch;
-    // cout << " enter the character : ";
-    // cin >> ch;
-    // if( int(ch)<=96) // a = 97, A = 65
-    // {cout << "uppercase";}
-    // else{
-    //     cout <<"lowercase";
-    // }
+// int b = a++; // a is getting updated after work
+// int b = ++a; // first update and then work
+// int b = --a;
+//    int b = a-- ;
+//     cout <<"b = " << b << endl;
+//     cout <<"a = " << a << endl;
+// Conditional statements :
+// int age;
+// cout << "enter the age: ";
+// cin >> age;
+// if (age >= 18)
+// {
+//     cout << "valid age";
+// }else{
+//     cout<< "under age";
+// char ch;
+// cout << " enter the character : ";
+// cin >> ch;
+// if( int(ch)<=96) // a = 97, A = 65
+// {cout << "uppercase";}
+// else{
+//     cout <<"lowercase";
+// }
 // Ternary Statement
 // condition ? stt1(if true) : strr2(if false);
 // int n = 45;
 // cout << (n>=0 ? "positive": "negative") << endl;
-//Loops
+// Loops
 // while,for,do-while
 // int n;
 // cout << "enter the value of n : ";
@@ -85,8 +86,8 @@ using namespace std;
 // For loops
 // for(initialisation; condition : updation)
 // int i =1 ; initialisation
-//i<=n ; condition
-//i++ updation
+// i<=n ; condition
+// i++ updation
 // int n;
 // cout << "enter n : ";
 // cin >> n;
@@ -144,7 +145,7 @@ using namespace std;
 // for(int i =2; i*i<=n; i++){
 //     if(n%i==0){
 //         isPrime = false;
-//     break;}    
+//     break;}
 //         }
 //     cout << isPrime<<endl;
 
@@ -163,7 +164,7 @@ using namespace std;
 // for(int i =1; i<=n;i++){
 //     if(i%3==0){
 //         sum = sum+i;
-//     }  
+//     }
 // }  cout<<sum;
 // int n;
 // cout<<"n : ";
@@ -227,10 +228,10 @@ using namespace std;
 //     cout<< ch;
 //     ch ++;
 // }cout << endl;
-// } 
+// }
 
 // Triangle Pattern
-// * 
+// *
 // **
 // ***
 // ****
@@ -238,8 +239,8 @@ using namespace std;
 // cout << "n : ";
 // cin>>n;
 // for(int i=0;i<n;i++){
-// for(int j=0;j<=i;j++){ 
-//         cout<<"* ";   
+// for(int j=0;j<=i;j++){
+//         cout<<"* ";
 // } cout<<endl;
 // }
 // 1
@@ -251,7 +252,7 @@ using namespace std;
 // cin>>n;
 // for(int i=0;i<n;i++){
 // for(int j=0;j<=i;j++){
-//         cout<<(i+1);  
+//         cout<<(i+1);
 // } cout<<endl;
 // }
 
@@ -263,8 +264,8 @@ using namespace std;
 // cout << "n : ";
 // cin>>n;
 // for(int i=0;i<n;i++){
-// for(int j=0;j<=i;j++){  
-//         cout<<(j+1);   
+// for(int j=0;j<=i;j++){
+//         cout<<(j+1);
 // } cout<<endl;
 // }
 
@@ -277,8 +278,8 @@ using namespace std;
 // cout << "n : ";
 // cin>>n;
 // for(int i=0;i<n;i++){
-// for(int j=i+1;j>0;j--){    
-//         cout<<j;   
+// for(int j=i+1;j>0;j--){
+//         cout<<j;
 // } cout<<endl;
 // }
 
@@ -293,18 +294,18 @@ using namespace std;
 // for(int i=0;i<n;i++){
 // for(int j=0;j<=i;j++){
 //     cout<<num;
-//     num ++;    
+//     num ++;
 // } cout<<endl;
-//1111
-//222
-//33
-//4
+// 1111
+// 222
+// 33
+// 4
 
 // int n;
 // cout << "n : ";
 // cin>>n;
 // for(int i=0;i<n;i++){
-// for(int j=0;j<i;j++){ // i times spaces   
+// for(int j=0;j<i;j++){ // i times spaces
 //         cout<<" ";}
 // for(int j=0;j<(n-i);j++)
 // {
@@ -321,7 +322,7 @@ using namespace std;
 // for(int i=0;i<n;i++){
 //     // spaces n-i-1
 // for(int j=0;j<(n-i-1);j++){
-//         cout<<" ";  
+//         cout<<" ";
 // }
 // // nums1 = i+1
 // for(int j =1; j<=(i+1);j++){
@@ -333,7 +334,7 @@ using namespace std;
 // }
 // cout<<endl;
 // }
-//int n=4;
+// int n=4;
 // cout << " n: ";
 // cin >>n;
 // for(int i=0;i<n;i++){
@@ -341,7 +342,7 @@ using namespace std;
 //     for(int j =0; j<(n-i-1);j++){
 //     cout<< " ";
 //     }
-//     cout<<"*";  
+//     cout<<"*";
 //     if(i!=0){
 //         //spaces
 //         for(int j =0; j<(2*i-1);j++){
@@ -436,7 +437,7 @@ using namespace std;
 // } return digSum;
 // }
 // int main(){
-//cout<<"Sumofdigits is"<< SumOfDigits(2356)<<endl;
+// cout<<"Sumofdigits is"<< SumOfDigits(2356)<<endl;
 //     return 0;
 // }
 
@@ -453,7 +454,7 @@ using namespace std;
 //     int fact_r = factorial(r);
 //     int fact_nmr = factorial(n-r);
 //     return fact_n/(fact_r * fact_nmr);
-// }    
+// }
 // int main(){
 //     int n=8, r=2;
 //  cout<< nCr(n,r)<<endl;
@@ -506,7 +507,7 @@ using namespace std;
 // int biToDec(int biNum){
 //     int ans =0, pow =1; // 2^0
 //     while(biNum >0){
-//         int rem = biNum%10;  
+//         int rem = biNum%10;
 //         ans +=(rem*pow);
 //          biNum /=10;
 //         pow*=2;
@@ -522,7 +523,7 @@ using namespace std;
 // Two's complement
 // convert to binary
 // prefix with 0;
-//1's complement 0->1;1->0
+// 1's complement 0->1;1->0
 // left most number is most significant bit(msb)
 // if msb =0 no is +ve; if 1 then -ve.
 // int n = -10;
@@ -602,7 +603,7 @@ using namespace std;
 // #include <climits>
 // int main(){
 // int marks[5] = {99,100,54,36,88};
- //marks[0] = 101; //possible
+// marks[0] = 101; //possible
 // double price[] = {98.99,105.67,30.00};
 // int size =5;
 // int sz = sizeof(marks);
@@ -616,7 +617,7 @@ using namespace std;
 // for(int i=0;i<size;i++){
 //     cout<<marks[i]<<endl;
 // }
-//INT_MAX = + infinity
+// INT_MAX = + infinity
 // int nums[] ={5,15,42,-21,-15,24};
 // int size =6;
 // int smallest = INT_MAX;
@@ -631,8 +632,8 @@ using namespace std;
 
 // min and max functions
 // for(int i=0;i<size;i++){
-//     smallest = min(nums[i],smallest); 
-//     largest = max(nums[i],largest); 
+//     smallest = min(nums[i],smallest);
+//     largest = max(nums[i],largest);
 // // min finds the smallest among the 2 arguments
 // }
 // cout<<smallest<<endl;
@@ -719,10 +720,10 @@ using namespace std;
 //     for(int i=0;i<sz;i++){
 //         if(smallest >arr[i]){
 //         smallest = arr[i];
-//     smallest_index = i;}      
+//     smallest_index = i;}
 //     if(largest <arr[i]){
 //         largest = arr[i];
-//      largest_index = i;}       
+//      largest_index = i;}
 // }
 //    swap(arr[smallest_index],arr[largest_index]);
 // }
@@ -758,21 +759,21 @@ using namespace std;
 // use -std=c++11 before code.cpp
 // #include <vector> // important
 // int main(){
-//vector<int> vec = {1,2,3};
+// vector<int> vec = {1,2,3};
 // vector<int> vec(5,0);
-//vector<char> vec = {'a','b','c','d','e'};
-//vector<int> vec;
+// vector<char> vec = {'a','b','c','d','e'};
+// vector<int> vec;
 // cout<<"size = "<<vec.size() <<endl;
 
 // vec.push_back(0); // adds at last
-// vec.push_back(1); 
+// vec.push_back(1);
 // vec.push_back(2);
 // vec.push_back(3);
 // vec.push_back(4);
 // cout<<"after push back size = "<<vec.size() <<endl;
-//cout<<"vector size " << vec.size()<<endl;
-//cout<<"vector capacity "<< vec.capacity()<<endl;
-//vec.pop_back(); // deletes last one
+// cout<<"vector size " << vec.size()<<endl;
+// cout<<"vector capacity "<< vec.capacity()<<endl;
+// vec.pop_back(); // deletes last one
 // for(int val :vec){ // for each loop
 //     cout<< val << endl;
 // }
@@ -781,22 +782,22 @@ using namespace std;
 // cout<< vec.at(1)<<endl; // prints value at 1
 
 // we add & before name is pass by referece
-//return 0;}
+// return 0;}
 
 // linear search vector
 // int linearSearch( vector<int> vec, int target){
 //     for(int val : vec){
 //         if(val == target){
 //             return 1;
-//         } 
+//         }
 //     }return 0;
 // }
 // int main(){
-//     vector<int> vec = {1,8,6,9,7};   
+//     vector<int> vec = {1,8,6,9,7};
 //     int target = 7;
 //     if(linearSearch(vec,target)){
 //         cout<<" target found";
-//     } 
+//     }
 //     else{
 //         cout<<"target not found";}
 // }
@@ -881,52 +882,52 @@ using namespace std;
 //    return 0;
 // }
 
-//PAIR SOME : 2POINTERS // o(n)
-// vector<int> pairSum(vector<int> nums, int target){
-//     vector<int> ans;
-//      int n = nums.size();
-//      int i=0,j=n-1;
-//      while(i<j){
-//         int sum = nums[i] + nums[j];
-//         if(sum > target){
-//             j--;
-//         }
-//         else if(sum < target){
-//             i++;
-//         }
-//         else {
-//             ans.push_back(nums[i]);
-//             ans.push_back(nums[j]);
-//             return ans;
-//         }
-//      } return ans;
-// }
-// int main(){
-//     vector<int> nums = {2,7,11,15};
-//     int target =26;
-//  vector<int> ans = pairSum(nums,target);
-//   cout << ans[0] << ","<<ans[1]<<endl;
-//    return 0;
-// }
+// PAIR SOME : 2POINTERS // o(n)
+//  vector<int> pairSum(vector<int> nums, int target){
+//      vector<int> ans;
+//       int n = nums.size();
+//       int i=0,j=n-1;
+//       while(i<j){
+//          int sum = nums[i] + nums[j];
+//          if(sum > target){
+//              j--;
+//          }
+//          else if(sum < target){
+//              i++;
+//          }
+//          else {
+//              ans.push_back(nums[i]);
+//              ans.push_back(nums[j]);
+//              return ans;
+//          }
+//       } return ans;
+//  }
+//  int main(){
+//      vector<int> nums = {2,7,11,15};
+//      int target =26;
+//   vector<int> ans = pairSum(nums,target);
+//    cout << ans[0] << ","<<ans[1]<<endl;
+//     return 0;
+//  }
 
-//MAJORITY ELEMENT - BRUTEFORCE
-//  int majorityElement(vector<int>& nums) {
-//     int n = nums.size();
-//         for(int val : nums){
-//             int freq =0;
-//             for(int el : nums){
-//              if (el == val){
-//                 freq++;
+// MAJORITY ELEMENT - BRUTEFORCE
+//   int majorityElement(vector<int>& nums) {
+//      int n = nums.size();
+//          for(int val : nums){
+//              int freq =0;
+//              for(int el : nums){
+//               if (el == val){
+//                  freq++;
+//               }
+//              }if(freq > n/2){
+//                 return val;
 //              }
-//             }if(freq > n/2){
-//                return val;
-//             }
-//         }
-//     }
-    // int main(){
-    //     vector<int> nums = {2,1,2,1,2};
-    //     cout << majorityElement(nums)<<endl;
-    // }
+//          }
+//      }
+//  int main(){
+//      vector<int> nums = {2,1,2,1,2};
+//      cout << majorityElement(nums)<<endl;
+//  }
 
 // Majority Element - Sorting O(nlogn)
 // int majorityElement(vector<int>& nums) {
@@ -952,7 +953,7 @@ using namespace std;
 //         cout << majorityElement(nums)<<endl;
 //     }
 
- //Majority Element - Moores voting algorithm
+// Majority Element - Moores voting algorithm
 //  int majorityElement(vector<int>& nums){
 //     int n= nums.size();
 //    int freq=0, ans =0;
@@ -1024,18 +1025,18 @@ using namespace std;
 //     b =20;
 // }
 // int main(){
-    //int a= 10;
-    // int* ptr = &a;
-    // int** parPtr = &ptr;
-    // cout<< &ptr<<endl;
-    // cout<< parPtr<<endl;
-    // cout<< *(parPtr)<<endl;
-    // cout<<ptr<<endl;
-    // cout<<**(parPtr)<<endl;
-    //cout<< &a<<endl;
-    // cout<< ptr<<endl;
-   // cout<< &ptr<<endl;
-   // cout<< *(&a)<<endl;
+// int a= 10;
+// int* ptr = &a;
+// int** parPtr = &ptr;
+// cout<< &ptr<<endl;
+// cout<< parPtr<<endl;
+// cout<< *(parPtr)<<endl;
+// cout<<ptr<<endl;
+// cout<<**(parPtr)<<endl;
+// cout<< &a<<endl;
+// cout<< ptr<<endl;
+// cout<< &ptr<<endl;
+// cout<< *(&a)<<endl;
 //   int a =5;
 //    int* p = &a;
 //    int** q = &p;
@@ -1049,11 +1050,11 @@ using namespace std;
 // // changeA(&a);
 // changeA(a);
 // cout<<"inside main fnx : " <<a<<endl; //20
-//int arr[] = {6,7,8,9};
+// int arr[] = {6,7,8,9};
 // cout<<*(arr+1)<<endl;
 // cout<<*(arr+2)<<endl;
 // cout<<*(arr)+3<<endl;
-// int* ptr2; we can subtract pointers 
+// int* ptr2; we can subtract pointers
 // ans is remaining blocks of that type
 // int* ptr1 = ptr2+2;
 // cout<<ptr1-ptr2<<endl;
@@ -1066,7 +1067,7 @@ using namespace std;
 //     return 0;
 // }
 
-    //STL 
+// STL
 // #include<list>
 // #include<deque>
 // #include<stack>
@@ -1076,325 +1077,313 @@ using namespace std;
 // #include<set>
 // #include<unordered_set>
 
-    // int main(){
-    // vector<int> vec;//0
-    // vector<int> vec = {1,2,3,4,5};
-    // vector<int> vec(3,10);
-    // vec.push_back(1);
-    // vec.push_back(2);
-    // vec.push_back(3);
-    // vec.push_back(4);
-    // vec.push_back(5);
-    // vec.emplace_back(6);
-    // vec.pop_back();
-    // cout<<vec.size()<<endl;
-    // cout<<vec.capacity()<<endl;
-    // for(int val : vec){
-    //     cout<<val<<" ";
-    // }
-    // cout<<endl;
-    // cout<<"val at idx 2 :"<<vec[2]<<" or "<<vec.at(2)<<endl;
-    // cout<<endl;
-    // FRONT AND BACK
-    // cout<<"at front : "<<vec.front()<<endl;
-    // cout<<"at back : "<<vec.back()<<endl;
-    //cout<<*vec.begin(); -> gives 1st element
-    //ERASE
-    //vec.erase(vec.begin());
-    //vec.erase(vec.begin()+2);
-    //vec.erase(vec.begin()+1,vec.begin()+3);
-    // for(int val : vec){
-    //     cout<<val<<" ";
-    // }
-    // cout<<endl;
-    // cout<<vec.size();
-    // cout<<vec.capacity();
-    
-    //INSERT
-    //vec.insert(vec.begin()+2,100);
+// int main(){
+// vector<int> vec;//0
+// vector<int> vec = {1,2,3,4,5};
+// vector<int> vec(3,10);
+// vec.push_back(1);
+// vec.push_back(2);
+// vec.push_back(3);
+// vec.push_back(4);
+// vec.push_back(5);
+// vec.emplace_back(6);
+// vec.pop_back();
+// cout<<vec.size()<<endl;
+// cout<<vec.capacity()<<endl;
+// for(int val : vec){
+//     cout<<val<<" ";
+// }
+// cout<<endl;
+// cout<<"val at idx 2 :"<<vec[2]<<" or "<<vec.at(2)<<endl;
+// cout<<endl;
+// FRONT AND BACK
+// cout<<"at front : "<<vec.front()<<endl;
+// cout<<"at back : "<<vec.back()<<endl;
+// cout<<*vec.begin(); -> gives 1st element
+// ERASE
+// vec.erase(vec.begin());
+// vec.erase(vec.begin()+2);
+// vec.erase(vec.begin()+1,vec.begin()+3);
+// for(int val : vec){
+//     cout<<val<<" ";
+// }
+// cout<<endl;
+// cout<<vec.size();
+// cout<<vec.capacity();
 
-    //CLEAR
-    //vec.clear();
-    // cout<<vec.size();
-    // cout<<vec.capacity();
+// INSERT
+// vec.insert(vec.begin()+2,100);
 
-    //EMPTY
-    //cout<<"is empty : "<<vec.empty()<<endl;
-    // for(int val : vec){
-    //     cout<<val<<" ";
-    // }
-    //cout<<*vec.end();
+// CLEAR
+// vec.clear();
+//  cout<<vec.size();
+//  cout<<vec.capacity();
 
-    // ITERATORS
-    // vector<int>:: iterator it;
-    // for(it = vec.begin();it!=vec.end();it++){
-    //     cout<<*(it)<<" "<<endl;
-    // }
-    // we can also use without the line 1194
-    // for(vector<int>:: iterator it = vec.begin();it != vec.end();it++){
-    //     cout<<*it<<" "<<endl;
-    //}
-    // for(auto it = vec.rbegin();it != vec.rend();it++){
-    //     cout<<*it<<" "<<endl;
-    // }
-    // cout<<endl;
+// EMPTY
+// cout<<"is empty : "<<vec.empty()<<endl;
+//  for(int val : vec){
+//      cout<<val<<" ";
+//  }
+// cout<<*vec.end();
 
-    //LIST
-    // list<int> l;
-    // l.emplace_back(1);
-    // l.push_back(2);
-    // l.push_front(3);
-    // l.push_front(5);
-    // l.pop_back();
-    // l.pop_front();
-    // for(int val : l){
-    //     cout<<val<<" ";
-    // }
-    // cout<<l[2]<<endl; //not possible in list
-    // cout<<endl;
+// ITERATORS
+// vector<int>:: iterator it;
+// for(it = vec.begin();it!=vec.end();it++){
+//     cout<<*(it)<<" "<<endl;
+// }
+// we can also use without the line 1194
+// for(vector<int>:: iterator it = vec.begin();it != vec.end();it++){
+//     cout<<*it<<" "<<endl;
+//}
+// for(auto it = vec.rbegin();it != vec.rend();it++){
+//     cout<<*it<<" "<<endl;
+// }
+// cout<<endl;
 
+// LIST
+//  list<int> l;
+//  l.emplace_back(1);
+//  l.push_back(2);
+//  l.push_front(3);
+//  l.push_front(5);
+//  l.pop_back();
+//  l.pop_front();
+//  for(int val : l){
+//      cout<<val<<" ";
+//  }
+//  cout<<l[2]<<endl; //not possible in list
+//  cout<<endl;
 
-    //DEQUE
-    // deque<int> d = {1,2,3,4,5};
-    // for(int val : d){
-    //     cout<<val<<" ";
-    // }
-    // cout<<d[2]<<endl; // possible in queue not in list
-    // cout<<endl;
+// DEQUE
+//  deque<int> d = {1,2,3,4,5};
+//  for(int val : d){
+//      cout<<val<<" ";
+//  }
+//  cout<<d[2]<<endl; // possible in queue not in list
+//  cout<<endl;
 
+// PAIRS
+// pair<int,int> p = {3,5};
+// pair<char,int> p = {'a',5};
+//  cout<<p.first<<endl;
+//  cout<<p.second<<endl;
+//  pair<int,pair<char,int>> p = {3,{'a',5}};
+//  cout<<p.second.first<<endl;
+//  cout<<p.second.second<<endl;
+//  vector<pair<int,int>> vec = {{1,2},{2,3},{3,4}};
+//  vec.push_back({4,5});//insert
+//  vec.emplace_back(4,5);// in-place objects create
+//  for(auto p : vec){
+//      cout<<p.first<<" "<<p.second<<endl;
+//  }
 
-    //PAIRS
-    //pair<int,int> p = {3,5};
-    //pair<char,int> p = {'a',5};
-    // cout<<p.first<<endl;
-    // cout<<p.second<<endl;
-    // pair<int,pair<char,int>> p = {3,{'a',5}};
-    // cout<<p.second.first<<endl;
-    // cout<<p.second.second<<endl;
-    // vector<pair<int,int>> vec = {{1,2},{2,3},{3,4}};
-    // vec.push_back({4,5});//insert
-    // vec.emplace_back(4,5);// in-place objects create
-    // for(auto p : vec){
-    //     cout<<p.first<<" "<<p.second<<endl;
-    // }
+// STACK
+//  stack<int> s;
+//  s.push(1);
+//  s.push(2);
+//  s.push(3);
+//  while (!s.empty())
+//  {
+//      cout<<s.top()<<" ";
+//      s.pop();
+//  }
+//  cout<<endl;
+// cout<<"top = "<<s.top()<<endl;
+//  stack<int> s2;
+//  s2.swap(s);
+//  cout<<"s size : "<<s.size()<<endl;
+//  cout<<"s2 size : "<<s2.size();
 
+// QUEUE
+//  queue<int> q;
+//  q.push(1);
+//  q.push(2);
+//  q.push(3);
+//  while(!q.empty()){
+//      cout<<q.front()<<" ";
+//      q.pop();
+//  }
+//  cout<<endl;
 
-    //STACK
-    // stack<int> s;
-    // s.push(1);
-    // s.push(2);
-    // s.push(3);
-    // while (!s.empty())
-    // {
-    //     cout<<s.top()<<" ";
-    //     s.pop();
-    // }
-    // cout<<endl;
-    //cout<<"top = "<<s.top()<<endl;
-    // stack<int> s2;
-    // s2.swap(s);
-    // cout<<"s size : "<<s.size()<<endl;
-    // cout<<"s2 size : "<<s2.size();
-    
+// PRIORITY_QUEUE
+//  FOR LARGEST TO BE ON TOP
+//  priority_queue<int> q;
+//  FOR SMALLEST TO BE ON TOP
+//  priority_queue<int,vector<int>,greater<int>> q;
+//  q.push(5);
+//  q.push(3);
+//  q.push(10);
+//  q.push(4);
+//  while(!q.empty()){
+//      cout<<q.top()<<" ";
+//      q.pop();
+//  }
+//  cout<<endl;
 
-    //QUEUE
-    // queue<int> q;
-    // q.push(1);
-    // q.push(2);
-    // q.push(3);
-    // while(!q.empty()){
-    //     cout<<q.front()<<" ";
-    //     q.pop();
-    // }
-    // cout<<endl;
+// MAP
+// map(key,value) key should be unique
+//  map<string,int> m;
+//  m["tv"] =100;
+//  m["laptop"] =100;
+//  m["phone"] =50;
+//  m["tabet"] =120;
+//  m["watch"] =50;
+//   m.insert({"camera",25});
+//  // m.emplace({"camera",25});
+//  for(auto p:m){
+//      cout<<p.first<<" "<<p.second<<endl;
+//  }
+//  if(m.find("camera") != m.end()){
+//      cout<<"found\n";
+//  }else{
+//      cout<<"not found\n";
+//      }
+//  cout<<"count = "<<m.count("laptop")<<endl;
+// cout<<m.size();
 
+// MULTIMAP
+//  multimap<string,int> m;
+//  m.emplace("tv",100);
+//  m.emplace("tv",100);
+//  m.emplace("tv",100);
+//  m.emplace("tv",100);
+//   m.insert({"camera",25});
+//  for(auto p:m){
+//      cout<<p.first<<" "<<p.second<<endl;
+//  }
 
-    //PRIORITY_QUEUE
-    // FOR LARGEST TO BE ON TOP
-    // priority_queue<int> q;
-    // FOR SMALLEST TO BE ON TOP
-    // priority_queue<int,vector<int>,greater<int>> q;
-    // q.push(5);
-    // q.push(3);
-    // q.push(10);
-    // q.push(4);
-    // while(!q.empty()){
-    //     cout<<q.top()<<" ";
-    //     q.pop();
-    // }
-    // cout<<endl;
+// UNORDERED_MAP
+//  unordered_map<string,int> m;
+//  m.emplace("tv",100);
+//  m.emplace("laptop",100);
+//  m.emplace("fridge",100);
+//  m.emplace("watch",100);
+//  for(auto p:m){
+//      cout<<p.first<<" "<<p.second<<endl;
+//  }
 
+// SET
+//  set<int> s;
+//  s.insert(1);
+//  s.insert(2);
+//  s.insert(3);
+//  s.insert(4);
+//  s.insert(5);
+//  s.insert(6);
+//  cout<<"lower bound = "<<*(s.lower_bound(4))<<endl;//4
+//  cout<<"upper bound = "<<*(s.upper_bound(4))<<endl;//5
+//  for(auto val:s){
+//      cout<<val<<" ";
+//  }
+//  cout<<endl;
 
-    //MAP
-    //map(key,value) key should be unique
-    // map<string,int> m;
-    // m["tv"] =100;
-    // m["laptop"] =100;
-    // m["phone"] =50;
-    // m["tabet"] =120;
-    // m["watch"] =50;
-    //  m.insert({"camera",25});
-    // // m.emplace({"camera",25});
-    // for(auto p:m){
-    //     cout<<p.first<<" "<<p.second<<endl;
-    // }
-    // if(m.find("camera") != m.end()){
-    //     cout<<"found\n";
-    // }else{
-    //     cout<<"not found\n";
-    //     }
-    // cout<<"count = "<<m.count("laptop")<<endl;
-   //cout<<m.size();
-   
+// MULTISET
+//  multiset<int> s;
+//  s.insert(1);
+//  s.insert(2);
+//  s.insert(3);
+//  s.insert(4);
+//  s.insert(5);
+//  s.insert(1);
+//  s.insert(2);
+//  for(auto val:s){
+//      cout<<val<<" ";
+//  }
+//  cout<<endl;
 
-   //MULTIMAP
-    // multimap<string,int> m;
-    // m.emplace("tv",100);
-    // m.emplace("tv",100);
-    // m.emplace("tv",100);
-    // m.emplace("tv",100);
-    //  m.insert({"camera",25});
-    // for(auto p:m){
-    //     cout<<p.first<<" "<<p.second<<endl;
-    // }
-
-
-    //UNORDERED_MAP
-    // unordered_map<string,int> m;
-    // m.emplace("tv",100);
-    // m.emplace("laptop",100);
-    // m.emplace("fridge",100);
-    // m.emplace("watch",100); 
-    // for(auto p:m){
-    //     cout<<p.first<<" "<<p.second<<endl;
-    // }
-
-
-    //SET
-    // set<int> s;
-    // s.insert(1);
-    // s.insert(2);
-    // s.insert(3);
-    // s.insert(4);
-    // s.insert(5);
-    // s.insert(6);
-    // cout<<"lower bound = "<<*(s.lower_bound(4))<<endl;//4
-    // cout<<"upper bound = "<<*(s.upper_bound(4))<<endl;//5
-    // for(auto val:s){
-    //     cout<<val<<" ";
-    // }
-    // cout<<endl;
-
-
-    //MULTISET
-    // multiset<int> s;
-    // s.insert(1);
-    // s.insert(2);
-    // s.insert(3);
-    // s.insert(4);
-    // s.insert(5);
-    // s.insert(1);
-    // s.insert(2);
-    // for(auto val:s){
-    //     cout<<val<<" ";
-    // }
-    // cout<<endl;
-
-
-    //UNORDEREDSET
-    // unordered_set<int> s;
-    // s.insert(1);
-    // s.insert(2);
-    // s.insert(3);
-    // s.insert(4);
-    // s.insert(2);
-    // s.insert(3);
-    //
-    // for(auto val:s){
-    //     cout<<val<<" ";
-    // }
-    // cout<<endl;
+// UNORDEREDSET
+//  unordered_set<int> s;
+//  s.insert(1);
+//  s.insert(2);
+//  s.insert(3);
+//  s.insert(4);
+//  s.insert(2);
+//  s.insert(3);
+//
+//  for(auto val:s){
+//      cout<<val<<" ";
+//  }
+//  cout<<endl;
 //}
 
-
-    // VECTOR PAIR REVERSE SORT
+// VECTOR PAIR REVERSE SORT
 // bool comparator(pair<int,int>p1,pair<int,int>p2){
 //     if(p1.second<p2.second) return true;
 //     if(p1.second>p2.second) return false;
 //     if(p1.first<p2.first) return true;
-//     else return false;  
+//     else return false;
 // }
 
-    //SORTING 
-//int main(){
-    // For Arrays
-    // int arr[5] = {3,5,1,8,2};
-    // sort(arr,arr+5);
-    // for(int val: arr){
-    //     cout<<val<<" ";
-    // }
-    // cout<<endl;
-    // //
-    // vector<int> vec = {3,5,1,8,2};
-    // sort(vec.begin(),vec.end());
-    // //
-    // for(int val: vec){
-    //     cout<<val<<" ";
-    // }
-    // // REVERSE ORDER
-    // sort(vec.begin(),vec.end(),greater<int>());
-    // for(int val: vec){
-    //     cout<<val<<" ";
-    // }
-    //vector<pair<int,int>> vec = {{3,1},{2,1},{7,1},{5,2}};
-    // sort(vec.begin(),vec.end());
-    // // They will sort w.r.t first value
-    // for(auto p : vec){
-    //     cout<<p.first<<" "<<p.second<<endl;
-    // }
-    // sort(vec.begin(),vec.end(),comparator);
-    // // They will sort w.r.t second value
-    // for(auto p : vec){
-    //     cout<<p.first<<" "<<p.second<<endl;
-    // }
+// SORTING
+// int main(){
+//  For Arrays
+//  int arr[5] = {3,5,1,8,2};
+//  sort(arr,arr+5);
+//  for(int val: arr){
+//      cout<<val<<" ";
+//  }
+//  cout<<endl;
+//  //
+//  vector<int> vec = {3,5,1,8,2};
+//  sort(vec.begin(),vec.end());
+//  //
+//  for(int val: vec){
+//      cout<<val<<" ";
+//  }
+//  // REVERSE ORDER
+//  sort(vec.begin(),vec.end(),greater<int>());
+//  for(int val: vec){
+//      cout<<val<<" ";
+//  }
+// vector<pair<int,int>> vec = {{3,1},{2,1},{7,1},{5,2}};
+//  sort(vec.begin(),vec.end());
+//  // They will sort w.r.t first value
+//  for(auto p : vec){
+//      cout<<p.first<<" "<<p.second<<endl;
+//  }
+//  sort(vec.begin(),vec.end(),comparator);
+//  // They will sort w.r.t second value
+//  for(auto p : vec){
+//      cout<<p.first<<" "<<p.second<<endl;
+//  }
 
-    //REVERSE
-    // vector<int> vec = {1,2,3,4,5};
-    // reverse(vec.begin()+1,vec.begin()+3); //start & end
-    // for(auto val : vec){
-    //     cout<<val<<" ";
-    // }
+// REVERSE
+//  vector<int> vec = {1,2,3,4,5};
+//  reverse(vec.begin()+1,vec.begin()+3); //start & end
+//  for(auto val : vec){
+//      cout<<val<<" ";
+//  }
 
-    //NEXT PERMUTATION
-    // string s = "abc";
-    // prev_permutation(s.begin(),s.end());
-    // cout<<s<<endl;
+// NEXT PERMUTATION
+//  string s = "abc";
+//  prev_permutation(s.begin(),s.end());
+//  cout<<s<<endl;
 
-    //MAX ELEMENT
-    // vector<int> vec = {1,2,3,4,5};
-    // cout<<*(max_element(vec.begin(),vec.end()))<<endl;
+// MAX ELEMENT
+//  vector<int> vec = {1,2,3,4,5};
+//  cout<<*(max_element(vec.begin(),vec.end()))<<endl;
 
-    //MIN ELEMENT
-    // vector<int> vec = {1,2,3,4,5};
-    // cout<<*(min_element(vec.begin(),vec.end()));
+// MIN ELEMENT
+//  vector<int> vec = {1,2,3,4,5};
+//  cout<<*(min_element(vec.begin(),vec.end()));
 
-    //BINARY SEARCH
-    // vector<int> vec = {1,2,3,4,5};
-    // cout<< binary_search(vec.begin(),vec.end(),4)<<endl;
-    // cout<< binary_search(vec.begin(),vec.end(),10)<<endl;
+// BINARY SEARCH
+//  vector<int> vec = {1,2,3,4,5};
+//  cout<< binary_search(vec.begin(),vec.end(),4)<<endl;
+//  cout<< binary_search(vec.begin(),vec.end(),10)<<endl;
 
-    // EXTRAS
-    // int n1 =15;
-    // long int n2 =15;
-    // long long int n3 =15;
-    // cout<<__builtin_popcount(n1)<<endl;
-    // cout<<__builtin_popcountl(n2)<<endl;
-    // cout<<__builtin_popcountll(n3)<<endl;
+// EXTRAS
+// int n1 =15;
+// long int n2 =15;
+// long long int n3 =15;
+// cout<<__builtin_popcount(n1)<<endl;
+// cout<<__builtin_popcountl(n2)<<endl;
+// cout<<__builtin_popcountll(n3)<<endl;
 //}
 
 // BINARY SEARCH
 // int binarySearch(vector<int> arr, int target){
-//     int st =0; 
+//     int st =0;
 //     int end = arr.size()-1;
 //     while(st<=end){
 //         int mid = st + ( end - st)/2;
@@ -1440,7 +1429,7 @@ using namespace std;
 //             }else {
 //                 end = mid-1;
 //             }
-//         }   
+//         }
 //     } return -1;
 // }
 // int main(){
@@ -1542,12 +1531,12 @@ using namespace std;
 //             end = mid-1;
 //         } else {//right
 //             st = mid +1;
-//         }       
+//         }
 //     }
 //     return ans;
 // }
 // int main(){
-//     vector<int> arr = {2,1,3,4}; 
+//     vector<int> arr = {2,1,3,4};
 //     int n=4,m=2;
 //     cout<< allocateBooks(arr,n,m)<<endl;
 // }
@@ -1595,35 +1584,35 @@ using namespace std;
 //     cout<<minTimeToPaint(arr,n,m);
 // }
 
-//SORTING ALGORITHMS
-//BUBBLE SORT O(n^2)
-// void bubblesort(int arr[],int n){
-//     for(int i=0;i<n;i++){
-//         bool isSwap = false;
-//         for(int j=0;j<(n-i-1);j++){
-//             if(arr[j]>arr[j+1]){ // if we use < it will sort in descending order
-//                 swap(arr[j],arr[j+1]);
-//                 isSwap = true;
-//             }
-//         }
-//         if(!isSwap){
-//             //array already sorted
-//             return;
-//         }
-//     }
-// }
-// void printArray(int arr[],int n){
-//     for(int i=0;i<n;i++){
-//         cout<<arr[i]<<" ";
-//     }
-//     cout<<endl;
-// }
-// int main(){
-//     int n =5;
-//     int arr[] = {4,1,5,2,3};
-//     bubblesort(arr,n);
-//     printArray(arr,n);
-// }
+// SORTING ALGORITHMS
+// BUBBLE SORT O(n^2)
+//  void bubblesort(int arr[],int n){
+//      for(int i=0;i<n;i++){
+//          bool isSwap = false;
+//          for(int j=0;j<(n-i-1);j++){
+//              if(arr[j]>arr[j+1]){ // if we use < it will sort in descending order
+//                  swap(arr[j],arr[j+1]);
+//                  isSwap = true;
+//              }
+//          }
+//          if(!isSwap){
+//              //array already sorted
+//              return;
+//          }
+//      }
+//  }
+//  void printArray(int arr[],int n){
+//      for(int i=0;i<n;i++){
+//          cout<<arr[i]<<" ";
+//      }
+//      cout<<endl;
+//  }
+//  int main(){
+//      int n =5;
+//      int arr[] = {4,1,5,2,3};
+//      bubblesort(arr,n);
+//      printArray(arr,n);
+//  }
 
 // SELECTION SORT O(n^2)
 //  void selectionSort(int arr[],int n){
@@ -1676,141 +1665,141 @@ using namespace std;
 
 // MERGE SORT O(nlogn)
 
-//SORT ARRAY WITH 0S,1S,2S
-//  void sortColors(vector<int>& nums) {
-//         int n = nums.size();
-//         int count0 =0, count1 =0, count2 =0;
-//         // O(n)
-//         for(int i=0;i<n;i++){
-//             if(nums[i]==0){
-//                 count0++;
-//             }
-//             if(nums[i]==1){
-//                 count1++;
-//             }
-//             if(nums[i]==2){
-//                 count2++;
-//             }
-//         }
-//         // O(n)
-//         int idx =0;
-//         for(int i=0;i<count0;i++){
-//             nums[idx++] =0;
-//         }
-//         for(int i=0;i<count1;i++){
-//             nums[idx++] =1;
-//         }
-//         for(int i=0;i<count2;i++){
-//             nums[idx++] =2;
-//         } 
-//     }
-// int main(){
-//     vector<int> nums = {2,0,2,1,1,0};
-//     sortColors(nums);
-// }
+// SORT ARRAY WITH 0S,1S,2S
+//   void sortColors(vector<int>& nums) {
+//          int n = nums.size();
+//          int count0 =0, count1 =0, count2 =0;
+//          // O(n)
+//          for(int i=0;i<n;i++){
+//              if(nums[i]==0){
+//                  count0++;
+//              }
+//              if(nums[i]==1){
+//                  count1++;
+//              }
+//              if(nums[i]==2){
+//                  count2++;
+//              }
+//          }
+//          // O(n)
+//          int idx =0;
+//          for(int i=0;i<count0;i++){
+//              nums[idx++] =0;
+//          }
+//          for(int i=0;i<count1;i++){
+//              nums[idx++] =1;
+//          }
+//          for(int i=0;i<count2;i++){
+//              nums[idx++] =2;
+//          }
+//      }
+//  int main(){
+//      vector<int> nums = {2,0,2,1,1,0};
+//      sortColors(nums);
+//  }
 
-//DNF ALGORITHM O(n)
+// DNF ALGORITHM O(n)
 //(TAKE YOU FORWARD)
-// void sortColors(int arr[], int sz){
-//     int low =0, mid =0, high = sz-1;
-//     while(mid <= high){
-//         if(arr[mid] ==0){
-//             swap(arr[low],arr[mid]);
-//             low++;
-//             mid++;
-//         }
-//         else if(arr[mid] ==1){
-//             mid++;
-//         }
-//         else{
-//             swap(arr[mid],arr[high]);
-//             high--;
-//         }
-//     }
-// }
-// int main(){
-//     int arr[] = {2,0,2,1,1,0};
-//     int sz =6;
-//     sortColors(arr,sz);
-//     for(int i=0;i<sz;i++){
-//         cout<<arr[i]<<" ";
-//     }cout<<endl;
-// }
+//  void sortColors(int arr[], int sz){
+//      int low =0, mid =0, high = sz-1;
+//      while(mid <= high){
+//          if(arr[mid] ==0){
+//              swap(arr[low],arr[mid]);
+//              low++;
+//              mid++;
+//          }
+//          else if(arr[mid] ==1){
+//              mid++;
+//          }
+//          else{
+//              swap(arr[mid],arr[high]);
+//              high--;
+//          }
+//      }
+//  }
+//  int main(){
+//      int arr[] = {2,0,2,1,1,0};
+//      int sz =6;
+//      sortColors(arr,sz);
+//      for(int i=0;i<sz;i++){
+//          cout<<arr[i]<<" ";
+//      }cout<<endl;
+//  }
 
-//MERGE SORTED ARRAYS O(m+n)
-// void merge(vector<int>& A, int m, vector<int>& B, int n) {
-//         int idx = m+n-1, i = m-1, j = n-1;
-//         while(i >=0 && j>=0){
-//             if(A[i] >= B[j]){
-//                 A[idx] = A[i];
-//                 idx--,i--;
-//             } else {
-//                 A[idx--] = B[j--];
-//             }
-//         }
-//         while(j>=0){
-//             A[idx--] = B[j--];
-//         }
-//     }
-// int main(){
-//     vector<int> A = {1,2,3,0,0,0}; 
-//     int m =3;
-//     vector<int> B = {2,5,6};    
-//     int n =3;
-//     merge(A,m,B,n); 
-//     for(int val : A){
-//         cout<<val<<" ";
-//     }
-//     cout<<endl;
-// }
+// MERGE SORTED ARRAYS O(m+n)
+//  void merge(vector<int>& A, int m, vector<int>& B, int n) {
+//          int idx = m+n-1, i = m-1, j = n-1;
+//          while(i >=0 && j>=0){
+//              if(A[i] >= B[j]){
+//                  A[idx] = A[i];
+//                  idx--,i--;
+//              } else {
+//                  A[idx--] = B[j--];
+//              }
+//          }
+//          while(j>=0){
+//              A[idx--] = B[j--];
+//          }
+//      }
+//  int main(){
+//      vector<int> A = {1,2,3,0,0,0};
+//      int m =3;
+//      vector<int> B = {2,5,6};
+//      int n =3;
+//      merge(A,m,B,n);
+//      for(int val : A){
+//          cout<<val<<" ";
+//      }
+//      cout<<endl;
+//  }
 
-//NEXT PERMUTATION PROBLEM
-// void nextPermutation(vector<int>& nums) {
-//         int n = nums.size();
-//         int pivot = -1;
-//         // step 1                
-//         for(int i=n-2;i>=0;i--){
-//             if(nums[i]<nums[i+1]){   
-//                 pivot = i;
-//                 break;   
-//             }
-//         }        
-//         // step 2    
-//         if(pivot == -1){
-//             reverse(nums.begin(),nums.end());
-//             return;
-//         }    
-//         for(int i=n-1;i>pivot;i--){
-//             if(nums[i]>nums[pivot]){
-//                 swap(nums[i],nums[pivot]);
-//                 break;   
-//             }
-//         }
-//         // step 3
-//         reverse(nums.begin()+pivot +1,nums.end()); 
-//     }
-// int main(){
-//     vector<int> nums = {1,2,3,5,4};
-//     nextPermutation(nums);
-//     for(int val : nums){
-//         cout<<val<<" ";
-//     } cout<<endl;
-// }
+// NEXT PERMUTATION PROBLEM
+//  void nextPermutation(vector<int>& nums) {
+//          int n = nums.size();
+//          int pivot = -1;
+//          // step 1
+//          for(int i=n-2;i>=0;i--){
+//              if(nums[i]<nums[i+1]){
+//                  pivot = i;
+//                  break;
+//              }
+//          }
+//          // step 2
+//          if(pivot == -1){
+//              reverse(nums.begin(),nums.end());
+//              return;
+//          }
+//          for(int i=n-1;i>pivot;i--){
+//              if(nums[i]>nums[pivot]){
+//                  swap(nums[i],nums[pivot]);
+//                  break;
+//              }
+//          }
+//          // step 3
+//          reverse(nums.begin()+pivot +1,nums.end());
+//      }
+//  int main(){
+//      vector<int> nums = {1,2,3,5,4};
+//      nextPermutation(nums);
+//      for(int val : nums){
+//          cout<<val<<" ";
+//      } cout<<endl;
+//  }
 
-//CHAR ARRAYS
-//int main(){
-    //char str[] = {'a','b','c','\0'}; // null char at the end 
-    //char str[] = "hello"; // null char at the end
-    //cout<< strlen(str) << endl; // constant pointers
-    // char str[12];
-    // cout << "enter char array : ";
-    //cin>>str; // stops at space
-    // we use cin.getline(str, len,delimiter);
-    //cin.getline(str,100,'$'); // stops at new line
-    // cin.getline(str,12);
-    // for(char ch : str){
-    // cout<< ch <<" ";}
-    // cout<<endl;
+// CHAR ARRAYS
+// int main(){
+// char str[] = {'a','b','c','\0'}; // null char at the end
+// char str[] = "hello"; // null char at the end
+// cout<< strlen(str) << endl; // constant pointers
+//  char str[12];
+//  cout << "enter char array : ";
+// cin>>str; // stops at space
+//  we use cin.getline(str, len,delimiter);
+// cin.getline(str,100,'$'); // stops at new line
+//  cin.getline(str,12);
+//  for(char ch : str){
+//  cout<< ch <<" ";}
+//  cout<<endl;
 //     char str[] = "abhi ram";
 //     int len =0;
 //     for(int i=0;i<str[i]!= '\0';i++){
@@ -1820,91 +1809,135 @@ using namespace std;
 //     return 0;
 // }
 
-//STRINGS
+// STRINGS
+//   int main(){
+//       string str = "apna college"; //dynamic => runtime resize
+//       string str2 = "egelloc anpa"; //dynamic => runtime resize
+//      // cout<<str<<endl;
+//      // string str1 = "Joe";
+//      // string str2 = "Scorpio";
+//      // string str3 = str1 + " " + str2; //concatination
+//      // cout<<str3<<endl;
+//      // cout<<str1.length()<<endl;
+//      // return 0;
+//      reverse(str.begin(),str.end());
+//      if(str == str2){
+//          cout<< "palindrome"<<endl;
+//      }
+//   }
+
+// VALID PALINDROME
+
+// REMOVE ALL OCCURENCES
+//  string removeOccurrences(string s, string part) {
+//          while(s.length() >0 && s.find(part) < s.length()){
+//              s.erase(s.find(part),part.length());
+//          }
+//          return s;
+//      }
 //  int main(){
-//      string str = "apna college"; //dynamic => runtime resize     
-//      string str2 = "egelloc anpa"; //dynamic => runtime resize     
-//     // cout<<str<<endl;
-//     // string str1 = "Joe";
-//     // string str2 = "Scorpio";
-//     // string str3 = str1 + " " + str2; //concatination
-//     // cout<<str3<<endl;
-//     // cout<<str1.length()<<endl;
-//     // return 0;
-//     reverse(str.begin(),str.end());
-//     if(str == str2){
-//         cout<< "palindrome"<<endl;
-//     } 
+//      string s = "daabcbaabcbc", part = "abc";
+//      cout<<removeOccurrences(s,part)<<endl;
+//      return 0;
 //  }
 
-//VALID PALINDROME
+// REVERSE WORDS IN A STRING
+//  string reverseWords(string s) {
+//          int n = s.length();
+//          string ans = "";
+//          reverse(s.begin(),s.end());
+//          for(int i=0;i<n;i++){
+//              string word = "";
+//              while(i<n && s[i]!=' '){
+//                  word +=s[i];
+//                  i++;
+//              }
+//              reverse(word.begin(),word.end());
+//              if(word.length()>0){
+//                  ans +=" " + word;
+//              }
+//          }
+//          return ans.substr(1);
+//      }
+//  int main(){
+//      string s = "the sky is blue";
+//      cout<< reverseWords(s);
+//  }
 
-//REMOVE ALL OCCURENCES
-// string removeOccurrences(string s, string part) {          
-//         while(s.length() >0 && s.find(part) < s.length()){
-//             s.erase(s.find(part),part.length());  
-//         }
-//         return s;
+// COMPRESS AN ARRAY OF CHARACTERS
+//      int compress(vector<char>& chars) {
+//          int n = chars.size();
+//          int idx =0;
+//          for(int i=0;i<n;i++){
+//              char ch = chars[i];
+//              int count =0;
+//              while(i<n && chars[i] == ch){
+//                  count++;i++;
+//              }
+//          if(count ==1){
+//              chars[idx++] = ch;
+//          }
+//          else{
+//              chars[idx++]=ch;
+//              string str = to_string(count);
+//              for(char dig : str){
+//                  chars[idx++]=dig;
+//              }
+//          }i--;
+//      } chars.resize(idx);
+//          return idx;}
+//  int main(){
+//      vector<char> chars ={'a','a','b','b','c','c','c'};
+//      int newLength = compress(chars);
+//      cout << "[";
+//      for (int i = 0; i < newLength; i++) {
+//          cout << "\"" << chars[i] << "\"";
+//          if (i < newLength - 1) cout << ",";
+//      }
+//      cout << "]" << endl;
+//      return 0;
+//  }
+
+// DIGITS IN A NUMBER && SUM OF DIGITS
+// void printDigits(int n)
+// { // TC = O(logn base number(here 10))
+//     int sum = 0;
+//     // int count =0;
+//     while (n != 0)
+//     {
+//         int digit = n % 10;
+//         sum += digit;
+//         // count++;
+//         n = n / 10;
 //     }
-// int main(){
-//     string s = "daabcbaabcbc", part = "abc";
-//     cout<<removeOccurrences(s,part)<<endl;
+//     cout << sum << endl;
+//     // cout<<count;
+// }
+// int main()
+// {
+//     int n = 3568;
+//     // printDigits(n);
+//     cout << (int)(log10(n) + 1) << endl; // number of digits
 //     return 0;
 // }
 
-//REVERSE WORDS IN A STRING
-// string reverseWords(string s) {
-//         int n = s.length();
-//         string ans = "";
-//         reverse(s.begin(),s.end());
-//         for(int i=0;i<n;i++){
-//             string word = "";
-//             while(i<n && s[i]!=' '){
-//                 word +=s[i];
-//                 i++;
-//             }
-//             reverse(word.begin(),word.end());
-//             if(word.length()>0){
-//                 ans +=" " + word;
-//             }
-//         }
-//         return ans.substr(1);
-//     }
-// int main(){
-//     string s = "the sky is blue";
-//     cout<< reverseWords(s);
+//ARMSTRONG NUMBER
+// bool isArmstrong(int n){ //TC = O(log(nbase10))
+//     int copyN =n;
+//     int sum = 0;
+//     while(n!=0){
+//         int digit = n%10;
+//         sum += digit*digit*digit;
+//         n = n/10;
+//     } return sum == copyN;
 // }
-
-//Compress an Array of Characters
-//     int compress(vector<char>& chars) {
-//         int n = chars.size();
-//         int idx =0;
-//         for(int i=0;i<n;i++){
-//             char ch = chars[i];
-//             int count =0;
-//             while(i<n && chars[i] == ch){
-//                 count++;i++;
-//             }
-//         if(count ==1){
-//             chars[idx++] = ch;
-//         }
-//         else{
-//             chars[idx++]=ch;
-//             string str = to_string(count);
-//             for(char dig : str){
-//                 chars[idx++]=dig;
-//             }
-//         }i--;
-//     } chars.resize(idx);
-//         return idx;}
-// int main(){ 
-//     vector<char> chars ={'a','a','b','b','c','c','c'};
-//     int newLength = compress(chars);
-//     cout << "[";
-//     for (int i = 0; i < newLength; i++) {
-//         cout << "\"" << chars[i] << "\"";
-//         if (i < newLength - 1) cout << ",";
+// int main()
+// {
+//     int n = 153;
+//     if(isArmstrong(n)){
+//      cout <<"is an armstrong number\n";   
+//     }else{
+//       cout <<"is not an armstrong number\n";   
 //     }
-//     cout << "]" << endl;
 //     return 0;
 // }
