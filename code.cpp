@@ -1077,6 +1077,7 @@ using namespace std;
 // #include<set>
 // #include<unordered_set>
 
+//VECTORS
 // int main(){
 // vector<int> vec;//0
 // vector<int> vec = {1,2,3,4,5};
@@ -1940,4 +1941,89 @@ using namespace std;
 //       cout <<"is not an armstrong number\n";   
 //     }
 //     return 0;
+// }
+
+//GCD
+// int gcd(int m,int n){
+//     int num =0;
+//     int limit = (m<n)?m:n;
+// for(int i=1;i<=limit;i++){
+//     if(n%i ==0 && m%i ==0){
+//         num = i;
+//     }
+// } return num;
+// }
+// int main(){
+//     cout<<gcd(0,30);
+// }
+ //ANOTHERWAY
+// int gcd(int m, int n){
+//     int x =0;
+//     if(n == m){
+//         return m;
+//     }
+//     if(n>m){
+//      x = gcd(m,n-m);
+//     }else{
+//      x = gcd(m-n,m);
+//     }
+//     if(m==0){
+//         return n;
+//     }
+//     if(n ==0){
+//         return m;
+//     }
+// }
+// int main(){
+//     cout<<gcd(10,30);
+// }
+//RECURSION
+// int gcd(int a,int b){
+//     if(b==0) return a;
+//     return gcd(b,a%b);
+// }
+//EUCLID ALGORITHM
+// int gcd(int a,int b){
+//     while(a>0 && b>0){
+//         if(a>b){
+//             a = a%b;
+//         }else{
+//             b = b%a;
+//         }
+//     }if(a==0) return b;
+//     return a;
+// }
+// int main(){
+//     cout<<gcd(3,30);
+// }
+
+//LCM
+// int lcm(int a, int b){
+//     for(int i=max(a,b);i<=a*b;i+=max(a,b)){
+//         if(i%a ==0 && i%b ==0)
+//         return i;
+//     }
+//     return a*b;
+// }
+// int main(){
+//     cout<<lcm(9,16);
+// }
+
+//REVERSE A NUMBER
+// int a = 4537;
+// string b = to_string(a);
+// int main(){
+// reverse(b.begin(),b.end());
+// int a = stoi(b);
+// cout<<a;
+// }
+// int main(){
+// int num = 4587;
+// int rev=0;
+// while(num>0){
+//     int digit = num%10;
+//     rev = rev*10 + digit;
+//     num = num/10;
+// }
+// cout<<rev;
 // }
