@@ -2028,4 +2028,78 @@ using namespace std;
 // cout<<rev;
 // }
 
+//2D ARRAYS LINEAR SEARCH
+// pair<int,int> linearSearch(int mat[][3],int rows, int cols,int key){
+//   pair<int,int> pos = {-1,-1};
+//   for(int i=0;i<rows;i++){ // i=row
+//     for(int j=0;j<cols;j++){
+//       if (mat[i][j] == key){
+//         return {i,j};
+//       }
+//     }
+//   }return pos;
+// }
+// int main(){
+//   int matrix[4][3] = {{1,2,3},{4,5,6},{7,8,9},{10,11,12}}; //2d array
+//   int rows =4;
+//   int cols =3;
+//   cout<<matrix[2][1]<<endl;
+//   for(int i=0;i<rows;i++){ // i=row
+//     for(int j=0;j<cols;j++){
+//       cout<<matrix[i][j]<<" ";
+//     }cout<<endl;
+//   }
+//    pair<int,int> pos = linearSearch(matrix,4,3,8);
+//    cout<<pos.first<<","<<pos.second<<endl;
+// }
 
+//2D ARRAY MAX ROW SUM
+// int main(){
+//   int matrix[3][3] = {{1,2,3},{4,5,6},{7,8,9}}; //2d array
+//   int rows =3;
+//   int cols =3;
+//   int maxsum =0;
+//   for(int i=0;i<rows;i++){
+//     int rowsum =0;
+//     for(int j=0;j<cols;j++){
+//        rowsum +=matrix[i][j];
+//     } maxsum = max(maxsum,rowsum);
+//   } cout<<maxsum;
+// }
+
+//DIAGNOL SUM
+// int main(){
+//   int matrix[3][3] = {{1,2,3},{4,5,6},{7,8,9}}; //2d array
+//   int rows =3;
+//   int cols =3;
+//   int sum =0;
+//   for(int i=0;i<rows;i++){ TC= O(N*N)
+//     for(int j=0;j<cols;j++){
+//        if(i ==j){
+//         sum +=matrix[i][j];
+//        }else if(j == cols-i-1){
+//         sum +=matrix[i][j];
+//        }
+//   } 
+// }
+// for(int i=0;i<cols;i++){ //TC = O(N)
+//   sum+=matrix[i][i];
+//   if(i!= cols-i-1){
+//     sum +=matrix[i][cols-i-1];
+//   }
+// }
+// cout<<sum;}
+
+//2D VECTOR
+// int main(){
+//   vector<vector<int>>mat = {{1,2,3},{4,5,6,10,11},{7,8,9}};
+//   //rows => mat.size();
+//   // cols = mat[i].size();
+//   for(int i=0;i<mat.size();i++){ // i=row
+//     for(int j=0;j<mat[i].size();j++){
+//       cout<<mat[i][j]<<" ";
+//     }cout<<endl;
+//   }
+// }
+
+//SEARCH IN A 2D MATRIX
