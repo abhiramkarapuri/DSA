@@ -2184,20 +2184,41 @@ using namespace std;
 //         return ans;
 //     }
 
-//2 SUM
+//2 SUM LEETCODE-1
 // BRUTE FORCE 
 //BETTER
 //OPTIMISED
-vector<int> twoSum(vector<int>& nums, int target) {
-  unordered_map<int,int> m;
-  vector<int> ans;
-  for(int i=0;i<nums.size();i++){
-    int first = nums[i];
-    int sec = target - nums[i];
-      if(m.find(sec)!=m.end()){
-          ans.push_back(i);
-          ans.push_back(m[sec]);
-          break;
-      }m[first] = i;
-  }return ans;
-}
+// vector<int> twoSum(vector<int>& nums, int target) {
+//   unordered_map<int,int> m;
+//   vector<int> ans;
+//   for(int i=0;i<nums.size();i++){
+//     int first = nums[i];
+//     int sec = target - nums[i];
+//       if(m.find(sec)!=m.end()){
+//           ans.push_back(i);
+//           ans.push_back(m[sec]);
+//           break;
+//       }m[first] = i;
+//   }return ans;
+// }
+
+//FINDING MISSING AND REPEATED VALUES LEETCODE 2965
+// vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
+//   vector<int>ans;
+//   unordered_set<int> s;
+//   int n = grid.size();
+//   int a,b;
+//   int expSum =0,actualSum= 0;
+//   for(int i=0;i<n;i++){
+//     for(int j=0;j<n;j++){
+//       actualSum +=grid[i][j];
+//       if(s.find(grid[i][j])!=s.end()){
+//         a =grid[i][j];
+//         ans.push_back(a);
+//       }s.insert(grid[i][j]);
+//     }
+//   } expSum = (n*n)*(n*n +1)/2;
+//   b = expSum + a - actualSum;
+//   ans.push_back(b);
+//   return ans;
+// }
