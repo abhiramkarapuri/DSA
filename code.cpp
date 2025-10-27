@@ -2272,3 +2272,39 @@ using namespace std;
 //   }return ans;
 //}
 
+//RECURSION
+//Reccurance relation : T(n) = T(n-1) + C
+// void printNumbers(int n){ // works like call stack
+//   if(n ==1){ // recursion tree
+//     cout<< "1\n";
+//     return;
+//   }
+//   cout<<n<<" ";
+//   printNumbers(n-1);
+// }
+// int main(){
+// printNumbers(4);
+//   return 0;
+// }
+// FACTORIAL
+// int fact(int n){ //TC = o(n) total calls * wd in each call
+//   //SC = height of callstack * mem in each call
+//   //Sc = o(n)
+//   if(n ==0){ 
+//     return 1;}
+//     return n * fact(n-1);
+// }
+// int main(){
+//   cout<< fact(5);
+// }
+//SUM OF N NUMBERS
+// int sum(int n){ //TC = SC = O(N)
+//   if(n ==1){
+//     return 1;
+//   }
+//   return n + sum(n-1);
+// }
+// int main(){
+//   cout<< sum(5);
+// }
+//FIBONACCI
