@@ -2307,7 +2307,7 @@ using namespace std;
 // int main(){
 //   cout<< sum(5);
 // }
-//FIBONACCI
+//RECURSION FIBONACCI
 // int fib(int n){ //Tc = O(2^n) //SC =O(n)
 //   if(n ==0){
 //     return 0;
@@ -2320,7 +2320,8 @@ using namespace std;
 // int main(){
 //   cout<<fib(7);
 // }
-//CHECK ARRAY IS SORTED OR NOT
+
+// RECURSION CHECK ARRAY IS SORTED OR NOT
 // bool isSorted(vector<int> arr,int n){//TC = SC = O(N)
 //   if(n ==0 || n ==1) return true;
 //   return (arr[n-1]>= arr[n-2] && isSorted(arr,n-1));
@@ -2330,7 +2331,8 @@ using namespace std;
 //   int n = arr.size();
 //   cout<<isSorted(arr,n);
 // }
-//BINARY SEARCH
+
+//RECURSION BINARY SEARCH
 // int bs(vector<int> arr,int tar,int st,int end){ //TC = SC = O(logn)
 //   if(st<=end){
 //   int mid = (st+end)/2;
@@ -2349,3 +2351,64 @@ using namespace std;
 //   int tar =11;
 //   cout<< bs(arr,tar,st,end);
 // }
+
+// PRINT ALL SUBSETS number of subsets = 2^n 
+// void printSubsets(vector<int> &arr,vector<int> &ans, int i){//Tc = O(2^n *n)
+// if(i == arr.size()){
+//   for(int val : ans){
+//     cout<<val<<" ";
+//   } cout<<endl;
+//   return;
+// }
+// //include
+// ans.push_back(arr[i]);
+// printSubsets(arr,ans,i+1);
+// ans.pop_back();//backtracking
+// //exclude
+// printSubsets(arr,ans,i+1);
+// }
+// int main(){
+//   vector<int> arr = {1,2,3};
+//   vector<int> ans;
+//   printSubsets(arr,ans,0);
+// }
+
+// RECURSION SUBSETS ||
+// void getAllSubsets(vector<int>&nums,vector<int> &ans, int i,vector<vector<int>> &allSubsets){ //TC = O(2^n *n)
+//     if(i == nums.size()){
+//         allSubsets.push_back(ans);
+//         return;
+//     }//include
+//     ans.push_back(nums[i]);
+//     getAllSubsets(nums,ans,i+1,allSubsets);
+//     ans.pop_back();
+//     int idx = i+1;
+//     while(idx < nums.size() && nums[idx]==nums[idx-1]) idx++;
+//     //exclude
+//     getAllSubsets(nums,ans,idx,allSubsets);
+// }
+//     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+//         sort(nums.begin(),nums.end());
+//         vector<vector<int>> allSubsets;
+//         vector<int> ans;
+//          getAllSubsets(nums,ans,0,allSubsets);
+//          return allSubsets;
+//     }
+
+//PERMUTATIONS
+// void getPerm(vector<int>& nums, int idx,vector<vector<int>> &ans){
+//     if(idx == nums.size()){
+//         ans.push_back({nums});
+//         return;
+//     }
+//     for(int i = idx;i<nums.size();i++){
+//         swap(nums[idx],nums[i]);
+//         getPerm(nums,idx+1,ans);
+//         swap(nums[i],nums[idx]);
+//     }
+// }
+//     vector<vector<int>> permute(vector<int>& nums) {
+//         vector<vector<int>>ans;
+//         getPerm(nums,0,ans);
+//         return ans;
+//     }
