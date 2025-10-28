@@ -2308,4 +2308,26 @@ using namespace std;
 //   cout<< sum(5);
 // }
 //FIBONACCI
-
+// int fib(int n){ //Tc = O(2^n) //SC =O(n)
+//   if(n ==0){
+//     return 0;
+//   }
+//   if( n ==1){
+//     return 1;
+//   }
+//    return fib(n-1)+fib(n-2);
+// }
+// int main(){
+//   cout<<fib(7);
+// }
+//CHECK ARRAY IS SORTED OR NOT
+// bool isSorted(vector<int> arr,int n){//TC = SC = O(N)
+//   if(n ==0 || n ==1) return true;
+//   return (arr[n-1]>= arr[n-2] && isSorted(arr,n-1));
+// }
+// int main(){
+//   vector<int> arr = {1,2,7,3,4,5};
+//   int n = arr.size();
+//   cout<<isSorted(arr,n);
+// }
+//RECURSION
