@@ -2330,4 +2330,22 @@ using namespace std;
 //   int n = arr.size();
 //   cout<<isSorted(arr,n);
 // }
-//RECURSION
+//BINARY SEARCH
+// int bs(vector<int> arr,int tar,int st,int end){ //TC = SC = O(logn)
+//   if(st<=end){
+//   int mid = (st+end)/2;
+//   if(arr[mid] == tar)
+//   return mid;
+//   if(arr[mid]<=tar){
+//     return bs(arr,tar,mid+1,end);
+//   }else{
+//     return bs(arr,tar,st,mid-1);
+//   }} return -1;
+// }
+// int main(){
+//   vector<int> arr = {1,2,3,8,10,12};
+//   int n = arr.size();
+//   int st = arr[0],end = arr[n-1];
+//   int tar =11;
+//   cout<< bs(arr,tar,st,end);
+// }
