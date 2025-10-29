@@ -2412,3 +2412,5 @@ using namespace std;
 //         getPerm(nums,0,ans);
 //         return ans;
 //     }
+
+//KNIGHT
