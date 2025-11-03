@@ -2413,5 +2413,105 @@ using namespace std;
 //         return ans;
 //     }
 
-//KNIGHT
+//N-QUEENS
+    bool isSafe(vector<string> &board,int row,int col,int n){
+        //horizontal
+        for(int j=0;j<n;j++){
+            if(board[row][j]=='Q'){
+               return false; 
+            }
+        }
+        //vertical
+        for(int i=0;i<n;i++){
+            if(board[i][col]=='Q'){
+               return false; 
+            }
+        }
+        //left diagnol
+        for(int i =row,j=col;i>=0 && j>=0;i--,j--){
+            if(board[i][j] == 'Q'){
+            return false;
+            }
+        }
+        for(int i =row,j=col;i>=0 && j<n;i--,j++){
+            if(board[i][j] == 'Q'){
+            return false;
+            }
+        } return true;
+    }
+    void nQueens(vector<string> &board,int row,int n,vector<vector<string>> &ans){
+        if(row ==n){
+            ans.push_back({board});
+            return;
+        }
+        for(int j=0;j<n;j++){
+            if(isSafe(board,row,j,n)){
+                board[row][j]='Q';
+                nQueens(board,row+1,n,ans);
+                board[row][j]='.';
+            }
+        }
+    }
+    vector<vector<string>> solveNQueens(int n) {
+        vector<string> board(n,string(n,'.'));
+        vector<vector<string>> ans;
+        nQueens(board,0,n,ans);
+        return ans;
+    }
+
+
+//SUDOKU
+bool isSafe(vector<vector<char>>& board,int row, int col,char dig){
+    //horizontal
+    for(int j=0;j<9;j++){
+        if(board[row][j]==dig){
+            return false;
+        }
+    }
+    //vertical
+    for(int i=0;i<9;i++){
+        if(board[i][col]==dig){
+            return false;
+        }
+    }
+    //grid
+    int srow = (row/3)*3;
+    int scol = (col/3)*3;
+    for(int i=srow;i<=srow+2;i++){
+        for(int j = scol;j<=scol+2;j++){
+            if(board[i][j]==dig){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+    bool helper(vector<vector<char>>& board,int row, int col){
+        if(row ==9){
+            return true;
+        }
+        int nextRow = row, nextCol = col+1;
+        if(nextCol == 9){
+            nextRow = row +1;
+            nextCol =0;
+        }
+        if(board[row][col]!= '.'){
+            return helper(board,nextRow,nextCol);
+        }
+        //place digit
+        for(char dig ='1';dig<='9';dig++){
+            if(isSafe(board,row,col,dig)){
+                board[row][col]=dig;
+                if(helper(board,nextRow,nextCol)){
+                    return true;
+                }
+                board[row][col]='.';
+            }
+        } return false; 
+    }
+    void solveSudoku(vector<vector<char>>& board) {
+        helper(board,0,0);
+    }
+
+//RAT IN A MAZE
 
