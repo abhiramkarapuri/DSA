@@ -2700,41 +2700,41 @@ using namespace std;
 //  Student s1("tony");
 // }
 
-class Shape{ //abstract class
-    virtual void draw()=0; //pure virtual function
-};
-class Circle:public Shape{
-    public:
-    void draw(){
-        cout<<"drawing a circle\n";
-    }
-};
-void fun(){
-    static int x=0; //init statement -1 run
-    cout<<x;
-    x++;
-}
-class A{
-    public:
-    int x;
-    void xy(){
-        x = x+1;
-    }
-};
-int main(){
-    Circle c1;
-    A obj1;
-    A obj2; 
-    obj1.x =100;
-    obj2.x =100;
-    cout<<obj2.x<<endl;
-    // obj.xy();
-    // cout<<obj.x <<endl;
-// fun();
-// fun();
-// fun();
-//c1.draw();
-}
+// class Shape{ //abstract class
+//     virtual void draw()=0; //pure virtual function
+// };
+// class Circle:public Shape{
+//     public:
+//     void draw(){
+//         cout<<"drawing a circle\n";
+//     }
+// };
+// void fun(){
+//     static int x=0; //init statement -1 run
+//     cout<<x;
+//     x++;
+// }
+// class A{
+//     public:
+//     int x;
+//     void xy(){
+//         x = x+1;
+//     }
+// };
+// int main(){
+//     Circle c1;
+//     A obj1;
+//     A obj2; 
+//     obj1.x =100;
+//     obj2.x =100;
+//     cout<<obj2.x<<endl;
+//     // obj.xy();
+//     // cout<<obj.x <<endl;
+// // fun();
+// // fun();
+// // fun();
+// //c1.draw();
+// }
 //questuons;
 /*new keyword
 shallow and deep copy
