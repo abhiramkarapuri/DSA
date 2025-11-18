@@ -2553,7 +2553,6 @@ using namespace std;
 // private:
 //     double balance;
 //     string password;
-
 // public:
 //     string account;
 //     string username;
@@ -2603,7 +2602,6 @@ using namespace std;
 //        cout<<"subject :"<<subject<<endl ;
 //     }
 // };
-
 // int main()
 // {
 //     Teacher t1("Joe","CS","C++",25000); //constructor call
@@ -2611,14 +2609,11 @@ using namespace std;
 //     // t1.subject = "C++";
 //     // t1.setSalary(25000);
 //     //cout << t1.dept<<endl;
-//     //t1.getInfo();
-    
+//     //t1.getInfo();   
 //     Teacher t2(t1);//default copy constructor
 //     t2.getInfo();
 //     return 0;
 // }
-
-
 // class Student{
 //  public:
 //  string name;
@@ -2638,7 +2633,6 @@ using namespace std;
 //     cout<<"i am destructor \n";
 //     delete cgpaPtr; //memory leak
 //  }
-
 // void getInfo(){
 //     cout<<name<<endl;
 //     cout<<*cgpaPtr<<endl;
@@ -2647,7 +2641,6 @@ using namespace std;
 // int main(){
 // Student s1("Kenny",8.9);
 // s1.getInfo();
-
 // }
 // class Person{
 // public:
@@ -2672,7 +2665,6 @@ using namespace std;
 //     //     cout<<age<<endl;
 //     //     cout<<rollno<<endl;
 //     // }
-
 // };
 // class GradStudent :public Student{
 // public:
@@ -2684,7 +2676,6 @@ using namespace std;
 // s1.research = "machines";
 // cout<<s1.name<<" "<<s1.research;
 // }
-
 // class Student{
 //     public:
 //     string name;
@@ -2699,7 +2690,6 @@ using namespace std;
 // int main(){
 //  Student s1("tony");
 // }
-
 // class Shape{ //abstract class
 //     virtual void draw()=0; //pure virtual function
 // };
@@ -2736,9 +2726,9 @@ using namespace std;
 // //c1.draw();
 // }
 //questuons;
-/*new keyword
-shallow and deep copy
-pointers
-dynamic memory allocation
-friend function and friend cls
-*/
+// /*new keyword
+// shallow and deep copy
+// pointers
+// dynamic memory allocation
+// friend function and friend cls
+// */
