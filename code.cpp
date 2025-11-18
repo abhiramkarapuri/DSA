@@ -1077,40 +1077,40 @@ using namespace std;
 // #include<set>
 // #include<unordered_set>
 
-//VECTORS
-// int main(){
-// vector<int> vec;//0
-// vector<int> vec = {1,2,3,4,5};
-// vector<int> vec(3,10);
-// vec.push_back(1);
-// vec.push_back(2);
-// vec.push_back(3);
-// vec.push_back(4);
-// vec.push_back(5);
-// vec.emplace_back(6);
-// vec.pop_back();
-// cout<<vec.size()<<endl;
-// cout<<vec.capacity()<<endl;
-// for(int val : vec){
-//     cout<<val<<" ";
-// }
-// cout<<endl;
-// cout<<"val at idx 2 :"<<vec[2]<<" or "<<vec.at(2)<<endl;
-// cout<<endl;
-// FRONT AND BACK
-// cout<<"at front : "<<vec.front()<<endl;
-// cout<<"at back : "<<vec.back()<<endl;
-// cout<<*vec.begin(); -> gives 1st element
-// ERASE
-// vec.erase(vec.begin());
-// vec.erase(vec.begin()+2);
-// vec.erase(vec.begin()+1,vec.begin()+3);
-// for(int val : vec){
-//     cout<<val<<" ";
-// }
-// cout<<endl;
-// cout<<vec.size();
-// cout<<vec.capacity();
+// VECTORS
+//  int main(){
+//  vector<int> vec;//0
+//  vector<int> vec = {1,2,3,4,5};
+//  vector<int> vec(3,10);
+//  vec.push_back(1);
+//  vec.push_back(2);
+//  vec.push_back(3);
+//  vec.push_back(4);
+//  vec.push_back(5);
+//  vec.emplace_back(6);
+//  vec.pop_back();
+//  cout<<vec.size()<<endl;
+//  cout<<vec.capacity()<<endl;
+//  for(int val : vec){
+//      cout<<val<<" ";
+//  }
+//  cout<<endl;
+//  cout<<"val at idx 2 :"<<vec[2]<<" or "<<vec.at(2)<<endl;
+//  cout<<endl;
+//  FRONT AND BACK
+//  cout<<"at front : "<<vec.front()<<endl;
+//  cout<<"at back : "<<vec.back()<<endl;
+//  cout<<*vec.begin(); -> gives 1st element
+//  ERASE
+//  vec.erase(vec.begin());
+//  vec.erase(vec.begin()+2);
+//  vec.erase(vec.begin()+1,vec.begin()+3);
+//  for(int val : vec){
+//      cout<<val<<" ";
+//  }
+//  cout<<endl;
+//  cout<<vec.size();
+//  cout<<vec.capacity();
 
 // INSERT
 // vec.insert(vec.begin()+2,100);
@@ -1922,41 +1922,41 @@ using namespace std;
 //     return 0;
 // }
 
-//ARMSTRONG NUMBER
-// bool isArmstrong(int n){ //TC = O(log(nbase10))
-//     int copyN =n;
-//     int sum = 0;
-//     while(n!=0){
-//         int digit = n%10;
-//         sum += digit*digit*digit;
-//         n = n/10;
-//     } return sum == copyN;
-// }
-// int main()
-// {
-//     int n = 153;
-//     if(isArmstrong(n)){
-//      cout <<"is an armstrong number\n";   
-//     }else{
-//       cout <<"is not an armstrong number\n";   
-//     }
-//     return 0;
-// }
+// ARMSTRONG NUMBER
+//  bool isArmstrong(int n){ //TC = O(log(nbase10))
+//      int copyN =n;
+//      int sum = 0;
+//      while(n!=0){
+//          int digit = n%10;
+//          sum += digit*digit*digit;
+//          n = n/10;
+//      } return sum == copyN;
+//  }
+//  int main()
+//  {
+//      int n = 153;
+//      if(isArmstrong(n)){
+//       cout <<"is an armstrong number\n";
+//      }else{
+//        cout <<"is not an armstrong number\n";
+//      }
+//      return 0;
+//  }
 
-//GCD
-// int gcd(int m,int n){
-//     int num =0;
-//     int limit = (m<n)?m:n;
-// for(int i=1;i<=limit;i++){
-//     if(n%i ==0 && m%i ==0){
-//         num = i;
-//     }
-// } return num;
-// }
-// int main(){
-//     cout<<gcd(0,30);
-// }
- //ANOTHERWAY
+// GCD
+//  int gcd(int m,int n){
+//      int num =0;
+//      int limit = (m<n)?m:n;
+//  for(int i=1;i<=limit;i++){
+//      if(n%i ==0 && m%i ==0){
+//          num = i;
+//      }
+//  } return num;
+//  }
+//  int main(){
+//      cout<<gcd(0,30);
+//  }
+// ANOTHERWAY
 // int gcd(int m, int n){
 //     int x =0;
 //     if(n == m){
@@ -1977,12 +1977,12 @@ using namespace std;
 // int main(){
 //     cout<<gcd(10,30);
 // }
-//RECURSION
+// RECURSION
 // int gcd(int a,int b){
 //     if(b==0) return a;
 //     return gcd(b,a%b);
 // }
-//EUCLID ALGORITHM
+// EUCLID ALGORITHM
 // int gcd(int a,int b){
 //     while(a>0 && b>0){
 //         if(a>b){
@@ -1997,329 +1997,329 @@ using namespace std;
 //     cout<<gcd(3,30);
 // }
 
-//LCM
-// int lcm(int a, int b){
-//     for(int i=max(a,b);i<=a*b;i+=max(a,b)){
-//         if(i%a ==0 && i%b ==0)
-//         return i;
-//     }
-//     return a*b;
-// }
-// int main(){
-//     cout<<lcm(9,16);
-// }
+// LCM
+//  int lcm(int a, int b){
+//      for(int i=max(a,b);i<=a*b;i+=max(a,b)){
+//          if(i%a ==0 && i%b ==0)
+//          return i;
+//      }
+//      return a*b;
+//  }
+//  int main(){
+//      cout<<lcm(9,16);
+//  }
 
-//REVERSE A NUMBER
-// int a = 4537;
-// string b = to_string(a);
-// int main(){
-// reverse(b.begin(),b.end());
-// int a = stoi(b);
-// cout<<a;
-// }
-// int main(){
-// int num = 4587;
-// int rev=0;
-// while(num>0){
-//     int digit = num%10;
-//     rev = rev*10 + digit;
-//     num = num/10;
-// }
-// cout<<rev;
-// }
+// REVERSE A NUMBER
+//  int a = 4537;
+//  string b = to_string(a);
+//  int main(){
+//  reverse(b.begin(),b.end());
+//  int a = stoi(b);
+//  cout<<a;
+//  }
+//  int main(){
+//  int num = 4587;
+//  int rev=0;
+//  while(num>0){
+//      int digit = num%10;
+//      rev = rev*10 + digit;
+//      num = num/10;
+//  }
+//  cout<<rev;
+//  }
 
-//2D ARRAYS LINEAR SEARCH
-// pair<int,int> linearSearch(int mat[][3],int rows, int cols,int key){
-//   pair<int,int> pos = {-1,-1};
-//   for(int i=0;i<rows;i++){ // i=row
-//     for(int j=0;j<cols;j++){
-//       if (mat[i][j] == key){
-//         return {i,j};
-//       }
-//     }
-//   }return pos;
-// }
-// int main(){
-//   int matrix[4][3] = {{1,2,3},{4,5,6},{7,8,9},{10,11,12}}; //2d array
-//   int rows =4;
-//   int cols =3;
-//   cout<<matrix[2][1]<<endl;
-//   for(int i=0;i<rows;i++){ // i=row
-//     for(int j=0;j<cols;j++){
-//       cout<<matrix[i][j]<<" ";
-//     }cout<<endl;
-//   }
-//    pair<int,int> pos = linearSearch(matrix,4,3,8);
-//    cout<<pos.first<<","<<pos.second<<endl;
-// }
-
-//2D ARRAY MAX ROW SUM
-// int main(){
-//   int matrix[3][3] = {{1,2,3},{4,5,6},{7,8,9}}; //2d array
-//   int rows =3;
-//   int cols =3;
-//   int maxsum =0;
-//   for(int i=0;i<rows;i++){
-//     int rowsum =0;
-//     for(int j=0;j<cols;j++){
-//        rowsum +=matrix[i][j];
-//     } maxsum = max(maxsum,rowsum);
-//   } cout<<maxsum;
-// }
-
-//DIAGNOL SUM
-// int main(){
-//   int matrix[3][3] = {{1,2,3},{4,5,6},{7,8,9}}; //2d array
-//   int rows =3;
-//   int cols =3;
-//   int sum =0;
-//   for(int i=0;i<rows;i++){ TC= O(N*N)
-//     for(int j=0;j<cols;j++){
-//        if(i ==j){
-//         sum +=matrix[i][j];
-//        }else if(j == cols-i-1){
-//         sum +=matrix[i][j];
+// 2D ARRAYS LINEAR SEARCH
+//  pair<int,int> linearSearch(int mat[][3],int rows, int cols,int key){
+//    pair<int,int> pos = {-1,-1};
+//    for(int i=0;i<rows;i++){ // i=row
+//      for(int j=0;j<cols;j++){
+//        if (mat[i][j] == key){
+//          return {i,j};
 //        }
-//   } 
-// }
-// for(int i=0;i<cols;i++){ //TC = O(N)
-//   sum+=matrix[i][i];
-//   if(i!= cols-i-1){
-//     sum +=matrix[i][cols-i-1];
-//   }
-// }
-// cout<<sum;}
+//      }
+//    }return pos;
+//  }
+//  int main(){
+//    int matrix[4][3] = {{1,2,3},{4,5,6},{7,8,9},{10,11,12}}; //2d array
+//    int rows =4;
+//    int cols =3;
+//    cout<<matrix[2][1]<<endl;
+//    for(int i=0;i<rows;i++){ // i=row
+//      for(int j=0;j<cols;j++){
+//        cout<<matrix[i][j]<<" ";
+//      }cout<<endl;
+//    }
+//     pair<int,int> pos = linearSearch(matrix,4,3,8);
+//     cout<<pos.first<<","<<pos.second<<endl;
+//  }
 
-//2D VECTOR
-// int main(){
-//   vector<vector<int>>mat = {{1,2,3},{4,5,6,10,11},{7,8,9}};
-//   //rows => mat.size();
-//   // cols = mat[i].size();
-//   for(int i=0;i<mat.size();i++){ // i=row
-//     for(int j=0;j<mat[i].size();j++){
-//       cout<<mat[i][j]<<" ";
-//     }cout<<endl;
-//   }
-// }
+// 2D ARRAY MAX ROW SUM
+//  int main(){
+//    int matrix[3][3] = {{1,2,3},{4,5,6},{7,8,9}}; //2d array
+//    int rows =3;
+//    int cols =3;
+//    int maxsum =0;
+//    for(int i=0;i<rows;i++){
+//      int rowsum =0;
+//      for(int j=0;j<cols;j++){
+//         rowsum +=matrix[i][j];
+//      } maxsum = max(maxsum,rowsum);
+//    } cout<<maxsum;
+//  }
 
-//SEARCH IN A 2D MATRIX
-// bool searchInRow(vector<vector<int>>& mat, int target,int row){
-//         int n= mat[0].size();
-//         int st =0, end = n-1;
-//         while(st<=end){
-//             int mid = (st+end)/2;
-//             if(target == mat[row][mid]){
-//                 return true;
-//             }else if(target >=mat[row][mid]){
-//                 st = mid+1;
-//             }else{
-//                 end = mid-1;
-//             }
-//         }return false;
-//     }
-//     bool searchMatrix(vector<vector<int>>& mat, int target) {
-//         //BS on total rows
-//         int m = mat.size(), n= mat[0].size();
-//         int stRow =0,endRow = m-1;
-//         while(stRow<=endRow){
-//             int midRow = (stRow+endRow)/2;
-//             if(target >=mat[midRow][0] && target <=mat[midRow][n-1]){
-//                 // found the row => BS on this row
-//                 return searchInRow(mat,target,midRow);
-//             }else if(target >= mat[midRow][n-1]){
-//                 //down => right
-//                 stRow = midRow+1;
-//             }else{
-//                 // up => left
-//                 endRow = midRow-1;
-//             }
-//         }return false;
-//     }
-
-//SEARCH IN A 2D MATRIX ||
-// bool searchMatrix(vector<vector<int>>& mat, int target) {
-//         int m = mat.size(),n = mat[0].size();
-//         int r=0,c=n-1;
-//         while(r<m && c>=0){
-//             if(target == mat[r][c]){
-//                 return true;
-//             }else if(target <mat[r][c]){
-//                 c--;
-//             }else{
-//                 r++;
-//             }
-//         }return false;
-//     } 
-
-//SPIRAL MATRIX
-// vector<int> spiralOrder(vector<vector<int>>& mat) { //O(m*n)
-//         int m = mat.size(),n = mat[0].size();
-//         int srow =0, scol = 0,erow =m-1,ecol =n-1;
-//         vector<int> ans;
-//         while(srow <=erow && scol<=ecol){
-//             //top
-//             for(int j = scol;j<=ecol;j++){
-//                 ans.push_back(mat[srow][j]);
-//             }
-//             //right
-//             for(int i = srow+1;i<=erow;i++){
-//                 ans.push_back(mat[i][ecol]);
-//             }
-//             //bottom
-//             for(int j = ecol-1;j>=scol;j--){
-//                 if(srow ==erow){
-//                     break;  
-//                 }
-//                 ans.push_back(mat[erow][j]);
-//             }
-//             //left
-//             for(int i=erow-1;i>=srow+1;i--){
-//                 if(scol ==ecol){
-//                     break;  
-//                 }
-//                 ans.push_back(mat[i][scol]);
-//             }
-//             srow++;erow--;scol++;ecol--;
+// DIAGNOL SUM
+//  int main(){
+//    int matrix[3][3] = {{1,2,3},{4,5,6},{7,8,9}}; //2d array
+//    int rows =3;
+//    int cols =3;
+//    int sum =0;
+//    for(int i=0;i<rows;i++){ TC= O(N*N)
+//      for(int j=0;j<cols;j++){
+//         if(i ==j){
+//          sum +=matrix[i][j];
+//         }else if(j == cols-i-1){
+//          sum +=matrix[i][j];
 //         }
-//         return ans;
-//     }
+//    }
+//  }
+//  for(int i=0;i<cols;i++){ //TC = O(N)
+//    sum+=matrix[i][i];
+//    if(i!= cols-i-1){
+//      sum +=matrix[i][cols-i-1];
+//    }
+//  }
+//  cout<<sum;}
 
-//2 SUM LEETCODE-1
-// BRUTE FORCE 
-//BETTER
-//OPTIMISED
-// vector<int> twoSum(vector<int>& nums, int target) {
-//   unordered_map<int,int> m;
-//   vector<int> ans;
-//   for(int i=0;i<nums.size();i++){
-//     int first = nums[i];
-//     int sec = target - nums[i];
-//       if(m.find(sec)!=m.end()){
-//           ans.push_back(i);
-//           ans.push_back(m[sec]);
-//           break;
-//       }m[first] = i;
-//   }return ans;
+// 2D VECTOR
+//  int main(){
+//    vector<vector<int>>mat = {{1,2,3},{4,5,6,10,11},{7,8,9}};
+//    //rows => mat.size();
+//    // cols = mat[i].size();
+//    for(int i=0;i<mat.size();i++){ // i=row
+//      for(int j=0;j<mat[i].size();j++){
+//        cout<<mat[i][j]<<" ";
+//      }cout<<endl;
+//    }
+//  }
+
+// SEARCH IN A 2D MATRIX
+//  bool searchInRow(vector<vector<int>>& mat, int target,int row){
+//          int n= mat[0].size();
+//          int st =0, end = n-1;
+//          while(st<=end){
+//              int mid = (st+end)/2;
+//              if(target == mat[row][mid]){
+//                  return true;
+//              }else if(target >=mat[row][mid]){
+//                  st = mid+1;
+//              }else{
+//                  end = mid-1;
+//              }
+//          }return false;
+//      }
+//      bool searchMatrix(vector<vector<int>>& mat, int target) {
+//          //BS on total rows
+//          int m = mat.size(), n= mat[0].size();
+//          int stRow =0,endRow = m-1;
+//          while(stRow<=endRow){
+//              int midRow = (stRow+endRow)/2;
+//              if(target >=mat[midRow][0] && target <=mat[midRow][n-1]){
+//                  // found the row => BS on this row
+//                  return searchInRow(mat,target,midRow);
+//              }else if(target >= mat[midRow][n-1]){
+//                  //down => right
+//                  stRow = midRow+1;
+//              }else{
+//                  // up => left
+//                  endRow = midRow-1;
+//              }
+//          }return false;
+//      }
+
+// SEARCH IN A 2D MATRIX ||
+//  bool searchMatrix(vector<vector<int>>& mat, int target) {
+//          int m = mat.size(),n = mat[0].size();
+//          int r=0,c=n-1;
+//          while(r<m && c>=0){
+//              if(target == mat[r][c]){
+//                  return true;
+//              }else if(target <mat[r][c]){
+//                  c--;
+//              }else{
+//                  r++;
+//              }
+//          }return false;
+//      }
+
+// SPIRAL MATRIX
+//  vector<int> spiralOrder(vector<vector<int>>& mat) { //O(m*n)
+//          int m = mat.size(),n = mat[0].size();
+//          int srow =0, scol = 0,erow =m-1,ecol =n-1;
+//          vector<int> ans;
+//          while(srow <=erow && scol<=ecol){
+//              //top
+//              for(int j = scol;j<=ecol;j++){
+//                  ans.push_back(mat[srow][j]);
+//              }
+//              //right
+//              for(int i = srow+1;i<=erow;i++){
+//                  ans.push_back(mat[i][ecol]);
+//              }
+//              //bottom
+//              for(int j = ecol-1;j>=scol;j--){
+//                  if(srow ==erow){
+//                      break;
+//                  }
+//                  ans.push_back(mat[erow][j]);
+//              }
+//              //left
+//              for(int i=erow-1;i>=srow+1;i--){
+//                  if(scol ==ecol){
+//                      break;
+//                  }
+//                  ans.push_back(mat[i][scol]);
+//              }
+//              srow++;erow--;scol++;ecol--;
+//          }
+//          return ans;
+//      }
+
+// 2 SUM LEETCODE-1
+//  BRUTE FORCE
+// BETTER
+// OPTIMISED
+//  vector<int> twoSum(vector<int>& nums, int target) {
+//    unordered_map<int,int> m;
+//    vector<int> ans;
+//    for(int i=0;i<nums.size();i++){
+//      int first = nums[i];
+//      int sec = target - nums[i];
+//        if(m.find(sec)!=m.end()){
+//            ans.push_back(i);
+//            ans.push_back(m[sec]);
+//            break;
+//        }m[first] = i;
+//    }return ans;
+//  }
+
+// FINDING MISSING AND REPEATED VALUES LEETCODE 2965
+//  vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
+//    vector<int>ans;
+//    unordered_set<int> s;
+//    int n = grid.size();
+//    int a,b;
+//    int expSum =0,actualSum= 0;
+//    for(int i=0;i<n;i++){
+//      for(int j=0;j<n;j++){
+//        actualSum +=grid[i][j];
+//        if(s.find(grid[i][j])!=s.end()){
+//          a =grid[i][j];
+//          ans.push_back(a);
+//        }s.insert(grid[i][j]);
+//      }
+//    } expSum = (n*n)*(n*n +1)/2;
+//    b = expSum + a - actualSum;
+//    ans.push_back(b);
+//    return ans;
+//  }
+
+// 3SUM
+//  vector<vector<int>> threeSum(vector<int>& nums) {
+//          int n = nums.size();
+//          vector<vector<int>>ans;
+//          sort(nums.begin(),nums.end());
+//          for(int i=0;i<n;i++){
+//              if(i>0 && nums[i] == nums[i-1]) continue;
+//              int j =i+1,k = n-1;
+//              while(j<k){
+//                  int sum = nums[i]+nums[j]+nums[k];
+//                  if(sum>0) k--;
+//                  else if(sum<0)j++;
+//                  else{
+//                      ans.push_back({nums[i],nums[j],nums[k]});
+//                      j++;k--;
+//                      while(j<k && nums[j] ==nums[j-1])j++;
+//                  }
+//              }
+//          }
+//  return ans;
+//      }
+
+// 4SUM
+//  vector<vector<int>> fourSum(vector<int>& nums, int tar) {
+//    vector<vector<int>> ans;
+//    int n = nums.size();
+//    sort(nums.begin(),nums.end());
+//    for(int i =0;i<n;i++){
+//      if(i>0 && nums[i]==nums[i-1]) continue;
+//      for(int j=i+1;j<n;){
+//        int p=j+1,q=n-1;
+//      while(p<q){
+//        long long sum = (long long)nums[i]+(long long)nums[j]
+//        +(long long)nums[p]+(long long)nums[q];
+//        if(sum<tar){
+//          p++;
+//        }else if(sum>tar){
+//          q--;
+//        }else{
+//          ans.push_back({nums[i],nums[j],nums[p],nums[q]});
+//          p++;q--;
+//          while(p<q && nums[p] ==nums[p-1]) p++;
+//        }
+//      };j++;
+//      while(j<n && nums[j]==nums[j-1])j++;
+//      }
+//    }return ans;
 // }
 
-//FINDING MISSING AND REPEATED VALUES LEETCODE 2965
-// vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
-//   vector<int>ans;
-//   unordered_set<int> s;
-//   int n = grid.size();
-//   int a,b;
-//   int expSum =0,actualSum= 0;
-//   for(int i=0;i<n;i++){
-//     for(int j=0;j<n;j++){
-//       actualSum +=grid[i][j];
-//       if(s.find(grid[i][j])!=s.end()){
-//         a =grid[i][j];
-//         ans.push_back(a);
-//       }s.insert(grid[i][j]);
-//     }
-//   } expSum = (n*n)*(n*n +1)/2;
-//   b = expSum + a - actualSum;
-//   ans.push_back(b);
-//   return ans;
-// }
-
-//3SUM
-// vector<vector<int>> threeSum(vector<int>& nums) {
-//         int n = nums.size();
-//         vector<vector<int>>ans;
-//         sort(nums.begin(),nums.end());
-//         for(int i=0;i<n;i++){
-//             if(i>0 && nums[i] == nums[i-1]) continue;
-//             int j =i+1,k = n-1;
-//             while(j<k){
-//                 int sum = nums[i]+nums[j]+nums[k];
-//                 if(sum>0) k--;
-//                 else if(sum<0)j++;
-//                 else{
-//                     ans.push_back({nums[i],nums[j],nums[k]});
-//                     j++;k--;
-//                     while(j<k && nums[j] ==nums[j-1])j++;
-//                 }
-//             }
-//         }
-// return ans;
-//     }
-
-//4SUM
-// vector<vector<int>> fourSum(vector<int>& nums, int tar) {
-//   vector<vector<int>> ans;
-//   int n = nums.size();
-//   sort(nums.begin(),nums.end());
-//   for(int i =0;i<n;i++){
-//     if(i>0 && nums[i]==nums[i-1]) continue;
-//     for(int j=i+1;j<n;){
-//       int p=j+1,q=n-1;  
-//     while(p<q){
-//       long long sum = (long long)nums[i]+(long long)nums[j]
-//       +(long long)nums[p]+(long long)nums[q];
-//       if(sum<tar){
-//         p++;
-//       }else if(sum>tar){
-//         q--;
-//       }else{
-//         ans.push_back({nums[i],nums[j],nums[p],nums[q]});
-//         p++;q--;
-//         while(p<q && nums[p] ==nums[p-1]) p++;
-//       }
-//     };j++;
-//     while(j<n && nums[j]==nums[j-1])j++;
-//     }
-//   }return ans;
-//}
-
-//RECURSION
-//Reccurance relation : T(n) = T(n-1) + C
-// void printNumbers(int n){ // works like call stack
-//   if(n ==1){ // recursion tree
-//     cout<< "1\n";
-//     return;
-//   }
-//   cout<<n<<" ";
-//   printNumbers(n-1);
-// }
-// int main(){
-// printNumbers(4);
-//   return 0;
-// }
-// FACTORIAL
-// int fact(int n){ //TC = o(n) total calls * wd in each call
-//   //SC = height of callstack * mem in each call
-//   //Sc = o(n)
-//   if(n ==0){ 
-//     return 1;}
-//     return n * fact(n-1);
-// }
-// int main(){
-//   cout<< fact(5);
-// }
-//SUM OF N NUMBERS
-// int sum(int n){ //TC = SC = O(N)
-//   if(n ==1){
-//     return 1;
-//   }
-//   return n + sum(n-1);
-// }
-// int main(){
-//   cout<< sum(5);
-// }
-//RECURSION FIBONACCI
-// int fib(int n){ //Tc = O(2^n) //SC =O(n)
-//   if(n ==0){
-//     return 0;
-//   }
-//   if( n ==1){
-//     return 1;
-//   }
-//    return fib(n-1)+fib(n-2);
-// }
-// int main(){
-//   cout<<fib(7);
-// }
+// RECURSION
+// Reccurance relation : T(n) = T(n-1) + C
+//  void printNumbers(int n){ // works like call stack
+//    if(n ==1){ // recursion tree
+//      cout<< "1\n";
+//      return;
+//    }
+//    cout<<n<<" ";
+//    printNumbers(n-1);
+//  }
+//  int main(){
+//  printNumbers(4);
+//    return 0;
+//  }
+//  FACTORIAL
+//  int fact(int n){ //TC = o(n) total calls * wd in each call
+//    //SC = height of callstack * mem in each call
+//    //Sc = o(n)
+//    if(n ==0){
+//      return 1;}
+//      return n * fact(n-1);
+//  }
+//  int main(){
+//    cout<< fact(5);
+//  }
+// SUM OF N NUMBERS
+//  int sum(int n){ //TC = SC = O(N)
+//    if(n ==1){
+//      return 1;
+//    }
+//    return n + sum(n-1);
+//  }
+//  int main(){
+//    cout<< sum(5);
+//  }
+// RECURSION FIBONACCI
+//  int fib(int n){ //Tc = O(2^n) //SC =O(n)
+//    if(n ==0){
+//      return 0;
+//    }
+//    if( n ==1){
+//      return 1;
+//    }
+//     return fib(n-1)+fib(n-2);
+//  }
+//  int main(){
+//    cout<<fib(7);
+//  }
 
 // RECURSION CHECK ARRAY IS SORTED OR NOT
 // bool isSorted(vector<int> arr,int n){//TC = SC = O(N)
@@ -2332,27 +2332,27 @@ using namespace std;
 //   cout<<isSorted(arr,n);
 // }
 
-//RECURSION BINARY SEARCH
-// int bs(vector<int> arr,int tar,int st,int end){ //TC = SC = O(logn)
-//   if(st<=end){
-//   int mid = (st+end)/2;
-//   if(arr[mid] == tar)
-//   return mid;
-//   if(arr[mid]<=tar){
-//     return bs(arr,tar,mid+1,end);
-//   }else{
-//     return bs(arr,tar,st,mid-1);
-//   }} return -1;
-// }
-// int main(){
-//   vector<int> arr = {1,2,3,8,10,12};
-//   int n = arr.size();
-//   int st = arr[0],end = arr[n-1];
-//   int tar =11;
-//   cout<< bs(arr,tar,st,end);
-// }
+// RECURSION BINARY SEARCH
+//  int bs(vector<int> arr,int tar,int st,int end){ //TC = SC = O(logn)
+//    if(st<=end){
+//    int mid = (st+end)/2;
+//    if(arr[mid] == tar)
+//    return mid;
+//    if(arr[mid]<=tar){
+//      return bs(arr,tar,mid+1,end);
+//    }else{
+//      return bs(arr,tar,st,mid-1);
+//    }} return -1;
+//  }
+//  int main(){
+//    vector<int> arr = {1,2,3,8,10,12};
+//    int n = arr.size();
+//    int st = arr[0],end = arr[n-1];
+//    int tar =11;
+//    cout<< bs(arr,tar,st,end);
+//  }
 
-// PRINT ALL SUBSETS number of subsets = 2^n 
+// PRINT ALL SUBSETS number of subsets = 2^n
 // void printSubsets(vector<int> &arr,vector<int> &ans, int i){//Tc = O(2^n *n)
 // if(i == arr.size()){
 //   for(int val : ans){
@@ -2395,155 +2395,350 @@ using namespace std;
 //          return allSubsets;
 //     }
 
-//PERMUTATIONS
-// void getPerm(vector<int>& nums, int idx,vector<vector<int>> &ans){
-//     if(idx == nums.size()){
-//         ans.push_back({nums});
-//         return;
-//     }
-//     for(int i = idx;i<nums.size();i++){
-//         swap(nums[idx],nums[i]);
-//         getPerm(nums,idx+1,ans);
-//         swap(nums[i],nums[idx]);
-//     }
-// }
-//     vector<vector<int>> permute(vector<int>& nums) {
-//         vector<vector<int>>ans;
-//         getPerm(nums,0,ans);
-//         return ans;
-//     }
+// PERMUTATIONS
+//  void getPerm(vector<int>& nums, int idx,vector<vector<int>> &ans){
+//      if(idx == nums.size()){
+//          ans.push_back({nums});
+//          return;
+//      }
+//      for(int i = idx;i<nums.size();i++){
+//          swap(nums[idx],nums[i]);
+//          getPerm(nums,idx+1,ans);
+//          swap(nums[i],nums[idx]);
+//      }
+//  }
+//      vector<vector<int>> permute(vector<int>& nums) {
+//          vector<vector<int>>ans;
+//          getPerm(nums,0,ans);
+//          return ans;
+//      }
 
-//N-QUEENS
-    // bool isSafe(vector<string> &board,int row,int col,int n){
-    //     //horizontal
-    //     for(int j=0;j<n;j++){
-    //         if(board[row][j]=='Q'){
-    //            return false; 
-    //         }
-    //     }
-    //     //vertical
-    //     for(int i=0;i<n;i++){
-    //         if(board[i][col]=='Q'){
-    //            return false; 
-    //         }
-    //     }
-    //     //left diagnol
-    //     for(int i =row,j=col;i>=0 && j>=0;i--,j--){
-    //         if(board[i][j] == 'Q'){
-    //         return false;
-    //         }
-    //     }
-    //     for(int i =row,j=col;i>=0 && j<n;i--,j++){
-    //         if(board[i][j] == 'Q'){
-    //         return false;
-    //         }
-    //     } return true;
-    // }
-    // void nQueens(vector<string> &board,int row,int n,vector<vector<string>> &ans){
-    //     if(row ==n){
-    //         ans.push_back({board});
-    //         return;
-    //     }
-    //     for(int j=0;j<n;j++){
-    //         if(isSafe(board,row,j,n)){
-    //             board[row][j]='Q';
-    //             nQueens(board,row+1,n,ans);
-    //             board[row][j]='.';
-    //         }
-    //     }
-    // }
-    // vector<vector<string>> solveNQueens(int n) {
-    //     vector<string> board(n,string(n,'.'));
-    //     vector<vector<string>> ans;
-    //     nQueens(board,0,n,ans);
-    //     return ans;
-    // }
-
-//SUDOKU
-// bool isSafe(vector<vector<char>>& board,int row, int col,char dig){
-//     //horizontal
-//     for(int j=0;j<9;j++){
-//         if(board[row][j]==dig){
+// N-QUEENS
+//  bool isSafe(vector<string> &board,int row,int col,int n){
+//      //horizontal
+//      for(int j=0;j<n;j++){
+//          if(board[row][j]=='Q'){
 //             return false;
-//         }
-//     }
-//     //vertical
-//     for(int i=0;i<9;i++){
-//         if(board[i][col]==dig){
+//          }
+//      }
+//      //vertical
+//      for(int i=0;i<n;i++){
+//          if(board[i][col]=='Q'){
 //             return false;
-//         }
-//     }
-//     //grid
-//     int srow = (row/3)*3;
-//     int scol = (col/3)*3;
-//     for(int i=srow;i<=srow+2;i++){
-//         for(int j = scol;j<=scol+2;j++){
-//             if(board[i][j]==dig){
-//                 return false;
-//             }
-//         }
-//     }
-//     return true;
-// }
-//     bool helper(vector<vector<char>>& board,int row, int col){
-//         if(row ==9){
-//             return true;
-//         }
-//         int nextRow = row, nextCol = col+1;
-//         if(nextCol == 9){
-//             nextRow = row +1;
-//             nextCol =0;
-//         }
-//         if(board[row][col]!= '.'){
-//             return helper(board,nextRow,nextCol);
-//         }
-//         //place digit
-//         for(char dig ='1';dig<='9';dig++){
-//             if(isSafe(board,row,col,dig)){
-//                 board[row][col]=dig;
-//                 if(helper(board,nextRow,nextCol)){
-//                     return true;
-//                 }
-//                 board[row][col]='.';
-//             }
-//         } return false; 
-//     }
-//     void solveSudoku(vector<vector<char>>& board) {
-//         helper(board,0,0);
-//     }
+//          }
+//      }
+//      //left diagnol
+//      for(int i =row,j=col;i>=0 && j>=0;i--,j--){
+//          if(board[i][j] == 'Q'){
+//          return false;
+//          }
+//      }
+//      for(int i =row,j=col;i>=0 && j<n;i--,j++){
+//          if(board[i][j] == 'Q'){
+//          return false;
+//          }
+//      } return true;
+//  }
+//  void nQueens(vector<string> &board,int row,int n,vector<vector<string>> &ans){
+//      if(row ==n){
+//          ans.push_back({board});
+//          return;
+//      }
+//      for(int j=0;j<n;j++){
+//          if(isSafe(board,row,j,n)){
+//              board[row][j]='Q';
+//              nQueens(board,row+1,n,ans);
+//              board[row][j]='.';
+//          }
+//      }
+//  }
+//  vector<vector<string>> solveNQueens(int n) {
+//      vector<string> board(n,string(n,'.'));
+//      vector<vector<string>> ans;
+//      nQueens(board,0,n,ans);
+//      return ans;
+//  }
 
-//RAT IN A MAZE TC = O(4^N^2)
-// void helper(vector<vector<int>> &mat,int r ,int c, string path, vector<string> &ans){
-//   int n = mat.size();
-//   if(r<0 || c<0 || r>=n || c>=n || mat[r][c]==0 || mat[r][c]==-1 ){
-//     return;
-//   }
-//   if(r == n-1 && c == n-1){//ans
-//     ans.push_back(path);
-//     return;
-//   }
-//   mat[r][c]=-1;//visit
-//   helper(mat,r+1,c,path+"D",ans);//down
-//   helper(mat,r-1,c,path+"U",ans);//up
-//   helper(mat,r,c-1,path+"L",ans);//left
-//   helper(mat,r,c+1,path+"R",ans);//right
-//   mat[r][c]=1;
-// }
-// //complete this function
-// vector<string> findPath(vector<vector<int>> &mat) {
-//   int n = mat.size();
-//   vector<string> ans;
-//   string path = "";
-//   helper(mat,0,0,path,ans);
-//   return ans;
-// }
-// int main() {
-//     vector<vector<int>> mat = {{1, 0, 0, 0},{1, 1, 0, 1},{1, 1, 0, 0},{0, 1, 1, 1}};
-//     vector<string> ans = findPath(mat);
-//     for(string path : ans) {
-//         cout << path << endl;
-//     }
-//     return 0;
-// }
+// SUDOKU
+//  bool isSafe(vector<vector<char>>& board,int row, int col,char dig){
+//      //horizontal
+//      for(int j=0;j<9;j++){
+//          if(board[row][j]==dig){
+//              return false;
+//          }
+//      }
+//      //vertical
+//      for(int i=0;i<9;i++){
+//          if(board[i][col]==dig){
+//              return false;
+//          }
+//      }
+//      //grid
+//      int srow = (row/3)*3;
+//      int scol = (col/3)*3;
+//      for(int i=srow;i<=srow+2;i++){
+//          for(int j = scol;j<=scol+2;j++){
+//              if(board[i][j]==dig){
+//                  return false;
+//              }
+//          }
+//      }
+//      return true;
+//  }
+//      bool helper(vector<vector<char>>& board,int row, int col){
+//          if(row ==9){
+//              return true;
+//          }
+//          int nextRow = row, nextCol = col+1;
+//          if(nextCol == 9){
+//              nextRow = row +1;
+//              nextCol =0;
+//          }
+//          if(board[row][col]!= '.'){
+//              return helper(board,nextRow,nextCol);
+//          }
+//          //place digit
+//          for(char dig ='1';dig<='9';dig++){
+//              if(isSafe(board,row,col,dig)){
+//                  board[row][col]=dig;
+//                  if(helper(board,nextRow,nextCol)){
+//                      return true;
+//                  }
+//                  board[row][col]='.';
+//              }
+//          } return false;
+//      }
+//      void solveSudoku(vector<vector<char>>& board) {
+//          helper(board,0,0);
+//      }
+
+// RAT IN A MAZE TC = O(4^N^2)
+//  void helper(vector<vector<int>> &mat,int r ,int c, string path, vector<string> &ans){
+//    int n = mat.size();
+//    if(r<0 || c<0 || r>=n || c>=n || mat[r][c]==0 || mat[r][c]==-1 ){
+//      return;
+//    }
+//    if(r == n-1 && c == n-1){//ans
+//      ans.push_back(path);
+//      return;
+//    }
+//    mat[r][c]=-1;//visit
+//    helper(mat,r+1,c,path+"D",ans);//down
+//    helper(mat,r-1,c,path+"U",ans);//up
+//    helper(mat,r,c-1,path+"L",ans);//left
+//    helper(mat,r,c+1,path+"R",ans);//right
+//    mat[r][c]=1;
+//  }
+//  //complete this function
+//  vector<string> findPath(vector<vector<int>> &mat) {
+//    int n = mat.size();
+//    vector<string> ans;
+//    string path = "";
+//    helper(mat,0,0,path,ans);
+//    return ans;
+//  }
+//  int main() {
+//      vector<vector<int>> mat = {{1, 0, 0, 0},{1, 1, 0, 1},{1, 1, 0, 0},{0, 1, 1, 1}};
+//      vector<string> ans = findPath(mat);
+//      for(string path : ans) {
+//          cout << path << endl;
+//      }
+//      return 0;
+//  }
 //
 
+// OOPS
+// class Account
+// {
+// private:
+//     double balance;
+//     string password;
+
+// public:
+//     string account;
+//     string username;
+// };
+// class Teacher
+// {
+// private:
+//     double salary;
+// public:
+//    // properties
+//     string name;
+//     string dept;
+//     string subject;
+// //non-parameterized constructor 
+// // Teacher(){
+// //     dept = "Computer Science";
+// // }
+// //parameterized constructor 
+// Teacher(string name,string dept, string subject,double salary){
+//     this->name = name;
+//     this->dept =dept;
+//     this->subject =subject;
+//     this->salary=salary;
+// }
+// //copy constructor
+// Teacher(Teacher &orgObj){//pass by reference
+//     cout<<"i am custom copy constructor\n";
+// this->name = orgObj.name;
+// this->dept = orgObj.dept;
+// this->subject = orgObj.subject;
+// this->salary = orgObj.salary;
+// } 
+//     // methods /member functions
+//     void changeDept(string newDept)
+//     { dept = newDept;
+//     }
+//     // setter function
+//     void setSalary(double s)
+//     {salary = s;
+//     }
+//     // getter function
+//     double getSalary()
+//     {return salary;
+//     }
+//     void getInfo(){
+//        cout<<"name :"<<name<<endl ;
+//        cout<<"subject :"<<subject<<endl ;
+//     }
+// };
+
+// int main()
+// {
+//     Teacher t1("Joe","CS","C++",25000); //constructor call
+//     // t1.name = "Joe";
+//     // t1.subject = "C++";
+//     // t1.setSalary(25000);
+//     //cout << t1.dept<<endl;
+//     //t1.getInfo();
+    
+//     Teacher t2(t1);//default copy constructor
+//     t2.getInfo();
+//     return 0;
+// }
+
+
+// class Student{
+//  public:
+//  string name;
+//  double* cgpaPtr;
+//  Student(string name,double cgpa){
+//     this->name = name;
+//     cgpaPtr = new double;
+//     *cgpaPtr = cgpa;
+//  }
+// //  Student(Student &obj){
+// //     this->name = obj.name;
+// //     cgpaPtr = new double;
+// //     *cgpaPtr = *obj.cgpaPtr;
+// //  }
+//  //destructor
+//  ~Student(){
+//     cout<<"i am destructor \n";
+//     delete cgpaPtr; //memory leak
+//  }
+
+// void getInfo(){
+//     cout<<name<<endl;
+//     cout<<*cgpaPtr<<endl;
+// }
+// };
+// int main(){
+// Student s1("Kenny",8.9);
+// s1.getInfo();
+
+// }
+// class Person{
+// public:
+// string name;
+// int age;
+// // Person(string name, int age){
+// //     this->name = name;
+// //     this->age = age;
+// // }
+// // Person(){
+// //     cout<<"parent constructor\n";
+// // }
+// };
+// class Student : public Person{
+//     public:
+//     int rollno;
+//     // Student(string name,int age,int rollno):Person(name,age){
+//     //    this->rollno = rollno;
+//     // }
+//     // void getInfo(){
+//     //     cout<<name<<endl;
+//     //     cout<<age<<endl;
+//     //     cout<<rollno<<endl;
+//     // }
+
+// };
+// class GradStudent :public Student{
+// public:
+// string research;
+// };
+// int main(){
+// GradStudent s1;
+// s1.name = "Tony Stark";
+// s1.research = "machines";
+// cout<<s1.name<<" "<<s1.research;
+// }
+
+// class Student{
+//     public:
+//     string name;
+//     Student(){
+//         cout<<"non-parameterized\n";
+//     }
+//     Student(string name){
+//         this->name = name;
+//         cout<<"parameterized/n";
+//     }
+// };
+// int main(){
+//  Student s1("tony");
+// }
+
+class Shape{ //abstract class
+    virtual void draw()=0; //pure virtual function
+};
+class Circle:public Shape{
+    public:
+    void draw(){
+        cout<<"drawing a circle\n";
+    }
+};
+void fun(){
+    static int x=0; //init statement -1 run
+    cout<<x;
+    x++;
+}
+class A{
+    public:
+    int x;
+    void xy(){
+        x = x+1;
+    }
+};
+int main(){
+    Circle c1;
+    A obj1;
+    A obj2; 
+    obj1.x =100;
+    obj2.x =100;
+    cout<<obj2.x<<endl;
+    // obj.xy();
+    // cout<<obj.x <<endl;
+// fun();
+// fun();
+// fun();
+//c1.draw();
+}
+//questuons;
+/*new keyword
+shallow and deep copy
+pointers
+dynamic memory allocation
+friend function and friend cls
+*/
