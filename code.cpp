@@ -2733,3 +2733,150 @@ using namespace std;
 // friend function and friend cls
 // */
 
+//LINKED LIST
+// class Node{
+// public:
+// int data;
+// Node* next;
+// Node(int val){
+//   data = val;
+//   next = NULL;
+// }
+// };
+// class List{
+// Node* head;
+// Node* tail;
+// public:
+// List(){
+//   head = tail = NULL;
+// }
+// void push_front(int val){
+//   Node* newNode = new Node(val); //dynamic
+//   //Node newNode(val);//static
+//   if(head == NULL){
+//     head = tail = newNode;
+//     return;
+//   } else{
+//     newNode -> next = head;
+//     head = newNode;
+//   }
+// }
+// void push_back(int val){
+//   Node* newNode = new Node(val);
+//   if(head == NULL){
+//     head = tail = newNode;
+//   }
+//   else{
+//      tail->next =newNode ;
+//     tail = newNode;
+//   }
+// }
+// void pop_front(){
+//   if(head == NULL)
+//   return;
+//   else{
+//     Node*temp = head;
+//     head = head->next;
+//     temp->next = NULL;
+//     delete temp;
+//   }
+// }
+// void pop_back(){
+//   if(head == NULL)
+//   return;
+//     Node*temp = head;
+//     while(temp->next!= tail){
+//       temp = temp->next; 
+//     }
+//     temp->next = NULL;
+//     delete tail;
+//       tail = temp;
+// }
+// void insert(int val,int pos){
+//   if(pos<0)
+//   return;
+//   if(pos ==0){
+//     push_front(val);
+//   }
+//   Node* newNode = new Node(val);
+//   Node*temp = head;
+//   for(int i=0;i<pos-1;i++){
+//     if(temp == NULL){
+//       cout<<"Invaid position\n";
+//       return;
+//     }
+//     temp = temp->next;
+//   }
+//   newNode->next = temp->next;
+//   temp->next = newNode;
+// }
+// int search(int val){
+//   Node*temp = head;
+//   int idx =0;
+//   while(temp!=NULL){
+//     if(temp->data ==val){
+//     return idx;
+//     }
+//     temp= temp->next;
+//     idx++;
+//   }return -1;
+// }
+// void printLL(){
+//   Node* temp =head;
+//   while(temp!= NULL){
+//     cout<<temp->data<<"-> ";
+//     temp = temp->next;
+//   }cout<<"NULL"<<endl;
+// }
+// };
+// int main(){
+//   List ll;
+//   ll.push_front(1);
+//   ll.push_front(2);
+//   ll.push_front(3);
+//   ll.push_back(4);
+//   //ll.pop_front();
+//   ll.printLL();
+//   cout<<ll.search(5);
+//   //ll.pop_back();
+//  // ll.printLL();
+//   //ll.insert(6,1);
+//   //ll.printLL();
+// }
+
+//REVERSE A LINKED LIST 
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+// class Solution {
+// public:
+//     ListNode* reverseList(ListNode* head) {
+//      ListNode* prev = NULL;   
+//      ListNode* curr = head;   
+//      ListNode* next = NULL;   
+//      while(curr !=NULL){
+//         next = curr->next;
+//         curr->next = prev;
+//         prev = curr;
+//         curr = next;
+//      }return prev;
+//     }
+// };
+
+//MIDDLE OF LINKED LIST
+// class Solution {
+// public:
+//     ListNode* middleNode(ListNode* head) {
+//       ListNode* slow = head;  
+//       ListNode* fast = head;  
+//       while(fast!=NULL && fast->next!= NULL){
+//         slow = slow->next;
+//         fast= fast->next->next;
+//       }return slow;
+//     }
+// };
