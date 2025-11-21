@@ -2566,11 +2566,11 @@ using namespace std;
 //     string name;
 //     string dept;
 //     string subject;
-// //non-parameterized constructor 
+// //non-parameterized constructor
 // // Teacher(){
 // //     dept = "Computer Science";
 // // }
-// //parameterized constructor 
+// //parameterized constructor
 // Teacher(string name,string dept, string subject,double salary){
 //     this->name = name;
 //     this->dept =dept;
@@ -2584,7 +2584,7 @@ using namespace std;
 // this->dept = orgObj.dept;
 // this->subject = orgObj.subject;
 // this->salary = orgObj.salary;
-// } 
+// }
 //     // methods /member functions
 //     void changeDept(string newDept)
 //     { dept = newDept;
@@ -2609,7 +2609,7 @@ using namespace std;
 //     // t1.subject = "C++";
 //     // t1.setSalary(25000);
 //     //cout << t1.dept<<endl;
-//     //t1.getInfo();   
+//     //t1.getInfo();
 //     Teacher t2(t1);//default copy constructor
 //     t2.getInfo();
 //     return 0;
@@ -2714,7 +2714,7 @@ using namespace std;
 // int main(){
 //     Circle c1;
 //     A obj1;
-//     A obj2; 
+//     A obj2;
 //     obj1.x =100;
 //     obj2.x =100;
 //     cout<<obj2.x<<endl;
@@ -2725,7 +2725,7 @@ using namespace std;
 // // fun();
 // //c1.draw();
 // }
-//questuons;
+// questuons;
 // /*new keyword
 // shallow and deep copy
 // pointers
@@ -2733,196 +2733,279 @@ using namespace std;
 // friend function and friend cls
 // */
 
-//LINKED LIST
-// class Node{
-// public:
-// int data;
-// Node* next;
-// Node(int val){
-//   data = val;
-//   next = NULL;
-// }
-// };
-// class List{
-// Node* head;
-// Node* tail;
-// public:
-// List(){
-//   head = tail = NULL;
-// }
-// void push_front(int val){
-//   Node* newNode = new Node(val); //dynamic
-//   //Node newNode(val);//static
-//   if(head == NULL){
-//     head = tail = newNode;
-//     return;
-//   } else{
-//     newNode -> next = head;
-//     head = newNode;
-//   }
-// }
-// void push_back(int val){
-//   Node* newNode = new Node(val);
-//   if(head == NULL){
-//     head = tail = newNode;
-//   }
-//   else{
-//      tail->next =newNode ;
-//     tail = newNode;
-//   }
-// }
-// void pop_front(){
-//   if(head == NULL)
-//   return;
-//   else{
-//     Node*temp = head;
-//     head = head->next;
-//     temp->next = NULL;
-//     delete temp;
-//   }
-// }
-// void pop_back(){
-//   if(head == NULL)
-//   return;
-//     Node*temp = head;
-//     while(temp->next!= tail){
-//       temp = temp->next; 
-//     }
-//     temp->next = NULL;
-//     delete tail;
-//       tail = temp;
-// }
-// void insert(int val,int pos){
-//   if(pos<0)
-//   return;
-//   if(pos ==0){
-//     push_front(val);
-//   }
-//   Node* newNode = new Node(val);
-//   Node*temp = head;
-//   for(int i=0;i<pos-1;i++){
-//     if(temp == NULL){
-//       cout<<"Invaid position\n";
-//       return;
-//     }
-//     temp = temp->next;
-//   }
-//   newNode->next = temp->next;
-//   temp->next = newNode;
-// }
-// int search(int val){
-//   Node*temp = head;
-//   int idx =0;
-//   while(temp!=NULL){
-//     if(temp->data ==val){
-//     return idx;
-//     }
-//     temp= temp->next;
-//     idx++;
-//   }return -1;
-// }
-// void printLL(){
-//   Node* temp =head;
-//   while(temp!= NULL){
-//     cout<<temp->data<<"-> ";
-//     temp = temp->next;
-//   }cout<<"NULL"<<endl;
-// }
-// };
-// int main(){
-//   List ll;
-//   ll.push_front(1);
-//   ll.push_front(2);
-//   ll.push_front(3);
-//   ll.push_back(4);
-//   //ll.pop_front();
-//   ll.printLL();
-//   cout<<ll.search(5);
-//   //ll.pop_back();
-//  // ll.printLL();
-//   //ll.insert(6,1);
-//   //ll.printLL();
-// }
+// LINKED LIST
+//  class Node{
+//  public:
+//  int data;
+//  Node* next;
+//  Node(int val){
+//    data = val;
+//    next = NULL;
+//  }
+//  };
+//  class List{
+//  Node* head;
+//  Node* tail;
+//  public:
+//  List(){
+//    head = tail = NULL;
+//  }
+//  void push_front(int val){
+//    Node* newNode = new Node(val); //dynamic
+//    //Node newNode(val);//static
+//    if(head == NULL){
+//      head = tail = newNode;
+//      return;
+//    } else{
+//      newNode -> next = head;
+//      head = newNode;
+//    }
+//  }
+//  void push_back(int val){
+//    Node* newNode = new Node(val);
+//    if(head == NULL){
+//      head = tail = newNode;
+//    }
+//    else{
+//       tail->next =newNode ;
+//      tail = newNode;
+//    }
+//  }
+//  void pop_front(){
+//    if(head == NULL)
+//    return;
+//    else{
+//      Node*temp = head;
+//      head = head->next;
+//      temp->next = NULL;
+//      delete temp;
+//    }
+//  }
+//  void pop_back(){
+//    if(head == NULL)
+//    return;
+//      Node*temp = head;
+//      while(temp->next!= tail){
+//        temp = temp->next;
+//      }
+//      temp->next = NULL;
+//      delete tail;
+//        tail = temp;
+//  }
+//  void insert(int val,int pos){
+//    if(pos<0)
+//    return;
+//    if(pos ==0){
+//      push_front(val);
+//    }
+//    Node* newNode = new Node(val);
+//    Node*temp = head;
+//    for(int i=0;i<pos-1;i++){
+//      if(temp == NULL){
+//        cout<<"Invaid position\n";
+//        return;
+//      }
+//      temp = temp->next;
+//    }
+//    newNode->next = temp->next;
+//    temp->next = newNode;
+//  }
+//  int search(int val){
+//    Node*temp = head;
+//    int idx =0;
+//    while(temp!=NULL){
+//      if(temp->data ==val){
+//      return idx;
+//      }
+//      temp= temp->next;
+//      idx++;
+//    }return -1;
+//  }
+//  void printLL(){
+//    Node* temp =head;
+//    while(temp!= NULL){
+//      cout<<temp->data<<"-> ";
+//      temp = temp->next;
+//    }cout<<"NULL"<<endl;
+//  }
+//  };
+//  int main(){
+//    List ll;
+//    ll.push_front(1);
+//    ll.push_front(2);
+//    ll.push_front(3);
+//    ll.push_back(4);
+//    //ll.pop_front();
+//    ll.printLL();
+//    cout<<ll.search(5);
+//    //ll.pop_back();
+//   // ll.printLL();
+//    //ll.insert(6,1);
+//    //ll.printLL();
+//  }
 
-//REVERSE A LINKED LIST 
-//  * Definition for singly-linked list.
-//  * struct ListNode {
-//  *     int val;
-//  *     ListNode *next;
-//  *     ListNode() : val(0), next(nullptr) {}
-//  *     ListNode(int x) : val(x), next(nullptr) {}
-//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
-//  * };
-// class Solution {
-// public:
-//     ListNode* reverseList(ListNode* head) {
-//      ListNode* prev = NULL;   
-//      ListNode* curr = head;   
-//      ListNode* next = NULL;   
-//      while(curr !=NULL){
-//         next = curr->next;
-//         curr->next = prev;
-//         prev = curr;
-//         curr = next;
-//      }return prev;
+// REVERSE A LINKED LIST
+//   * Definition for singly-linked list.
+//   * struct ListNode {
+//   *     int val;
+//   *     ListNode *next;
+//   *     ListNode() : val(0), next(nullptr) {}
+//   *     ListNode(int x) : val(x), next(nullptr) {}
+//   *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//   * };
+//  class Solution {
+//  public:
+//      ListNode* reverseList(ListNode* head) {
+//       ListNode* prev = NULL;
+//       ListNode* curr = head;
+//       ListNode* next = NULL;
+//       while(curr !=NULL){
+//          next = curr->next;
+//          curr->next = prev;
+//          prev = curr;
+//          curr = next;
+//       }return prev;
+//      }
+//  };
+
+// MIDDLE OF LINKED LIST
+//  class Solution {
+//  public:
+//      ListNode* middleNode(ListNode* head) {
+//        ListNode* slow = head;
+//        ListNode* fast = head;
+//        while(fast!=NULL && fast->next!= NULL){
+//          slow = slow->next;
+//          fast= fast->next->next;
+//        }return slow;
+//      }
+//  };
+
+// DETECT CYCLE IN LINKED LIST
+//  class Solution {
+//  public:
+//      bool hasCycle(ListNode *head) {
+//  ListNode *slow = head;
+//  ListNode *fast = head;
+//  while(fast!=NULL && fast->next!=NULL){
+//      slow = slow->next;
+//      fast = fast->next->next;
+//      if(fast == slow){
+//      return true;
+//  }
+//  }return false;
 //     }
 // };
 
-//MIDDLE OF LINKED LIST
-// class Solution {
-// public:
-//     ListNode* middleNode(ListNode* head) {
-//       ListNode* slow = head;  
-//       ListNode* fast = head;  
-//       while(fast!=NULL && fast->next!= NULL){
-//         slow = slow->next;
-//         fast= fast->next->next;
-//       }return slow;
-//     }
-// };
+// DETECT NODE AND REMOVE CYCLE
+//  class Solution {
+//  public:
+//      ListNode *detectCycle(ListNode *head) {
+//          ListNode *slow = head;
+//          ListNode *fast = head;
+//          bool isCycle = false;
+//          while(fast!=NULL && fast->next !=NULL){
+//              slow = slow->next;
+//              fast = fast->next->next;
+//              if(slow == fast){
+//                  isCycle = true;
+//                  break;
+//              }
+//          }
+//          if(!isCycle){
+//              return NULL;
+//          }
+//          slow = head;
+//          ListNode *prev = NULL;//TO REMOVE
+//          while(slow!=fast){
+//          slow = slow->next;
+//          prev = fast;//TO REMOVE
+//          fast = fast->next;
+//          }
+//          prev->next = NULL; //REMOVE
+//      return slow;
+//      }
+//  };
 
-//DETECT CYCLE IN LINKED LIST
-// class Solution {
-// public:
-//     bool hasCycle(ListNode *head) {
-        // ListNode *slow = head;
-        // ListNode *fast = head;
-        // while(fast!=NULL && fast->next!=NULL){
-        //     slow = slow->next;
-        //     fast = fast->next->next;
-        //     if(fast == slow){
-        //     return true;
-        // } 
-        // }return false;
-//     }
-// };
+// COPY LINKED LIST
+//  class Solution {
+//  public:
+//      Node* copyRandomList(Node* head) {
+//          if(head == NULL){
+//              return NULL;
+//          }
+//          unordered_map<Node* , Node*>m;
+//          Node* newHead = new Node(head->val);
+//          Node* oldTemp = head->next;
+//          Node* newTemp = newHead;
+//          m[head] = newHead;
+//          while(oldTemp!=NULL){
+//              Node* copyNode = new Node(oldTemp->val);
+//              m[oldTemp] = copyNode;
+//              newTemp->next =copyNode;
+//              oldTemp = oldTemp->next;
+//              newTemp = newTemp->next;
+//          }
+//          oldTemp = head;newTemp = newHead;
+//          while(oldTemp!=NULL){
+//              newTemp->random = m[oldTemp->random];
+//              oldTemp = oldTemp->next;
+//              newTemp = newTemp->next;
+//          }return newHead;
+//      }
+//  };
 
-//DETECT NODE AND REMOVE CYCLE
-// class Solution {
-// public:
-//     ListNode *detectCycle(ListNode *head) {
-//         ListNode *slow = head;
-//         ListNode *fast = head;
-//         bool isCycle = false;
-//         while(fast!=NULL && fast->next !=NULL){
-//             slow = slow->next;
-//             fast = fast->next->next;
-//             if(slow == fast){
-//                 isCycle = true;
-//                 break;
-//             }
-//         }
-//         if(!isCycle){
-//             return NULL;
-//         }
-//         slow = head;
-//         ListNode *prev = NULL;//TO REMOVE
-//         while(slow!=fast){
-//         slow = slow->next;
-//         prev = fast;//TO REMOVE
-//         fast = fast->next;
-//         }
-//         prev->next = NULL; //REMOVE
-//     return slow;
-//     }
-// };
+// DOUBLE LINKED LIST
+class Node{
+public:
+  int data;
+  Node *next;
+  Node *prev;
+  Node(int val){
+    data = val;
+    next = prev = NULL;
+  }
+};
+class DoublyList{
+  Node* head;
+  Node* tail;
+  public:
+  DoublyList(){
+    head = tail = NULL;
+  }
+  void push_front(int val){
+    Node* newNode = new Node(val);
+    if(head == NULL){
+      head = tail = newNode;
+    }else{
+    newNode->next = head;
+    head->prev = newNode;
+    head = newNode;}
+  }
+  void push_back(int val){
+    Node* newNode = new Node(val);
+    if(head == NULL){
+      head = tail = newNode;
+    }else{
+      tail->next = newNode;
+      newNode->prev = tail;
+      tail = newNode;
+    }
+  }
+  void print(){
+    Node* temp = head;
+    while(temp!=NULL){
+      cout<<temp->data<<" <-> ";
+      temp = temp->next;
+    }cout<<"NULL";
+  }
+};
+
+int main(){
+  DoublyList dll;
+  dll.push_front(1);
+  dll.push_front(2);
+  dll.push_front(3);
+  dll.push_back(4);
+  dll.print();
+}
