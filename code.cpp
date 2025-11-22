@@ -2992,6 +2992,27 @@ using namespace std;
 //       tail = newNode;
 //     }
 //   }
+//   void pop_front(){
+//     if(head == NULL){
+//       cout<<"doublylist is empty";
+//     }
+//     Node* temp = head;
+//       head = head->next;
+//       if(head!=NULL){
+//       head->prev = NULL;}
+//       delete temp;
+//   }
+//   void pop_back(){
+//     if(head== NULL){
+//       cout<<"its empty";
+//     }
+//     Node* temp = tail;
+//     tail = tail->prev;
+//     if(tail!=NULL){
+//       tail->next = NULL;
+//     }
+//     delete temp;
+//   }
 //   void print(){
 //     Node* temp = head;
 //     while(temp!=NULL){
@@ -3006,6 +3027,8 @@ using namespace std;
 //   dll.push_front(2);
 //   dll.push_front(3);
 //   dll.push_back(4);
+//   dll.pop_front();
+//   dll.pop_back();
 //   dll.print();
 // }
 
