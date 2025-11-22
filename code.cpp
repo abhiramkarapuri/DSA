@@ -3032,3 +3032,148 @@ using namespace std;
 //   dll.print();
 // }
 
+//CIRCULAR LINKED LIST
+//g++ -std=c++11  code.cpp && a.exe
+// class Node{
+//   public:
+//   int data;
+//   Node* next;
+//   Node(int val){
+//     data = val;
+//     next = NULL;
+//   }
+// };
+// class CircularList{
+//   Node* head;
+//   Node* tail;
+//   public:
+//   CircularList(){
+//     head = tail = NULL;
+//   }
+//   void insertAtHead(int val){
+//     Node* newNode = new Node(val);
+//     if(tail ==NULL){
+//       head = tail = newNode;
+//       tail->next = head;
+//     }
+//     newNode->next = head;
+//     head = newNode;
+//     tail->next = newNode;
+//   }
+//   void insertAtTail(int val){
+//     Node* newNode = new Node(val);
+//      if(head ==NULL){
+//       head = tail = newNode;
+//       tail->next = head;
+//     }else{
+//     newNode->next = head;
+//     tail->next = newNode;
+//     tail = newNode;
+//   }}
+//   void deleteAtHead(){
+//     if(head == NULL)return;
+//     if(head == tail){ delete head;
+//     head = tail = NULL;}
+//     else{
+//       Node* temp = head;
+//       head = head->next;
+//       tail->next = head;
+//       temp->next = NULL;
+//       delete temp;
+//     }
+//   }
+//   void deleteAtTail(){
+//     if(head == NULL)return;
+//     if(head == tail){ delete head;
+//     head = tail = NULL;}
+//     else{
+//       Node* temp = head;
+//       while(temp->next != tail){
+//         temp = temp->next;
+//       }
+//       delete tail;
+//       tail = temp;
+//       temp->next = head;
+//     }
+//   }
+//   void print(){
+//     if(head == NULL){
+//       return;
+//     }
+//       cout<<head->data<<"->";
+//       Node* temp = head->next;
+//       while(temp!= head){
+//         cout<<temp->data<<"->";
+//         temp = temp->next;    
+//     }cout<<temp->data<<endl;
+//   }
+// };
+// int main(){
+// CircularList cll;
+// // cll.insertAtHead(1);
+// // cll.insertAtHead(2);
+// // cll.insertAtHead(3);
+// cll.insertAtTail(1);
+// cll.insertAtTail(2);
+// cll.insertAtTail(3);
+// //cll.deleteAtHead();
+// cll.deleteAtTail();
+// cll.print();
+// }
+
+//FLATTEN A DOUBLY LINKED LIST
+// class Solution {
+// public:
+//     Node* flatten(Node* head) {
+//        if(head == NULL){
+//         return head;
+//        }
+//        Node* curr = head;
+//        while(curr!=NULL){
+//         if(curr->child!=NULL){
+//             //flatten the child nodes
+//             Node* next = curr->next;
+//             curr->next = flatten(curr->child);
+//             curr->next->prev = curr;
+//             curr->child = NULL;
+//             //find tail
+//             while(curr->next!=NULL){
+//                 curr = curr->next;
+//             }
+//             //attach tail with next ptr
+//             if(next !=NULL){
+//                 curr->next = next;
+//                 next->prev = curr;
+//             }
+//         }curr = curr->next;
+//        }return head;
+//     }
+// };
+
+//REVERSE NODES IN K-GROUP
+// class Solution {
+// public:
+//     ListNode* reverseKGroup(ListNode* head, int k) {
+//         ListNode* temp = head;
+//         int count =0;
+//         //check if k nodes exist
+//         while(count<k){
+//             if(temp == NULL){
+//                 return head;
+//             }
+//             temp = temp->next;
+//             count++;
+//         }
+//         //recursively call for rest of LL
+//         ListNode* prevNode = reverseKGroup(temp,k);
+//         //reverse current group
+//         temp = head;count =0;
+//         while(count<k){
+//             ListNode* next = temp->next;
+//             temp->next = prevNode;
+//             prevNode = temp;
+//             temp = next;
+//             count++;
+//         }return prevNode;
+//     }
+// };
