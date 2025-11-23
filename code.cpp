@@ -3208,4 +3208,78 @@ using namespace std;
 //     }
 // };
 
-//g++ -std=c++11  code.cpp && a.exe
+//STACK
+//#include <stack>
+// class Stack{
+//   //vector<int> v;
+//   list<int> ll;
+//   public:
+//   void push(int val){//o(1)
+//     //v.push_back(val);
+//     ll.push_front(val);
+//   }
+//   void pop(){
+//     //v.pop_back();
+//     ll.pop_front();
+//   }
+//   int top(){
+//     //return v[v.size()-1];
+//     return ll.front();
+//   }
+//   bool empty(){
+//     //return v.size() ==0 ;
+//     return ll.size() ==0 ;
+//   }
+// };
+// int main(){
+// //Stack s;
+//  stack<int>s;
+// s.push(10);
+// s.push(20);
+// s.push(30);
+// while(!s.empty()){
+//   cout<<s.top()<<" ";//30 20 10
+//   s.pop();
+// }
+// }
+
+//VALID PARENTHESES
+// bool isValid(string str) {//Tc =o(n) sc=o(n)
+//   stack<char> st;
+//   for(int i=0;i<str.size();i++){
+//       if(str[i]== '('|| str[i]== '{'|| str[i]== '['){//opening
+//         st.push(str[i]);
+//       }else{//closing bracket
+//       if(st.size()==0){
+//         return false;
+//       }
+//       if((st.top() == '(' &&str[i]==')'
+//       )||(st.top() == '{' &&str[i]=='}'
+//       )||(st.top() == '[' &&str[i]==']')){
+//         st.pop();
+//       }else{//no match
+//       return false;
+//       }
+//       }
+//   }
+//   return st.size()==0;
+// }
+
+//STOCK SPAN
+// int main(){//TC =SC= O(N)
+// vector<int> price = {100,80,60,70,60,75,85};
+// vector<int>ans(price.size(),0);
+// stack<int>s;
+// for(int i=0;i<price.size();i++){
+// while(s.size()>0 && price[s.top()]<=price[i]){
+//   s.pop();
+// }if(s.empty()){
+//   ans[i]=i+1;
+// }else{
+//   ans[i] = i-s.top(); //i=prevHigh
+// }s.push(i);
+// }
+// for(int val : ans){
+//   cout<<val<<" ";
+// }cout<<endl;
+// }
