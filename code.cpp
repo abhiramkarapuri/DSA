@@ -3321,3 +3321,130 @@ using namespace std;
 //     cout<<val<<" ";
 //   }
 // }
+
+//DESIGN A MIN STACK
+//g++ -std=c++11  code.cpp && a.exe
+//stack<pair<int,int>> s;//val,minVal
+// stack<long long int>s;
+// long long int minVal;
+//     MinStack() {       
+//     }
+//     void push(int val) {
+//         // if(s.empty()){
+//         //     s.push({val,val});
+//         // }else{
+//         //     int minVal = min(val,s.top().second);
+//         //     s.push({val,minVal});
+//         // }
+//         if(s.empty()){
+//             s.push(val);
+//             minVal = val;
+//         }else{
+//             if(val<minVal){
+//                 s.push((long long)2*val -minVal);
+//                 minVal = val;
+//             }else{
+//                 s.push(val);
+//             }
+//         }
+//     }  
+//     void pop() {
+//         //s.pop();
+//         if(s.top()<minVal){
+//             minVal = 2*minVal -s.top();
+//         }s.pop();
+//     }    
+//     int top() {
+//       //return s.top().first ;
+//       if(s.top()<minVal){
+//         return minVal;
+//       }else{
+//         return s.top();
+//       }
+//     }
+//     int getMin() {
+//         //return s.top().second;
+//         return minVal;
+//     }
+
+//LARGEST RECTANGLE IN HISTOGRAM TC=SC =O(N)
+// int largestRectangleArea(vector<int>& heights) {
+//   int n = heights.size();
+//   vector<int>left(n,0);//left smaller nearest
+//   vector<int>right(n,0);//right smaller nearest
+//   stack<int>s;
+//   //Right O(N)
+//   for(int i=n-1;i>=0;i--){
+//       while(s.size()>0 && heights[s.top()]>=heights[i]){
+//           s.pop();
+//       }
+//       right[i]=s.empty()?n:s.top();//important step
+//       s.push(i);
+//   }
+//   while(!s.empty()){//empty stack
+//       s.pop();
+//   }
+//   //Left O(N)
+//   for(int i=0;i<n;i++){
+//       while(s.size()>0 && heights[s.top()]>=heights[i]){
+//           s.pop();
+//       }
+//       left[i]=s.empty()?-1:s.top();
+//       s.push(i);
+//   }
+//   int ans =0;
+//   for(int i=0;i<n;i++){
+//       int width = right[i]-left[i]-1;
+//       int currArea = heights[i]*width; 
+//       ans = max(ans,currArea);
+//   }return ans;
+// }
+
+//NEXT GREATER ELEMENT 2 //TC=SC = O(N)
+// vector<int> nextGreaterElements(vector<int>& nums) {
+//   int n = nums.size();
+//   vector<int>ans(n,-1);
+//   stack<int>s;
+//   for(int i = 2*n-1;i>=0;i--){
+//       while(s.size()>0 && nums[s.top()]<=nums[i%n]){
+//           s.pop();
+//       }
+//       ans[i%n]= s.empty()?-1:nums[s.top()];
+//       s.push(i%n);
+//   }return ans;
+// }
+
+//CELEBRITY PROBLEM TC = SC = O(N)
+// int getCelebrity(vector<vector<int>>arr){
+//   stack<int>s;
+//   int n = arr.size();
+//   for(int i =0;i<n;i++){
+//     s.push(i);
+//   }
+//   while(s.size()>1){
+//     int i = s.top();
+//     s.pop();
+//     int j = s.top();
+//     s.pop();
+//     if(arr[i][j]==0){
+//       s.push(i);
+//     }else{
+//       s.push(j);
+//     }
+//   }
+//   int celeb = s.top();
+//   for(int i=0;i<n;i++){
+//     if((i!=celeb)&&(arr[i][celeb]==0 ||arr[celeb][i]==1)){
+//       return -1;
+//     }
+//   }return celeb;
+// }
+// int main(){
+//   vector<vector<int>>arr = {{0,1,0},
+//                             {0,0,0},
+//                           {0,1,0}};
+// int ans = getCelebrity(arr);
+// cout<<"Celebrity is "<<ans<<endl;
+// }
+
+//DESIGN AN LRU CACHE
