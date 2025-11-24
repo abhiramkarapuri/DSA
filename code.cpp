@@ -3400,7 +3400,7 @@ using namespace std;
 //   }return ans;
 // }
 
-//NEXT GREATER ELEMENT 2 //TC=SC = O(N)
+// NEXT GREATER ELEMENT 2 //TC=SC = O(N)
 // vector<int> nextGreaterElements(vector<int>& nums) {
 //   int n = nums.size();
 //   vector<int>ans(n,-1);
@@ -3414,37 +3414,37 @@ using namespace std;
 //   }return ans;
 // }
 
-//CELEBRITY PROBLEM TC = SC = O(N)
-// int getCelebrity(vector<vector<int>>arr){
-//   stack<int>s;
-//   int n = arr.size();
-//   for(int i =0;i<n;i++){
-//     s.push(i);
-//   }
-//   while(s.size()>1){
-//     int i = s.top();
-//     s.pop();
-//     int j = s.top();
-//     s.pop();
-//     if(arr[i][j]==0){
-//       s.push(i);
-//     }else{
-//       s.push(j);
-//     }
-//   }
-//   int celeb = s.top();
-//   for(int i=0;i<n;i++){
-//     if((i!=celeb)&&(arr[i][celeb]==0 ||arr[celeb][i]==1)){
-//       return -1;
-//     }
-//   }return celeb;
-// }
-// int main(){
-//   vector<vector<int>>arr = {{0,1,0},
-//                             {0,0,0},
-//                           {0,1,0}};
-// int ans = getCelebrity(arr);
-// cout<<"Celebrity is "<<ans<<endl;
-// }
+CELEBRITY PROBLEM TC = SC = O(N)
+int getCelebrity(vector<vector<int>>arr){
+  stack<int>s;
+  int n = arr.size();
+  for(int i =0;i<n;i++){
+    s.push(i);
+  }
+  while(s.size()>1){
+    int i = s.top();
+    s.pop();
+    int j = s.top();
+    s.pop();
+    if(arr[i][j]==0){
+      s.push(i);
+    }else{
+      s.push(j);
+    }
+  }
+  int celeb = s.top();
+  for(int i=0;i<n;i++){
+    if((i!=celeb)&&(arr[i][celeb]==0 ||arr[celeb][i]==1)){
+      return -1;
+    }
+  }return celeb;
+}
+int main(){
+  vector<vector<int>>arr = {{0,1,0},
+                            {0,0,0},
+                          {0,1,0}};
+int ans = getCelebrity(arr);
+cout<<"Celebrity is "<<ans<<endl;
+}
 
-//DESIGN AN LRU CACHE
+//g++ -std=c++11  code.cpp && a.exe
