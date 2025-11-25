@@ -3581,16 +3581,42 @@ using namespace std;
 // }
 
 //FIRST UNIQUE CHARACTER IN A STRING TC = sc =O(N)
-int firstUniqChar(string s) {
-  unordered_map<char,int>m;
-  queue<int>Q;
-  for(int i=0;i<s.size();i++){
-    if(m.find(s[i]) ==m.end()){
-      Q.push(i);     
-    }
-    m[s[i]]++;
-    while(Q.size()>0 && m[s[Q.front()]]>1){
-      Q.pop();
-    }
-  }return Q.empty()?-1:Q.front();
-}
+// int firstUniqChar(string s) {
+//   unordered_map<char,int>m;
+//   queue<int>Q;
+//   for(int i=0;i<s.size();i++){
+//     if(m.find(s[i]) ==m.end()){
+//       Q.push(i);     
+//     }
+//     m[s[i]]++;
+//     while(Q.size()>0 && m[s[Q.front()]]>1){
+//       Q.pop();
+//     }
+//   }return Q.empty()?-1:Q.front();
+// }
+
+//SLIDING WINDOW MAXIMUM TC = SC = O(N)
+// vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+//   deque<int>dq;
+//   vector<int>res;
+//   //1st window
+//   for(int i=0;i<k;i++){
+//     while(dq.size()>0 && nums[dq.back()]<=nums[i]){
+//         dq.pop_back();
+//     }dq.push_back(i);
+//   }
+//   for(int i=k;i<nums.size();i++){
+//     res.push_back(nums[dq.front()]);
+//     //remove el whaich are not part of curr window
+//     while(dq.size()>0 && dq.front()<=i-k){
+//       dq.pop_front();
+//     }
+//     //remove smaller from end
+//     while(dq.size()>0 && nums[dq.back()]<=nums[i]){
+//       dq.pop_back();
+//     }dq.push_back(i);
+//   }res.push_back(nums[dq.front()]);
+//   return res;
+// }
+
+
