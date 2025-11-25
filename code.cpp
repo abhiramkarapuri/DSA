@@ -3032,373 +3032,373 @@ using namespace std;
 //   dll.print();
 // }
 
-//CIRCULAR LINKED LIST
-//g++ -std=c++11  code.cpp && a.exe
-// class Node{
-//   public:
-//   int data;
-//   Node* next;
-//   Node(int val){
-//     data = val;
-//     next = NULL;
-//   }
-// };
-// class CircularList{
-//   Node* head;
-//   Node* tail;
-//   public:
-//   CircularList(){
-//     head = tail = NULL;
-//   }
-//   void insertAtHead(int val){
-//     Node* newNode = new Node(val);
-//     if(tail ==NULL){
-//       head = tail = newNode;
-//       tail->next = head;
-//     }
-//     newNode->next = head;
-//     head = newNode;
-//     tail->next = newNode;
-//   }
-//   void insertAtTail(int val){
-//     Node* newNode = new Node(val);
-//      if(head ==NULL){
-//       head = tail = newNode;
-//       tail->next = head;
-//     }else{
-//     newNode->next = head;
-//     tail->next = newNode;
-//     tail = newNode;
-//   }}
-//   void deleteAtHead(){
-//     if(head == NULL)return;
-//     if(head == tail){ delete head;
-//     head = tail = NULL;}
-//     else{
-//       Node* temp = head;
-//       head = head->next;
-//       tail->next = head;
-//       temp->next = NULL;
-//       delete temp;
-//     }
-//   }
-//   void deleteAtTail(){
-//     if(head == NULL)return;
-//     if(head == tail){ delete head;
-//     head = tail = NULL;}
-//     else{
-//       Node* temp = head;
-//       while(temp->next != tail){
-//         temp = temp->next;
-//       }
-//       delete tail;
-//       tail = temp;
-//       temp->next = head;
-//     }
-//   }
-//   void print(){
-//     if(head == NULL){
-//       return;
-//     }
-//       cout<<head->data<<"->";
-//       Node* temp = head->next;
-//       while(temp!= head){
-//         cout<<temp->data<<"->";
-//         temp = temp->next;    
-//     }cout<<temp->data<<endl;
-//   }
-// };
-// int main(){
-// CircularList cll;
-// // cll.insertAtHead(1);
-// // cll.insertAtHead(2);
-// // cll.insertAtHead(3);
-// cll.insertAtTail(1);
-// cll.insertAtTail(2);
-// cll.insertAtTail(3);
-// //cll.deleteAtHead();
-// cll.deleteAtTail();
-// cll.print();
-// }
-
-//FLATTEN A DOUBLY LINKED LIST
-// class Solution {
-// public:
-//     Node* flatten(Node* head) {
-//        if(head == NULL){
-//         return head;
+// CIRCULAR LINKED LIST
+// g++ -std=c++11  code.cpp && a.exe
+//  class Node{
+//    public:
+//    int data;
+//    Node* next;
+//    Node(int val){
+//      data = val;
+//      next = NULL;
+//    }
+//  };
+//  class CircularList{
+//    Node* head;
+//    Node* tail;
+//    public:
+//    CircularList(){
+//      head = tail = NULL;
+//    }
+//    void insertAtHead(int val){
+//      Node* newNode = new Node(val);
+//      if(tail ==NULL){
+//        head = tail = newNode;
+//        tail->next = head;
+//      }
+//      newNode->next = head;
+//      head = newNode;
+//      tail->next = newNode;
+//    }
+//    void insertAtTail(int val){
+//      Node* newNode = new Node(val);
+//       if(head ==NULL){
+//        head = tail = newNode;
+//        tail->next = head;
+//      }else{
+//      newNode->next = head;
+//      tail->next = newNode;
+//      tail = newNode;
+//    }}
+//    void deleteAtHead(){
+//      if(head == NULL)return;
+//      if(head == tail){ delete head;
+//      head = tail = NULL;}
+//      else{
+//        Node* temp = head;
+//        head = head->next;
+//        tail->next = head;
+//        temp->next = NULL;
+//        delete temp;
+//      }
+//    }
+//    void deleteAtTail(){
+//      if(head == NULL)return;
+//      if(head == tail){ delete head;
+//      head = tail = NULL;}
+//      else{
+//        Node* temp = head;
+//        while(temp->next != tail){
+//          temp = temp->next;
 //        }
-//        Node* curr = head;
-//        while(curr!=NULL){
-//         if(curr->child!=NULL){
-//             //flatten the child nodes
-//             Node* next = curr->next;
-//             curr->next = flatten(curr->child);
-//             curr->next->prev = curr;
-//             curr->child = NULL;
-//             //find tail
-//             while(curr->next!=NULL){
-//                 curr = curr->next;
-//             }
-//             //attach tail with next ptr
-//             if(next !=NULL){
-//                 curr->next = next;
-//                 next->prev = curr;
-//             }
-//         }curr = curr->next;
-//        }return head;
-//     }
-// };
+//        delete tail;
+//        tail = temp;
+//        temp->next = head;
+//      }
+//    }
+//    void print(){
+//      if(head == NULL){
+//        return;
+//      }
+//        cout<<head->data<<"->";
+//        Node* temp = head->next;
+//        while(temp!= head){
+//          cout<<temp->data<<"->";
+//          temp = temp->next;
+//      }cout<<temp->data<<endl;
+//    }
+//  };
+//  int main(){
+//  CircularList cll;
+//  // cll.insertAtHead(1);
+//  // cll.insertAtHead(2);
+//  // cll.insertAtHead(3);
+//  cll.insertAtTail(1);
+//  cll.insertAtTail(2);
+//  cll.insertAtTail(3);
+//  //cll.deleteAtHead();
+//  cll.deleteAtTail();
+//  cll.print();
+//  }
 
-//REVERSE NODES IN K-GROUP
-// class Solution {
-// public:
-//     ListNode* reverseKGroup(ListNode* head, int k) {
-//         ListNode* temp = head;
-//         int count =0;
-//         //check if k nodes exist
-//         while(count<k){
-//             if(temp == NULL){
-//                 return head;
-//             }
-//             temp = temp->next;
-//             count++;
+// FLATTEN A DOUBLY LINKED LIST
+//  class Solution {
+//  public:
+//      Node* flatten(Node* head) {
+//         if(head == NULL){
+//          return head;
 //         }
-//         //recursively call for rest of LL
-//         ListNode* prevNode = reverseKGroup(temp,k);
-//         //reverse current group
-//         temp = head;count =0;
-//         while(count<k){
-//             ListNode* next = temp->next;
-//             temp->next = prevNode;
-//             prevNode = temp;
-//             temp = next;
-//             count++;
-//         }return prevNode;
-//     }
-// };
+//         Node* curr = head;
+//         while(curr!=NULL){
+//          if(curr->child!=NULL){
+//              //flatten the child nodes
+//              Node* next = curr->next;
+//              curr->next = flatten(curr->child);
+//              curr->next->prev = curr;
+//              curr->child = NULL;
+//              //find tail
+//              while(curr->next!=NULL){
+//                  curr = curr->next;
+//              }
+//              //attach tail with next ptr
+//              if(next !=NULL){
+//                  curr->next = next;
+//                  next->prev = curr;
+//              }
+//          }curr = curr->next;
+//         }return head;
+//      }
+//  };
 
-//SWAP NODES IN PAIRS
-// class Solution {
-// public:
-//     ListNode* swapPairs(ListNode* head) {
-//       if(head == NULL || head->next == NULL){
-//         return head;
-//       }
-//     ListNode* first = head;
-//     ListNode* second = head->next;
-//     ListNode* prev = NULL;
-//     while(first!=NULL && second || NULL){
-//         ListNode* third = second->next;
-//         second->next = first;
-//         first->next = third;
-//         if(prev!=NULL){        
-//             prev->next = second;}
-//         else{
-//             head = second;
-//         }//update
-//         prev = first;
-//         first = third;
-//         if(third!=NULL){
-//             second = third->next;
-//         }else{
-//             second = NULL;
-//         }
-//     }return head;
-//     }
-// };
+// REVERSE NODES IN K-GROUP
+//  class Solution {
+//  public:
+//      ListNode* reverseKGroup(ListNode* head, int k) {
+//          ListNode* temp = head;
+//          int count =0;
+//          //check if k nodes exist
+//          while(count<k){
+//              if(temp == NULL){
+//                  return head;
+//              }
+//              temp = temp->next;
+//              count++;
+//          }
+//          //recursively call for rest of LL
+//          ListNode* prevNode = reverseKGroup(temp,k);
+//          //reverse current group
+//          temp = head;count =0;
+//          while(count<k){
+//              ListNode* next = temp->next;
+//              temp->next = prevNode;
+//              prevNode = temp;
+//              temp = next;
+//              count++;
+//          }return prevNode;
+//      }
+//  };
 
-//STACK
-//#include <stack>
-// class Stack{
-//   //vector<int> v;
-//   list<int> ll;
-//   public:
-//   void push(int val){//o(1)
-//     //v.push_back(val);
-//     ll.push_front(val);
-//   }
-//   void pop(){
-//     //v.pop_back();
-//     ll.pop_front();
-//   }
-//   int top(){
-//     //return v[v.size()-1];
-//     return ll.front();
-//   }
-//   bool empty(){
-//     //return v.size() ==0 ;
-//     return ll.size() ==0 ;
-//   }
-// };
-// int main(){
-// //Stack s;
+// SWAP NODES IN PAIRS
+//  class Solution {
+//  public:
+//      ListNode* swapPairs(ListNode* head) {
+//        if(head == NULL || head->next == NULL){
+//          return head;
+//        }
+//      ListNode* first = head;
+//      ListNode* second = head->next;
+//      ListNode* prev = NULL;
+//      while(first!=NULL && second || NULL){
+//          ListNode* third = second->next;
+//          second->next = first;
+//          first->next = third;
+//          if(prev!=NULL){
+//              prev->next = second;}
+//          else{
+//              head = second;
+//          }//update
+//          prev = first;
+//          first = third;
+//          if(third!=NULL){
+//              second = third->next;
+//          }else{
+//              second = NULL;
+//          }
+//      }return head;
+//      }
+//  };
+
+// STACK
+// #include <stack>
+//  class Stack{
+//    //vector<int> v;
+//    list<int> ll;
+//    public:
+//    void push(int val){//o(1)
+//      //v.push_back(val);
+//      ll.push_front(val);
+//    }
+//    void pop(){
+//      //v.pop_back();
+//      ll.pop_front();
+//    }
+//    int top(){
+//      //return v[v.size()-1];
+//      return ll.front();
+//    }
+//    bool empty(){
+//      //return v.size() ==0 ;
+//      return ll.size() ==0 ;
+//    }
+//  };
+//  int main(){
+//  //Stack s;
+//   stack<int>s;
+//  s.push(10);
+//  s.push(20);
+//  s.push(30);
+//  while(!s.empty()){
+//    cout<<s.top()<<" ";//30 20 10
+//    s.pop();
+//  }
+//  }
+
+// VALID PARENTHESES
+//  bool isValid(string str) {//Tc =o(n) sc=o(n)
+//    stack<char> st;
+//    for(int i=0;i<str.size();i++){
+//        if(str[i]== '('|| str[i]== '{'|| str[i]== '['){//opening
+//          st.push(str[i]);
+//        }else{//closing bracket
+//        if(st.size()==0){
+//          return false;
+//        }
+//        if((st.top() == '(' &&str[i]==')'
+//        )||(st.top() == '{' &&str[i]=='}'
+//        )||(st.top() == '[' &&str[i]==']')){
+//          st.pop();
+//        }else{//no match
+//        return false;
+//        }
+//        }
+//    }
+//    return st.size()==0;
+//  }
+
+// STOCK SPAN
+//  int main(){//TC =SC= O(N)
+//  vector<int> price = {100,80,60,70,60,75,85};
+//  vector<int>ans(price.size(),0);
 //  stack<int>s;
-// s.push(10);
-// s.push(20);
-// s.push(30);
-// while(!s.empty()){
-//   cout<<s.top()<<" ";//30 20 10
-//   s.pop();
-// }
-// }
+//  for(int i=0;i<price.size();i++){
+//  while(s.size()>0 && price[s.top()]<=price[i]){
+//    s.pop();
+//  }if(s.empty()){
+//    ans[i]=i+1;
+//  }else{
+//    ans[i] = i-s.top(); //i=prevHigh
+//  }s.push(i);
+//  }
+//  for(int val : ans){
+//    cout<<val<<" ";
+//  }cout<<endl;
+//  }
 
-//VALID PARENTHESES
-// bool isValid(string str) {//Tc =o(n) sc=o(n)
-//   stack<char> st;
-//   for(int i=0;i<str.size();i++){
-//       if(str[i]== '('|| str[i]== '{'|| str[i]== '['){//opening
-//         st.push(str[i]);
-//       }else{//closing bracket
-//       if(st.size()==0){
-//         return false;
-//       }
-//       if((st.top() == '(' &&str[i]==')'
-//       )||(st.top() == '{' &&str[i]=='}'
-//       )||(st.top() == '[' &&str[i]==']')){
-//         st.pop();
-//       }else{//no match
-//       return false;
-//       }
-//       }
-//   }
-//   return st.size()==0;
-// }
+// NEXT GREATEST ELEMENT //TC =SC = O(N)
+//  int main(){
+//    vector<int> arr = {6,8,0,1,3};
+//    //next greatest
+//    stack<int>s;
+//    vector<int>ans(arr.size(),-1);
+//    for(int i = arr.size()-1;i>=0;i--){
+//      while(s.size()>0 && s.top()<=arr[i]){
+//        s.pop();
+//      }if(s.empty()){
+//        ans[i]=-1;
+//      }else{
+//        ans[i] = s.top();
+//      }s.push(arr[i]);
+//    }for(int val : ans){
+//      cout<<val<<" ";
+//    }
+//  }
 
-//STOCK SPAN
-// int main(){//TC =SC= O(N)
-// vector<int> price = {100,80,60,70,60,75,85};
-// vector<int>ans(price.size(),0);
-// stack<int>s;
-// for(int i=0;i<price.size();i++){
-// while(s.size()>0 && price[s.top()]<=price[i]){
-//   s.pop();
-// }if(s.empty()){
-//   ans[i]=i+1;
-// }else{
-//   ans[i] = i-s.top(); //i=prevHigh
-// }s.push(i);
-// }
-// for(int val : ans){
-//   cout<<val<<" ";
-// }cout<<endl;
-// }
+// PREV SMALLEST ELEMENT TC = SC =O(N)
+//  int main(){
+//    vector<int> arr = {3,1,0,8,6};
+//    stack<int>s;
+//    vector<int>ans(arr.size(),-1);
+//    for(int i =0;i<arr.size();i++){
+//      while(s.size()>0 && s.top()>=arr[i]){
+//        s.pop();
+//      }if(s.empty()){
+//        ans[i]=-1;
+//      }else{
+//        ans[i] =s.top();
+//      }
+//      s.push(arr[i]);
+//    }for(int val : ans){
+//      cout<<val<<" ";
+//    }
+//  }
 
-//NEXT GREATEST ELEMENT //TC =SC = O(N)
-// int main(){
-//   vector<int> arr = {6,8,0,1,3};
-//   //next greatest
-//   stack<int>s;
-//   vector<int>ans(arr.size(),-1);
-//   for(int i = arr.size()-1;i>=0;i--){
-//     while(s.size()>0 && s.top()<=arr[i]){
-//       s.pop();
-//     }if(s.empty()){
-//       ans[i]=-1;
-//     }else{
-//       ans[i] = s.top();
-//     }s.push(arr[i]);
-//   }for(int val : ans){
-//     cout<<val<<" ";
-//   }
-// }
+// DESIGN A MIN STACK
+// g++ -std=c++11  code.cpp && a.exe
+// stack<pair<int,int>> s;//val,minVal
+//  stack<long long int>s;
+//  long long int minVal;
+//      MinStack() {
+//      }
+//      void push(int val) {
+//          // if(s.empty()){
+//          //     s.push({val,val});
+//          // }else{
+//          //     int minVal = min(val,s.top().second);
+//          //     s.push({val,minVal});
+//          // }
+//          if(s.empty()){
+//              s.push(val);
+//              minVal = val;
+//          }else{
+//              if(val<minVal){
+//                  s.push((long long)2*val -minVal);
+//                  minVal = val;
+//              }else{
+//                  s.push(val);
+//              }
+//          }
+//      }
+//      void pop() {
+//          //s.pop();
+//          if(s.top()<minVal){
+//              minVal = 2*minVal -s.top();
+//          }s.pop();
+//      }
+//      int top() {
+//        //return s.top().first ;
+//        if(s.top()<minVal){
+//          return minVal;
+//        }else{
+//          return s.top();
+//        }
+//      }
+//      int getMin() {
+//          //return s.top().second;
+//          return minVal;
+//      }
 
-//PREV SMALLEST ELEMENT TC = SC =O(N)
-// int main(){
-//   vector<int> arr = {3,1,0,8,6};
-//   stack<int>s;
-//   vector<int>ans(arr.size(),-1);
-//   for(int i =0;i<arr.size();i++){
-//     while(s.size()>0 && s.top()>=arr[i]){
-//       s.pop();
-//     }if(s.empty()){
-//       ans[i]=-1;
-//     }else{
-//       ans[i] =s.top();
-//     }
-//     s.push(arr[i]);
-//   }for(int val : ans){
-//     cout<<val<<" ";
-//   }
-// }
-
-//DESIGN A MIN STACK
-//g++ -std=c++11  code.cpp && a.exe
-//stack<pair<int,int>> s;//val,minVal
-// stack<long long int>s;
-// long long int minVal;
-//     MinStack() {       
-//     }
-//     void push(int val) {
-//         // if(s.empty()){
-//         //     s.push({val,val});
-//         // }else{
-//         //     int minVal = min(val,s.top().second);
-//         //     s.push({val,minVal});
-//         // }
-//         if(s.empty()){
-//             s.push(val);
-//             minVal = val;
-//         }else{
-//             if(val<minVal){
-//                 s.push((long long)2*val -minVal);
-//                 minVal = val;
-//             }else{
-//                 s.push(val);
-//             }
-//         }
-//     }  
-//     void pop() {
-//         //s.pop();
-//         if(s.top()<minVal){
-//             minVal = 2*minVal -s.top();
-//         }s.pop();
-//     }    
-//     int top() {
-//       //return s.top().first ;
-//       if(s.top()<minVal){
-//         return minVal;
-//       }else{
-//         return s.top();
-//       }
-//     }
-//     int getMin() {
-//         //return s.top().second;
-//         return minVal;
-//     }
-
-//LARGEST RECTANGLE IN HISTOGRAM TC=SC =O(N)
-// int largestRectangleArea(vector<int>& heights) {
-//   int n = heights.size();
-//   vector<int>left(n,0);//left smaller nearest
-//   vector<int>right(n,0);//right smaller nearest
-//   stack<int>s;
-//   //Right O(N)
-//   for(int i=n-1;i>=0;i--){
-//       while(s.size()>0 && heights[s.top()]>=heights[i]){
-//           s.pop();
-//       }
-//       right[i]=s.empty()?n:s.top();//important step
-//       s.push(i);
-//   }
-//   while(!s.empty()){//empty stack
-//       s.pop();
-//   }
-//   //Left O(N)
-//   for(int i=0;i<n;i++){
-//       while(s.size()>0 && heights[s.top()]>=heights[i]){
-//           s.pop();
-//       }
-//       left[i]=s.empty()?-1:s.top();
-//       s.push(i);
-//   }
-//   int ans =0;
-//   for(int i=0;i<n;i++){
-//       int width = right[i]-left[i]-1;
-//       int currArea = heights[i]*width; 
-//       ans = max(ans,currArea);
-//   }return ans;
-// }
+// LARGEST RECTANGLE IN HISTOGRAM TC=SC =O(N)
+//  int largestRectangleArea(vector<int>& heights) {
+//    int n = heights.size();
+//    vector<int>left(n,0);//left smaller nearest
+//    vector<int>right(n,0);//right smaller nearest
+//    stack<int>s;
+//    //Right O(N)
+//    for(int i=n-1;i>=0;i--){
+//        while(s.size()>0 && heights[s.top()]>=heights[i]){
+//            s.pop();
+//        }
+//        right[i]=s.empty()?n:s.top();//important step
+//        s.push(i);
+//    }
+//    while(!s.empty()){//empty stack
+//        s.pop();
+//    }
+//    //Left O(N)
+//    for(int i=0;i<n;i++){
+//        while(s.size()>0 && heights[s.top()]>=heights[i]){
+//            s.pop();
+//        }
+//        left[i]=s.empty()?-1:s.top();
+//        s.push(i);
+//    }
+//    int ans =0;
+//    for(int i=0;i<n;i++){
+//        int width = right[i]-left[i]-1;
+//        int currArea = heights[i]*width;
+//        ans = max(ans,currArea);
+//    }return ans;
+//  }
 
 // NEXT GREATER ELEMENT 2 //TC=SC = O(N)
 // vector<int> nextGreaterElements(vector<int>& nums) {
@@ -3447,4 +3447,150 @@ using namespace std;
 // cout<<"Celebrity is "<<ans<<endl;
 // }
 
-//g++ -std=c++11  code.cpp && a.exe
+// QUEUE
+//  class Node{
+//    public:
+//  int data;
+//  Node* next;
+//  Node(int val){
+//    data = val;
+//    next = NULL;
+//  }
+//  };
+//  class Queue{
+//    Node* head;
+//    Node* tail;
+//    public:
+//    Queue(){
+//      head = tail = NULL;
+//    }
+//    void push(int data){//insert data at tail
+//      Node* newNode = new Node(data);
+//      if(empty()){
+//        head = tail = newNode;
+//      }else{
+//        tail->next = newNode;
+//        tail = newNode;
+//      }
+//    }
+//    void pop(){//O(1)
+//      if(empty()){
+//        cout<<"LL is empty\n";
+//      }else{
+//      Node* temp = head;
+//      head = head->next;
+//      delete temp;
+//    }
+//    }
+//    int front(){
+//      if(empty()){
+//        cout<<"LL is empty\n";
+//        return -1;
+//      }
+//      return head->data;
+//    }
+//    bool empty(){
+//      return head ==NULL;
+//    }
+//    void print(){
+//      Node* temp =head;
+//      while(temp!=NULL){
+//        cout<<temp->data<<" ";
+//        temp=temp->next;
+//      }
+//    }
+//  };
+// int main(){
+//  queue<int> q;
+//  q.push(1);
+//  q.push(2);
+//  q.push(3);
+//  q.push(4);
+//  while(!q.empty()){
+//    cout<<q.front()<<" ";
+//    q.pop();
+// }
+//  deque<int>dq;
+//  dq.push_back(1);
+//  dq.push_back(2);
+//  dq.push_back(3);//4,1,2,3
+//  dq.push_front(4);
+//  cout<<dq.front()<<" "<<dq.back()<<endl;
+//  dq.pop_back();
+//  cout<<dq.front()<<" "<<dq.back()<<endl;//4 1 2
+//  }
+
+// CIRCULAR QUEUE
+// class CircularQueue{
+//   int *arr;
+//   int currSize, cap;
+//   int f, r;
+// public:
+//   CircularQueue(int size){
+//     cap = size;
+//     arr = new int[cap];
+//     currSize=0;
+//     f = 0;
+//     r = -1;
+//   }
+//   void push(int data){//O(1)
+//     if(currSize ==cap){//FULL
+//       cout<<"circular queue is full\n";
+//       return;
+//     }
+//     r = (r+1)%cap;
+//     arr[r]=data;
+//     currSize++;
+//   }
+//   void pop(){//O(1)
+//     if(empty()){
+//       cout<<"Circular queue is empty\n";
+//       return;
+//     }
+//     f =(f+1)%cap;
+//     currSize--;
+//   }
+//   int front(){//O(1)
+//     if(empty()){
+//       cout<<"Circular queue is empty\n";
+//       return -1;
+//     }
+//     return arr[f];
+//   }
+//   bool empty(){//O(1)
+//     return currSize ==0;
+//   }
+//   void printArray(){
+//     for(int i=0;i<cap;i++){
+//       cout<<arr[i]<<" ";
+//     }cout<<endl;
+//   }
+// };
+// int main(){
+//   CircularQueue cq(3);
+//   cq.push(1);
+//   cq.push(2);
+//   cq.push(3);
+//   cq.pop();
+//   cq.push(4);
+//   //cq.printArray();
+//   while(!cq.empty()){
+//     cout<<cq.front()<<" ";
+//     cq.pop();
+//   }cout<<endl;
+// }
+
+//FIRST UNIQUE CHARACTER IN A STRING TC = sc =O(N)
+int firstUniqChar(string s) {
+  unordered_map<char,int>m;
+  queue<int>Q;
+  for(int i=0;i<s.size();i++){
+    if(m.find(s[i]) ==m.end()){
+      Q.push(i);     
+    }
+    m[s[i]]++;
+    while(Q.size()>0 && m[s[Q.front()]]>1){
+      Q.pop();
+    }
+  }return Q.empty()?-1:Q.front();
+}
