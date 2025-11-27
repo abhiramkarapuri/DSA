@@ -14,6 +14,7 @@
 #include <string>
 #include <cmath>
 using namespace std;
+
 // int main()
 // {  // primitive (basicdata types
 //     int age = 25;
