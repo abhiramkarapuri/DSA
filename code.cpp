@@ -3643,16 +3643,16 @@ using namespace std;
 // }
 
 //BINARY TREES
-class Node{
-  public:
-  int data;
-  Node* left;
-  Node* right;
-  Node(int val){
-      data = val;
-      left = right = NULL;
-  }
-};
+// class Node{
+//   public:
+//   int data;
+//   Node* left;
+//   Node* right;
+//   Node(int val){
+//       data = val;
+//       left = right = NULL;
+//   }
+// };
 static int idx = -1;
 Node* buildTree(vector<int>preorder){//TC = O(N)
   idx++;
