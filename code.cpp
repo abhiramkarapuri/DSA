@@ -3787,6 +3787,21 @@ void postOrder(Node* root){//TC = O(N )
 // }
 
 //SUBTREE OF ANOTHER TREE
+// bool isIdentical(Node* root, Node* subRoot){
+//   if(root == NULL || subRoot == NULL){
+//     return root == subRoot;
+//   }
+//   return (isIdentical(root->left,subRoot->left) && isIdentical(root->right,subRoot->right)  && (root->data == subRoot->data));
+// }
+//   bool isSubtree(Node* root, Node* subRoot) {
+//     if(root ==NULL || subRoot == NULL){
+//       return root == subRoot;
+//     }   
+//     if(root->data == subRoot ->data && isIdentical(root,subRoot)){
+//       return true;
+//     }
+//     return isSubtree(root->left,subRoot)||isSubtree(root->right,subRoot);
+//   }
 
 //DIAMETER OF TREE
 // int height(Node* root){
@@ -3915,4 +3930,25 @@ void postOrder(Node* root){//TC = O(N )
 //   cout<<endl;
 //   return 0;
 // }
+
+//BINARY TREE PATHS
+// void allPaths(Node* root, string path, vector<string>& ans){
+//   if(root->left ==NULL && root->right == NULL){
+//     ans.push_back(path);
+//     return;
+//   }
+//   if(root->left){
+//     allPaths(root->left,path+"->"+to_string(root->left->data),ans);
+//   }
+//   if(root->right){
+//     allPaths(root->right,path+"->"+to_string(root->right->data),ans);
+//   }
+// }
+//   vector<string> binaryTreePaths(Node* root) {
+//     vector<string> ans;
+//     string path = to_string(root->data);
+//     allPaths(root,path,ans);
+//     return ans;
+//   }
+
 
