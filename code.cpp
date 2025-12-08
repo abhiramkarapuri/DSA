@@ -3644,55 +3644,55 @@ using namespace std;
 // }
 
 //BINARY TREES
-// class Node{
-//   public:
-//   int data;
-//   Node* left;
-//   Node* right;
-//   Node(int val){
-//       data = val;
-//       left = right = NULL;
-//   }
-// };
-// static int idx = -1;
-// Node* buildTree(vector<int>preorder){//TC = O(N)
-//   idx++;
-//   if(preorder[idx]==-1){
-//       return NULL;
-//   }
-//   Node* root = new Node(preorder[idx]);
-//   root->left = buildTree(preorder);//LEFT
-//   root->right = buildTree(preorder);//RIGHT 
-//   return root;
-// }
-// //preorder
-// void preOrder(Node *root){  //TC = O(N)
-//   if(root == NULL){
-//     return;
-//   }
-//   cout<<root->data<<" ";
-//   preOrder(root->left);
-//   preOrder(root->right);
-// }
-// //inorder
-// void inOrder(Node* root){//TC = O(N )
-//   if(root == NULL){
-//     return;
-//   }
-//   inOrder(root->left);
-//   cout<<root->data<<" ";
-//   inOrder(root->right);
-// }
-// //postorder
-// void postOrder(Node* root){//TC = O(N )
-//   if(root == NULL){
-//     return;
-//   }
-//   postOrder(root->left);
-//   postOrder(root->right);
-//   cout<<root->data<<" ";
-// }
-// //level order
+class Node{
+  public:
+  int data;
+  Node* left;
+  Node* right;
+  Node(int val){
+      data = val;
+      left = right = NULL;
+  }
+};
+static int idx = -1;
+Node* buildTree(vector<int>preorder){//TC = O(N)
+  idx++;
+  if(preorder[idx]==-1){
+      return NULL;
+  }
+  Node* root = new Node(preorder[idx]);
+  root->left = buildTree(preorder);//LEFT
+  root->right = buildTree(preorder);//RIGHT 
+  return root;
+}
+//preorder
+void preOrder(Node *root){  //TC = O(N)
+  if(root == NULL){
+    return;
+  }
+  cout<<root->data<<" ";
+  preOrder(root->left);
+  preOrder(root->right);
+}
+//inorder
+void inOrder(Node* root){//TC = O(N )
+  if(root == NULL){
+    return;
+  }
+  inOrder(root->left);
+  cout<<root->data<<" ";
+  inOrder(root->right);
+}
+//postorder
+void postOrder(Node* root){//TC = O(N )
+  if(root == NULL){
+    return;
+  }
+  postOrder(root->left);
+  postOrder(root->right);
+  cout<<root->data<<" ";
+}
+//level order
 // void levelOrder(Node* root){
 //   queue<Node*>q;
 //   q.push(root);
@@ -3730,4 +3730,165 @@ using namespace std;
 //   // cout<<root->right->data<<endl;
 //   return 0;
 // }
+
+//HEIGHT & COUNT & SUM OF NODES OF A TREE
+// class Node{
+//   public:
+//   int data;
+//   Node* left;
+//   Node* right;
+//   Node(int val){
+//     data = val;
+//     left = right = NULL;
+//   }
+// };
+// int height(Node* root){
+//   if(root == NULL){
+//     return 0;
+//   }
+//   int leftHt = height(root->left);
+//   int rightHt = height(root->right);
+//   return max(leftHt,rightHt)+1;//1 is root
+// }
+// int count(Node* root){
+//   if(root == NULL){
+//     return 0;
+//   }
+//   int leftCount = count(root->left);
+//   int rightCount = count(root->right);
+//   return leftCount+rightCount+1;//1 is root
+// }
+// int sum(Node* root){
+//   int total =0;
+//   if(root == NULL){
+//     return 0;
+//   }
+//   int leftSum = sum(root->left);
+//   int rightSum = sum(root->right);
+//   return leftSum+rightSum+root->data;
+// }
+// int main(){
+//   vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
+//   Node* root = buildTree(preorder);
+//   cout<<"height :"<<height(root)<<endl;
+//   cout<<"count :"<<count(root)<<endl;
+//   cout<<"sum :"<<sum(root)<<endl;
+//   return 0;
+// }
+
+//IS SAME TREE
+// bool isSameTree(Node* p,Node* q) {
+//   if(p==NULL || q ==NULL){
+//     return p == q;
+//   }
+//   bool isLeftSame = isSameTree(p->left,q->left);
+//   bool isRightSame = isSameTree(p->right,q->right);
+//   return (isLeftSame && isRightSame && (p->data == q->data));
+// }
+//SUBTREE OF ANOTHER TREE
+
+//DIAMETER OF TREE
+// int height(Node* root){
+//   if(root == NULL){
+//     return 0;
+//   }
+//   return max(height(root->left),height(root->right))+1;
+// }
+//   int diameterOfBinaryTree(Node* root) {
+//     if(root == NULL){
+//       return 0;
+//     }
+//     int leftDia = diameterOfBinaryTree(root->left);
+//     int rightDia = diameterOfBinaryTree(root->right);
+//     int currDia = height(root->left)+height(root->right);
+//     return max(max(leftDia,rightDia),currDia);
+//   }
+
+//TOP VIEW OF TREE
+// void topView(Node* root){ //O(nlogn) because map->find = O(logN),unordered map o(1)
+//   queue<pair<Node*,int>>q; //(Node,Horzontal distance)
+//   map<int,int>m; //<HD,node val>
+//   q.push({root,0});
+//   while(q.size()>0){
+//     Node* curr = q.front().first;
+//     int currHD = q.front().second;
+//     q.pop();
+//     if(m.find(currHD)== m.end()){
+//       m[currHD]=curr->data;
+//     }
+//     if(curr->left!=NULL){
+//       q.push({curr->left,currHD-1});
+//     }
+//     if(curr->right!=NULL){
+//       q.push({curr->right,currHD+1});
+//     }
+//   }
+//   for(auto it : m){
+//     cout<<it.second<<" ";
+//   }cout<<endl;
+// }
+// int main(){
+//   vector<int> preorder = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
+//   Node* root = buildTree(preorder);
+//   topView(root);  
+//   return 0;
+// }
+
+//K'TH LEVEL OF A TREE // TC = O(n)
+// void Kthlevel(Node* root, int k){
+// if(root == NULL) return;
+// if(k ==1){
+//   cout<<root->data<<" ";
+//   return;
+// }
+// Kthlevel(root->left,k-1);
+// Kthlevel(root->right,k-1);
+// }
+// int main(){
+//   vector<int> preorder = {1,2,7,-1,-1,-1,3,4,-1,-1,5,-1,-1};
+//   Node* root = buildTree(preorder);
+//   Kthlevel(root,3);
+//   return 0;
+// }
+
+//LEAST COMMON ANCESTOR //TC = SC = O(N)
+// Node* lowestCommonAncestor(Node* root, Node* p, Node* q) {
+//   if(root == NULL){
+//     return NULL;
+//   }
+//   if(root->val == p->val ||root->val == q->val){
+//     return root;
+//   }
+//   Node* leftLCA = lowestCommonAncestor(root->left,p,q);
+//   Node* rightLCA = lowestCommonAncestor(root->right,p,q);
+//   if(leftLCA && rightLCA){
+//     return root;
+//   }else if(leftLCA != NULL){
+//     return leftLCA;
+//   }else{
+//     return rightLCA;
+//   }
+// }
+
+//BUILD TREE FROM PREORDER & INORDER 
+// int search(vector<int>& inorder, int left, int right, int val){
+//   for(int i= left;i<=right;i++){
+//     if(inorder[i]==val){
+//       return i;
+//     }
+//   }return -1;
+//   }
+//   Node* helper(vector<int>& preorder, vector<int>& inorder, int& preIdx, int left, int right){
+//     if(left >right) return NULL;
+//     Node* root = new Node(preorder[preIdx]);
+//     int inIdx = search(inorder,left,right,preorder[preIdx]);
+//     preIdx++;
+//     root->left = helper(preorder,inorder,preIdx,left, inIdx-1);
+//     root->right = helper(preorder,inorder,preIdx,inIdx+1,right);
+//     return root;
+//   }
+//   Node* buildTree(vector<int>& preorder, vector<int>& inorder) {
+//       int preIdx =0;
+//       return helper(preorder,inorder, preIdx,0,inorder.size()-1);
+//     }
 
