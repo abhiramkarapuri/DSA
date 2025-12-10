@@ -4000,3 +4000,13 @@ void postOrder(Node* root){//TC = O(N )
 //   return ans; 
 // }
 
+//FLATTEN BINARY TREE TO LINKED LIST
+// Node* nextRight = NULL;
+//   void flatten(Node* root) {
+//     if(root == NULL)return;
+//     flatten(root->right);
+//     flatten(root->left);
+//     root->left = NULL;
+//     root->right = nextRight;
+//     nextRight = root;
+//   }
