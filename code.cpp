@@ -4029,58 +4029,85 @@ Node* buildBST(vector<int>arr){
   }
   return root;
 }
-//SEARCH IN BST
-bool search(Node* root,int key){//o(height)
-  if(root == NULL){
+// //SEARCH IN BST
+// bool search(Node* root,int key){//o(height)
+//   if(root == NULL){
+//     return false;
+//   }if(root->data == key){
+//     return true;
+//   }if(key< root->data){
+//     return search(root->left,key);
+//   }else{
+//     return search(root->right,key);
+//   }}
+//   //DELETE NODE IN BST
+//   Node* getInorderSuccessor(Node* root){//left most node in right subtree
+//     while(root!=NULL && root->left != NULL){
+//       root = root->left;
+//     }return root;
+//   }
+//   Node* delNode(Node* root, int key){//key=>val to delete
+//     if(root == NULL){
+//       return NULL; 
+//     } 
+//     if(key<root->data){
+//       root->left = delNode(root->left,key);
+//     }else if(root->data<key){
+//       root->right = delNode(root->right,key);
+//     }else{//root = key delNode
+//       //O & 1 CHILD CASE
+//       if(root->left == NULL){
+//         Node* temp = root->right;
+//         delete root;
+//         return temp;
+//       }else if(root->right == NULL){
+//         Node* temp = root->left;
+//         delete root;
+//         return temp;
+//       }else{//2CHILD
+//         Node* IS = getInorderSuccessor(root->right);
+//           root->data = IS->data;
+//           root->right = delNode(root->right,IS->data);
+//       }
+//     }return root;
+//   }
+// int main(){
+//   vector<int> arr = {3,2,1,5,6,4};
+//   Node* root = buildBST(arr);
+//   cout<<"before : ";
+//   inOrder(root);
+//   //cout<<search(root,8);
+//   cout<<endl;
+//   delNode(root,5);
+//   cout<<"after :";
+//   inOrder(root);
+//   cout<<endl;
+//   return 0;
+// }
+
+//CONVERT SORTED ARRAY INTO BST
+// Node* helper(vector<int>& nums,int st, int end){
+//   if(st>end)return NULL;
+//   int mid = st +(end-st)/2;
+//   Node* root = new Node(nums[mid]);
+//   root->left = helper(nums,st,mid-1);
+//   root->right = helper(nums,mid+1,end);
+//   return root;
+// }
+// Node* sortedArrayToBST(vector<int>& nums) {
+//     return helper(nums,0,nums.size()-1);
+// }
+
+//VALIDATE BST
+bool helper(Node* root,Node* min,Node* max){
+  if(root == NULL) return true;
+  if(min !=NULL && root->data <= min->data){
     return false;
-  }if(root->data == key){
-    return true;
-  }if(key< root->data){
-    return search(root->left,key);
-  }else{
-    return search(root->right,key);
-  }}
-  //DELETE NODE IN BST
-  Node* getInorderSuccessor(Node* root){//left most node in right subtree
-    while(root!=NULL && root->left != NULL){
-      root = root->left;
-    }return root;
   }
-  Node* delNode(Node* root, int key){//key=>val to delete
-    if(root == NULL){
-      return NULL; 
-    } 
-    if(key<root->data){
-      root->left = delNode(root->left,key);
-    }else if(root->data<key){
-      root->right = delNode(root->right,key);
-    }else{//root = key delNode
-      //O & 1 CHILD CASE
-      if(root->left == NULL){
-        Node* temp = root->right;
-        delete root;
-        return temp;
-      }else if(root->right == NULL){
-        Node* temp = root->left;
-        delete root;
-        return temp;
-      }else{//2CHILD
-        Node* IS = getInorderSuccessor(root->right);
-          root->data = IS->data;
-          root->right = delNode(root->right,IS->data);
-      }
-    }return root;
-  }
-int main(){
-  vector<int> arr = {3,2,1,5,6,4};
-  Node* root = buildBST(arr);
-  cout<<"before : ";
-  inOrder(root);
-  //cout<<search(root,8);
-  cout<<endl;
-  delNode(root,5);
-  cout<<"after :";
-  inOrder(root);
-  cout<<endl;
-  return 0;
+  if(max!= NULL && root->data >= max->data){
+    return false;
+  }return helper(root->left,min,root) && helper(root->right,root,max);
 }
+  bool isValidBST(Node* root) {
+      return helper(root,NULL,NULL);
+  }
