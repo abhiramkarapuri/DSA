@@ -4111,3 +4111,44 @@ void postOrder(Node* root){//TC = O(N )
 //   bool isValidBST(Node* root) {
 //       return helper(root,NULL,NULL);
 //   }
+
+//MIN DISTANCE BETWEEN BST NODES
+// Node* prev = NULL;
+// int getMinimumDifference(Node* root) {
+//   int ans = INT_MAX;
+//     if(root == NULL)return INT_MAX;
+//     if(root->left!=NULL){
+//       int leftMin = getMinimumDifference(root->left);
+//       ans = min(ans,leftMin);
+//     }
+//     if(prev!=NULL){
+//       ans = min(ans,root->data-prev->data);
+//     }prev = root;
+//     if(root->right!=NULL){
+//       int rightMin = getMinimumDifference(root->right);
+//       ans = min(ans,rightMin);
+//     }return ans;
+// }
+
+//KTH SMALLEST ELEMENT IN BST
+// int prevOrder = 0;
+//   int kthSmallest(Node* root, int k) {
+//     if(root == NULL) return -1;
+//     if(root->left !=NULL){
+//       int leftAns = kthSmallest(root->left,k);
+//       if(leftAns != -1){
+//         return leftAns;
+//       }
+//     }
+//     if(prevOrder + 1 == k){
+//       return root->data;
+//     }
+//     prevOrder+=1;
+//     if(root->right !=NULL){
+//       int rightAns = kthSmallest(root->right,k);
+//       if(rightAns !=-1){
+//         return rightAns;
+//       }
+//     }
+//       return -1;
+//   }
