@@ -4298,4 +4298,27 @@ void postOrder(Node* root){//TC = O(N )
 //   }return root;
 // }
 
-//
+//BST ITERATOR // TC = O(1) SC = O(H)
+// class BSTIterator {
+// public:
+// stack<Node*>s;
+// void storeLeftNodes(Node* root){
+//   while(root!=NULL){
+//     s.push(root);
+//     root = root->left;
+//   }
+//   }
+//   BSTIterator(Node* root) {
+//       storeLeftNodes(root);
+//   }
+//   int next() { //TC = O(1) sc = o(H)
+//     Node* ans = s.top();
+//     s.pop();
+//     storeLeftNodes(ans->right);
+//     return ans->data;
+//   }
+//   bool hasNext() {
+//       return s.size()>0;
+//   }
+// };
+
