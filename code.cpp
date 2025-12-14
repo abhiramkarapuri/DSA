@@ -3644,54 +3644,54 @@ using namespace std;
 // }
 
 //BINARY TREES
-class Node{
-  public:
-  int data;
-  Node* left;
-  Node* right;
-  Node(int val){
-      data = val;
-      left = right = NULL;
-  }
-};
-static int idx = -1;
-Node* buildTree(vector<int>preorder){//TC = O(N)
-  idx++;
-  if(preorder[idx]==-1){
-      return NULL;
-  }
-  Node* root = new Node(preorder[idx]);
-  root->left = buildTree(preorder);//LEFT
-  root->right = buildTree(preorder);//RIGHT 
-  return root;
-}
-//preorder
-void preOrder(Node *root){  //TC = O(N)
-  if(root == NULL){
-    return;
-  }
-  cout<<root->data<<" ";
-  preOrder(root->left);
-  preOrder(root->right);
-}
-//inorder
-void inOrder(Node* root){//TC = O(N )
-  if(root == NULL){
-    return;
-  }
-  inOrder(root->left);
-  cout<<root->data<<" ";
-  inOrder(root->right);
-}
-//postorder
-void postOrder(Node* root){//TC = O(N )
-  if(root == NULL){
-    return;
-  }
-  postOrder(root->left);
-  postOrder(root->right);
-  cout<<root->data<<" ";
-}
+// class Node{
+//   public:
+//   int data;
+//   Node* left;
+//   Node* right;
+//   Node(int val){
+//       data = val;
+//       left = right = NULL;
+//   }
+// };
+// static int idx = -1;
+// Node* buildTree(vector<int>preorder){//TC = O(N)
+//   idx++;
+//   if(preorder[idx]==-1){
+//       return NULL;
+//   }
+//   Node* root = new Node(preorder[idx]);
+//   root->left = buildTree(preorder);//LEFT
+//   root->right = buildTree(preorder);//RIGHT 
+//   return root;
+// }
+// //preorder
+// void preOrder(Node *root){  //TC = O(N)
+//   if(root == NULL){
+//     return;
+//   }
+//   cout<<root->data<<" ";
+//   preOrder(root->left);
+//   preOrder(root->right);
+// }
+// //inorder
+// void inOrder(Node* root){//TC = O(N )
+//   if(root == NULL){
+//     return;
+//   }
+//   inOrder(root->left);
+//   cout<<root->data<<" ";
+//   inOrder(root->right);
+// }
+// //postorder
+// void postOrder(Node* root){//TC = O(N )
+//   if(root == NULL){
+//     return;
+//   }
+//   postOrder(root->left);
+//   postOrder(root->right);
+//   cout<<root->data<<" ";
+// }
 //level order
 // void levelOrder(Node* root){
 //   queue<Node*>q;
@@ -4375,3 +4375,80 @@ void postOrder(Node* root){//TC = O(N )
 //   cout<<"successor: "<<ans[1]<<endl;
 //   return 0;
 // }
+
+//GRAPHS
+// class Graph{
+//   int V;
+//   list<int> *l; //int *arr
+//   public:
+//   Graph(int V){
+//     this->V = V;
+//     l = new list<int> [V]; //arr = new int[V]
+//   }
+//   void addEdge(int u, int v){
+//     l[u].push_back(v);
+//     l[v].push_back(u);
+//   }
+//   //BFS TRAVERSAL
+//   void bfs(){//O(V+E)
+//     queue<int>Q;
+//     vector<bool>vis(V,false);
+//     Q.push(0);
+//     vis[0]= true;
+//     while(Q.size()>0){
+//       int u = Q.front();//u-v
+//       Q.pop();
+//       cout<<u<<" ";
+//       for(int v: l[u]){//v ->immediate neighbor
+//         if(!vis[v]){
+//           vis[v]=true;
+//           Q.push(v);
+//         }
+//       }
+//     }cout<<endl;
+//   }
+//   //DFS TRAVERSAL
+//   void dfsHelper(int u, vector<bool>&vis){//O(V+E)
+//     cout<<u<<" ";
+//     vis[u] =true;
+//     for(int v : l[u]){
+//       if(!vis[v]){
+//         dfsHelper(v,vis);
+//       }
+//     }
+//   }
+//   void dfs(){
+//     int src =0;
+//     vector<bool> vis(V,false);
+//     // for(int i=0;i<V;i++){ for disconnected graph
+//     //   if(!vis[i]){
+//     //     dfsHelper(i,vis);
+//     //   }
+//     // } 
+//     dfsHelper(src,vis);
+//     cout<<endl;
+//   }
+//   // void printAdjList(){
+//   //   for(int i=0;i<V;i++){
+//   //     cout<<i<<" : ";
+//   //     for(int neigh : l[i]){
+//   //       cout<<neigh<<" ";
+//   //     }cout<<endl;
+//   //   }
+//   // }
+// };
+// int main(){
+//   Graph g(5);
+//   g.addEdge(0,1);
+//   g.addEdge(1,2);
+//   g.addEdge(1,3);
+//   //g.addEdge(2,3);
+//   g.addEdge(2,4);
+//   cout<<"bfs :";
+//   g.bfs();
+//   cout<<"dfs :";
+//   g.dfs();
+//   //g.printAdjList();
+//   return 0;
+// }
+
