@@ -4429,29 +4429,29 @@ class Graph{
   //   cout<<endl;
   // }
   //DETECT CYCLE IN UNDIR GRAPH USING DFS //TC = O(V+E)
-  bool isCycleUndirDFS(int src, int par, vector<bool>&vis){//dfs algo
-    vis[src]=true;
-    list<int> neighbors = l[src];
-    for(int v : neighbors){
-      if(!vis[v]){
-        if(isCycleUndirDFS(v,src,vis)){
-          return true;
-        }
-      }else if(v!=par){
-        return true;
-      }
-    }  return false;
-  }
-  bool isCycle(){
-    vector<bool> vis(V,false);
-    for(int i=0;i<V;i++){
-      if(!vis[i]){
-        if(isCycleUndirDFS(i,-1,vis)){
-          return true;
-        }
-      }
-    }return false;
-  }
+  // bool isCycleUndirDFS(int src, int par, vector<bool>&vis){//dfs algo
+  //   vis[src]=true;
+  //   list<int> neighbors = l[src];
+  //   for(int v : neighbors){
+  //     if(!vis[v]){
+  //       if(isCycleUndirDFS(v,src,vis)){
+  //         return true;
+  //       }
+  //     }else if(v!=par){
+  //       return true;
+  //     }
+  //   }  return false;
+  // }
+  // bool isCycle(){
+  //   vector<bool> vis(V,false);
+  //   for(int i=0;i<V;i++){
+  //     if(!vis[i]){
+  //       if(isCycleUndirDFS(i,-1,vis)){
+  //         return true;
+  //       }
+  //     }
+  //   }return false;
+  // }
   // void printAdjList(){
   //   for(int i=0;i<V;i++){
   //     cout<<i<<" : ";
@@ -4473,7 +4473,7 @@ int main(){
   // cout<<"dfs :";
   // g.dfs();
   //g.printAdjList();
-  cout<<g.isCycle();
+  //cout<<g.isCycle();
   return 0;
 }
 
