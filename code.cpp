@@ -4452,6 +4452,37 @@ class Graph{
   //     }
   //   }return false;
   // }
+  //DETECT CYCLE IN UNDIR GRAPH USING BFS //TC = O(V+E)
+  bool isCycleUndirBFS(int src, vector<bool>&vis){
+    queue<pair<int,int>>q;
+    q.push({src,-1});
+    vis[src]=true;
+    while(q.size()>0){
+      int u = q.front().first;
+      int parU = q.front().second;
+      q.pop();
+      list<int> neighbors = l[u];
+      for(int v : neighbors){
+        if(!vis[v]){
+          q.push({v,u});
+          vis[v]=true;
+        }else if(v!=parU){//cycle condition
+          return true;
+        }
+      }
+    }return false;
+
+  }
+  bool isCycle(){
+    vector<bool>vis(V,false);
+    for(int i=0;i<V;i++){
+      if(!vis[i]){
+        if(isCycleUndirBFS(i,vis)){
+          return true;
+        }
+      }
+    }return false;
+  }
   // void printAdjList(){
   //   for(int i=0;i<V;i++){
   //     cout<<i<<" : ";
@@ -4473,7 +4504,7 @@ int main(){
   // cout<<"dfs :";
   // g.dfs();
   //g.printAdjList();
-  //cout<<g.isCycle();
+  cout<<g.isCycle();
   return 0;
 }
 
