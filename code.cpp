@@ -4386,8 +4386,8 @@ class Graph{
     l = new list<int> [V]; //arr = new int[V]
   }
   void addEdge(int u, int v){
-    l[u].push_back(v);
-    l[v].push_back(u);
+    l[u].push_back(v); //only directed edges
+    //l[v].push_back(u);
   }
   //BFS TRAVERSAL
   // void bfs(){//O(V+E)
@@ -4453,31 +4453,57 @@ class Graph{
   //   }return false;
   // }
   //DETECT CYCLE IN UNDIR GRAPH USING BFS //TC = O(V+E)
-  bool isCycleUndirBFS(int src, vector<bool>&vis){
-    queue<pair<int,int>>q;
-    q.push({src,-1});
-    vis[src]=true;
-    while(q.size()>0){
-      int u = q.front().first;
-      int parU = q.front().second;
-      q.pop();
-      list<int> neighbors = l[u];
-      for(int v : neighbors){
-        if(!vis[v]){
-          q.push({v,u});
-          vis[v]=true;
-        }else if(v!=parU){//cycle condition
+  // bool isCycleUndirBFS(int src, vector<bool>&vis){
+  //   queue<pair<int,int>>q;
+  //   q.push({src,-1});
+  //   vis[src]=true;
+  //   while(q.size()>0){
+  //     int u = q.front().first;
+  //     int parU = q.front().second;
+  //     q.pop();
+  //     list<int> neighbors = l[u];
+  //     for(int v : neighbors){
+  //       if(!vis[v]){
+  //         q.push({v,u});
+  //         vis[v]=true;
+  //       }else if(v!=parU){//cycle condition
+  //         return true;
+  //       }
+  //     }
+  //   }return false;
+  // }
+  // bool isCycle(){
+  //   vector<bool>vis(V,false);
+  //   for(int i=0;i<V;i++){
+  //     if(!vis[i]){
+  //       if(isCycleUndirBFS(i,vis)){
+  //         return true;
+  //       }
+  //     }
+  //   }return false;
+  // }
+  //DETECT CYCLE IN UNDIR GRAPH USING BFS //TC = O(V+E)
+  bool isCycleDirBFS(int curr,vector<bool>&vis,vector<bool>&recPath){
+    vis[curr] = true;
+    recPath[curr] = true;
+    for(int v :l[curr]){
+      if(!vis[v]){
+        if(isCycleDirBFS(v,vis,recPath)){
           return true;
         }
+      }else if(recPath[v]){
+        return true;
       }
-    }return false;
-
+    }
+    recPath[curr]=false;
+    return false;
   }
   bool isCycle(){
     vector<bool>vis(V,false);
+    vector<bool>recPath(V,false);
     for(int i=0;i<V;i++){
       if(!vis[i]){
-        if(isCycleUndirBFS(i,vis)){
+        if(isCycleDirBFS(i,vis,recPath)){
           return true;
         }
       }
@@ -4493,22 +4519,27 @@ class Graph{
   // }
  };
 int main(){
-  Graph g(5);
-  g.addEdge(0,1);
-  g.addEdge(1,2);
-  g.addEdge(1,3);
-  //g.addEdge(2,3);
-  g.addEdge(2,4);
+  Graph g(4);
+  g.addEdge(1,0);
+  g.addEdge(0,2);
+  g.addEdge(2,3);
+  g.addEdge(3,0);
+  cout<<g.isCycle()<<endl;
+  // g.addEdge(0,1);
+  // g.addEdge(1,2);
+  // g.addEdge(1,3);
+  // //g.addEdge(2,3);
+  // g.addEdge(2,4);
   // cout<<"bfs :";
   // g.bfs();
   // cout<<"dfs :";
   // g.dfs();
   //g.printAdjList();
-  cout<<g.isCycle();
+  //cout<<g.isCycle();
   return 0;
 }
 
-//NUMBER OF ISLANDS
+//NUMBER OF ISLANDS //TC = SC = O(n*m)
 // void dfs(int i,int j,vector<vector<bool>>&vis,vector<vector<char>>& grid,int n,int m){
 //   if(i<0||j<0||i>=n||j>=m||vis[i][j]||grid[i][j]!='1'){
 //     return;
@@ -4535,4 +4566,53 @@ int main(){
 //     }return islands;
 //   }
 
+//ROTTEN ORANGES
+// int orangesRotting(vector<vector<int>>& grid) {
+//   int n = grid.size();
+//   int m = grid[0].size();
+//   int ans =0;
+//   vector<vector<bool>>vis(n,vector<bool>(m,false));
+//   queue<pair<pair<int,int>,int>> q; //((i,j),time)
+//   //pushing all sources in queue
+//   for(int i=0;i<n;i++){
+//     for(int j=0;j<m;j++){
+//       if(grid[i][j]==2){
+//         q.push({{i,j},0});
+//         vis[i][j] = true;
+//       }
+//     }
+//   }//bfs
+//   while(q.size()>0){
+//     int i = q.front().first.first;
+//     int j = q.front().first.second;
+//     int time = q.front().second;
+//     q.pop();
+//     ans = max(ans,time);
+//     if(i-1>=0 && !vis[i-1][j] && grid[i-1][j] == 1){//top ->i-1,j
+//       q.push({{i-1,j},time+1});
+//       vis[i-1][j] = true;
+//     }
+//     if(j+1<m && !vis[i][j+1] && grid[i][j+1] == 1){//right i,j+1
+//       q.push({{i,j+1},time+1});
+//       vis[i][j+1] = true;
+//     }
+//     if(i+1<n && !vis[i+1][j] && grid[i+1][j] == 1){//bottom->i+1,j
+//       q.push({{i+1,j},time+1});
+//       vis[i+1][j] = true;
+//     }
+//     if(j-1>=0 && !vis[i][j-1] && grid[i][j-1] == 1){//left-> i,j-1
+//       q.push({{i,j-1},time+1});
+//       vis[i][j-1] = true;
+//     }
+//   }
+//   //check for fresh oranges
+//   for(int i=0;i<n;i++){
+//     for(int j=0;j<m;j++){
+//       if(grid[i][j] == 1 && !vis[i][j]){
+//         return -1;
+//       }
+//     }
+//   }return ans;
+// }
 
+//C
