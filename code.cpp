@@ -4389,6 +4389,7 @@ class Graph{
     l[u].push_back(v); //only directed edges
     //l[v].push_back(u);
   }
+
   //BFS TRAVERSAL
   // void bfs(){//O(V+E)
   //   queue<int>Q;
@@ -4407,6 +4408,7 @@ class Graph{
   //     }
   //   }cout<<endl;
   // }
+
   //DFS TRAVERSAL
   // void dfsHelper(int u, vector<bool>&vis){//O(V+E)
   //   cout<<u<<" ";
@@ -4428,6 +4430,7 @@ class Graph{
   //   dfsHelper(src,vis);
   //   cout<<endl;
   // }
+
   //DETECT CYCLE IN UNDIR GRAPH USING DFS //TC = O(V+E)
   // bool isCycleUndirDFS(int src, int par, vector<bool>&vis){//dfs algo
   //   vis[src]=true;
@@ -4452,6 +4455,7 @@ class Graph{
   //     }
   //   }return false;
   // }
+
   //DETECT CYCLE IN UNDIR GRAPH USING BFS //TC = O(V+E)
   // bool isCycleUndirBFS(int src, vector<bool>&vis){
   //   queue<pair<int,int>>q;
@@ -4482,33 +4486,34 @@ class Graph{
   //     }
   //   }return false;
   // }
+
   //DETECT CYCLE IN UNDIR GRAPH USING BFS //TC = O(V+E)
-  bool isCycleDirBFS(int curr,vector<bool>&vis,vector<bool>&recPath){
-    vis[curr] = true;
-    recPath[curr] = true;
-    for(int v :l[curr]){
-      if(!vis[v]){
-        if(isCycleDirBFS(v,vis,recPath)){
-          return true;
-        }
-      }else if(recPath[v]){
-        return true;
-      }
-    }
-    recPath[curr]=false;
-    return false;
-  }
-  bool isCycle(){
-    vector<bool>vis(V,false);
-    vector<bool>recPath(V,false);
-    for(int i=0;i<V;i++){
-      if(!vis[i]){
-        if(isCycleDirBFS(i,vis,recPath)){
-          return true;
-        }
-      }
-    }return false;
-  }
+  // bool isCycleDirBFS(int curr,vector<bool>&vis,vector<bool>&recPath){
+  //   vis[curr] = true;
+  //   recPath[curr] = true;
+  //   for(int v :l[curr]){
+  //     if(!vis[v]){
+  //       if(isCycleDirBFS(v,vis,recPath)){
+  //         return true;
+  //       }
+  //     }else if(recPath[v]){
+  //       return true;
+  //     }
+  //   }
+  //   recPath[curr]=false;
+  //   return false;
+  // }
+  // bool isCycle(){
+  //   vector<bool>vis(V,false);
+  //   vector<bool>recPath(V,false);
+  //   for(int i=0;i<V;i++){
+  //     if(!vis[i]){
+  //       if(isCycleDirBFS(i,vis,recPath)){
+  //         return true;
+  //       }
+  //     }
+  //   }return false;
+  // }
   // void printAdjList(){
   //   for(int i=0;i<V;i++){
   //     cout<<i<<" : ";
@@ -4517,14 +4522,41 @@ class Graph{
   //     }cout<<endl;
   //   }
   // }
- };
+ 
+//TOPOLOGICAL SORT // Tc = O(V+E)
+  void dfs(int curr, vector<bool>&vis,stack<int> &s){
+    vis[curr] =true;
+    for(int v : l[curr]){
+      if(!vis[v]){
+        dfs(v,vis,s);
+      }
+    }s.push(curr);
+  } 
+  void topoSort(){
+    vector<bool> vis(V,false);
+    stack<int>s;
+    for(int i=0;i<V;i++){
+      if(!vis[i]){
+        dfs(i,vis,s);
+      }
+    }
+    while(s.size()>0){
+      cout<<s.top()<<" ";
+      s.pop();
+    }cout<<endl;
+  }
+};
+ 
 int main(){
-  Graph g(4);
-  g.addEdge(1,0);
-  g.addEdge(0,2);
+  Graph g(6);
+  g.addEdge(3,1);
   g.addEdge(2,3);
-  g.addEdge(3,0);
-  cout<<g.isCycle()<<endl;
+  g.addEdge(4,0);
+  g.addEdge(4,1);
+  g.addEdge(5,0);
+  g.addEdge(5,3);
+  g.topoSort();
+  //cout<<g.isCycle()<<endl;
   // g.addEdge(0,1);
   // g.addEdge(1,2);
   // g.addEdge(1,3);
@@ -4615,4 +4647,19 @@ int main(){
 //   }return ans;
 // }
 
-//C
+//FLOOD FILL ALGORITHM
+// void dfs(vector<vector<int>>& image, int i, int j, int newColor,int orgColor){ // O(M*N)
+//   if(i <0 || j < 0 || i >= image.size() || j >= image[0].size() || image[i][j] == newColor
+//   || image[i][j] != orgColor){
+//     return;
+//   }
+//   image[i][j] = newColor;
+//   dfs(image, i-1, j, newColor, orgColor); //top
+//   dfs(image, i, j+1, newColor, orgColor); //right
+//   dfs(image, i+1, j, newColor, orgColor); //bottom
+//   dfs(image, i, j-1, newColor, orgColor); //left
+// }
+// vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+//   dfs(image,sr,sc,color,image[sr][sc]);
+//   return image;
+// }
