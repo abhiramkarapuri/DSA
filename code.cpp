@@ -4524,26 +4524,63 @@ class Graph{
   // }
  
 //TOPOLOGICAL SORT // Tc = O(V+E)
-  void dfs(int curr, vector<bool>&vis,stack<int> &s){
-    vis[curr] =true;
-    for(int v : l[curr]){
-      if(!vis[v]){
-        dfs(v,vis,s);
-      }
-    }s.push(curr);
-  } 
+// void dfs(int curr, vector<bool>&vis,stack<int> &s){
+//   vis[curr] =true;
+//   for(int v : l[curr]){
+//     if(!vis[v]){
+//       dfs(v,vis,s);
+//     }
+//   }s.push(curr);
+// } 
+// void topoSort(){
+//   vector<bool> vis(V,false);
+//   stack<int>s;
+//   for(int i=0;i<V;i++){
+//     if(!vis[i]){
+//       dfs(i,vis,s);
+//     }
+//   }
+//   while(s.size()>0){
+//     cout<<s.top()<<" ";
+//     s.pop();
+//   }cout<<endl;
+// }
+
+//KAHN'S ALGORITHM
+
   void topoSort(){
-    vector<bool> vis(V,false);
-    stack<int>s;
-    for(int i=0;i<V;i++){
-      if(!vis[i]){
-        dfs(i,vis,s);
+    vector<int>res;
+    // calc indeg
+    vector<int> indeg(V,0);
+    for(int u=0; u<V;u++){
+      for(int v : l[u]){
+        indeg[v]++;
       }
     }
-    while(s.size()>0){
-      cout<<s.top()<<" ";
-      s.pop();
-    }cout<<endl;
+    //0 indeg =>Q
+    queue<int>q;
+    for(int i=0;i<V;i++){
+      if(indeg[i]==0){
+        q.push(i);
+      }
+    }
+    //bfs
+    while(q.size()>0){
+      int curr = q.front();
+      q.pop();
+      res.push_back(curr);
+      for(int v : l[curr]){
+        indeg[v]--;
+        if(indeg[v]==0){
+        q.push(v);
+        }
+      }
+    }
+    //result
+    for(int val : res){
+      cout<<val<<" ";
+    }
+    cout<<endl;
   }
 };
  
@@ -4556,6 +4593,7 @@ int main(){
   g.addEdge(5,0);
   g.addEdge(5,3);
   g.topoSort();
+  //g.topoSort();
   //cout<<g.isCycle()<<endl;
   // g.addEdge(0,1);
   // g.addEdge(1,2);
@@ -4663,3 +4701,95 @@ int main(){
 //   dfs(image,sr,sc,color,image[sr][sc]);
 //   return image;
 // }
+ 
+//COURSE SCHEDULE
+// bool isCycleDFS(int src,vector<bool> &vis, vector<bool> &recPath, vector<vector<int>>& edges){
+//   vis[src] = true;
+//   recPath[src] = true;
+//   for(int i=0;i<edges.size();i++){
+//     int v = edges[i][0];
+//     int u = edges[i][1];
+//     if(u == src){
+//       if(!vis[v]){
+//         if(isCycleDFS(v,vis,recPath,edges)){
+//           return true;
+//         }
+//       }else if(recPath[v]){
+//         return true;
+//       }
+//     }
+//   }
+//   recPath[src] = false;
+//   return false;
+// }
+// bool canFinish(int numCourses, vector<vector<int>>& edges) {
+//   vector<bool>vis(numCourses,false);
+//   vector<bool> recPath(numCourses,false);
+//   for(int i=0; i<numCourses;i++){
+//     if(!vis[i]){
+//       if(isCycleDFS(i,vis,recPath,edges)){
+//         return false;
+//       }
+//     }
+//   }return true;
+// }
+
+//COURSE SCHEDULE ||
+// bool isCycleDFS(int src,vector<bool> &vis, vector<bool> &recPath, vector<vector<int>>& edges){
+//   vis[src] = true;
+//   recPath[src] = true;
+//   for(int i=0;i<edges.size();i++){
+//     int v = edges[i][0];
+//     int u = edges[i][1];
+//     if(u == src){
+//       if(!vis[v]){
+//         if(isCycleDFS(v,vis,recPath,edges)){
+//           return true;
+//         }
+//       }else if(recPath[v]){
+//         return true;
+//       }
+//     }
+//   }
+//   recPath[src] = false;
+//   return false;
+// }
+// void topoOrder(int src, vector<bool> &vis, stack<int> &s, vector<vector<int>>& edges){
+//   vis[src] = true;
+//   for(int i=0;i<edges.size();i++){
+//     int v = edges[i][0];
+//     int u = edges[i][1];
+//     if(u == src){
+//       if(!vis[v]){
+//         topoOrder(v,vis,s,edges);
+//       }
+//     }
+//   }s.push(src);
+// }
+// vector<int> findOrder(int numCourses, vector<vector<int>>& edges) {
+//   vector<bool>vis(numCourses,false);
+//   vector<bool> recPath(numCourses,false);
+//   vector<int>ans;
+//   for(int i=0; i<numCourses;i++){
+//     if(!vis[i]){
+//       if(isCycleDFS(i,vis,recPath,edges)){
+//         return ans;
+//       }
+//     }
+//   }
+//   //Topological sorted order - DAG
+//   stack<int>s;
+//   vis.assign(numCourses,false);
+//   for(int i=0; i<numCourses;i++){
+//     if(!vis[i]){
+//       topoOrder(i,vis,s,edges);
+//     }
+//   }
+//   while(s.size()>0){
+//     ans.push_back(s.top());
+//     s.pop();
+//   }
+//   return ans;
+//   }
+
+//D
