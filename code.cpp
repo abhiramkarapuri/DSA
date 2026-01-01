@@ -4878,3 +4878,32 @@ using namespace std;
 //   return 0;
 // }
 
+//LEMONADE 
+bool lemonadeChange(vector<int>& bills) {
+  int five =0;
+  int ten =0;
+  for(int i=0;i<bills.size();i++){
+    if(bills[i]==5){
+      five++;
+    }
+    else if(bills[i] ==10){
+      if(!five) return false;
+      ten++;
+      five--;
+
+    }
+    else{
+      if(!five) return false;
+      if(ten && five){
+        ten --;five--;
+      }
+      else if(!ten && five >=3){
+        five = five -3;
+      }
+      else return false;
+    } }return true;
+}
+int main(){
+  vector<int>bills = {5,10,5,5,5,20,10,5};
+  cout<< lemonadeChange(bills);
+}
