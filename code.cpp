@@ -4906,3 +4906,48 @@ using namespace std;
 //   vector<int>bills = {5,10,5,5,5,20,10,5};
 //   cout<< lemonadeChange(bills);
 // }
+
+//job sequencing
+struct Job {
+    char id;
+    int deadline;
+    int profit;
+};
+// Comparator to sort jobs by profit (descending)
+bool compare(Job a, Job b) {
+    return a.profit > b.profit;
+}
+int main() {
+    vector<Job> jobs = {
+        {'A', 2, 100},
+        {'B', 1, 19},
+        {'C', 2, 27},
+        {'D', 1, 25},
+        {'E', 3, 15}
+    };
+    // Sort jobs by profit
+    sort(jobs.begin(), jobs.end(), compare);
+    int maxDeadline = 0;
+    for (auto &job : jobs)
+        maxDeadline = max(maxDeadline, job.deadline);
+    // Slot array to keep track of free time slots
+    vector<int> slot(maxDeadline + 1, -1);
+    int totalProfit = 0;
+    for (auto &job : jobs) {
+        // Try to place job at latest possible slot
+        for (int t = job.deadline; t > 0; t--) {
+            if (slot[t] == -1) {
+                slot[t] = job.id;
+                totalProfit += job.profit;
+                break;
+            }
+        }
+    }
+    cout << "Scheduled Jobs: ";
+    for (int i = 1; i <= maxDeadline; i++) {
+        if (slot[i] != -1)
+            cout << (char)slot[i] << " ";
+    }
+    cout << "\nTotal Profit: " << totalProfit << endl;
+    return 0;
+}
