@@ -5046,7 +5046,7 @@ using namespace std;
 //   return result;
 // }
 
-//MINIMUM PLATFORMS 
+//MINIMUM PLATFORMS TC = O(2NlogN+ 2N) ,SC = O(1)
 // int findPlatform(int arr[], int dep[], int n) {
 //     sort(arr, arr + n);
 //     sort(dep, dep + n);
@@ -5073,7 +5073,24 @@ using namespace std;
 //     return 0;
 // }
 
-//VALID PARENTHESIS STRING
-
+//VALID PARENTHESIS STRING TC = O(N), SC = O(1)
+// bool checkValidString(string s) {
+//     int min =0, max =0;
+//     int n = s.size();
+//     for(int i=0;i<n;i++){
+//       if(s[i] == '('){
+//         min = min+1;
+//         max = max+1;
+//       } else if ( s[i] == ')'){
+//         min = min-1;
+//         max = max-1;
+//       }else{
+//         min = min-1;
+//         max = max+1;
+//       }
+//       if (min <0) min =0;
+//       if(max <0) return false;
+//     }return (min ==0);
+// } 
 
 
