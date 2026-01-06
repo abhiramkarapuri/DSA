@@ -5047,30 +5047,33 @@ using namespace std;
 // }
 
 //MINIMUM PLATFORMS 
-int findPlatform(int arr[], int dep[], int n) {
-    sort(arr, arr + n);
-    sort(dep, dep + n);
-    int platforms = 1;      // platforms currently needed
-    int maxPlatforms = 1;   // result
-    int i = 1, j = 0;
-    while (i < n && j < n) {
-        if (arr[i] <= dep[j]) {
-            platforms++;
-            i++;
-        } else {
-            platforms--;
-            j++;
-        }
-        maxPlatforms = max(maxPlatforms, platforms);
-    }
-    return maxPlatforms;
-}
-int main() {
-    int arr[] = {900, 940, 950, 1100, 1500, 1800};
-    int dep[] = {910, 1200, 1120, 1130, 1900, 2000};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    cout << findPlatform(arr, dep, n);
-    return 0;
-}
+// int findPlatform(int arr[], int dep[], int n) {
+//     sort(arr, arr + n);
+//     sort(dep, dep + n);
+//     int platforms = 1;      // platforms currently needed
+//     int maxPlatforms = 1;   // result
+//     int i = 1, j = 0;
+//     while (i < n && j < n) {
+//       if (arr[i] <= dep[j]) {
+//         platforms++;
+//         i++;
+//       } else {
+//           platforms--;
+//           j++;
+//       }
+//       maxPlatforms = max(maxPlatforms, platforms);
+//     }
+//     return maxPlatforms;
+// }
+// int main() {
+//     int arr[] = {900, 940, 950, 1100, 1500, 1800};
+//     int dep[] = {910, 1200, 1120, 1130, 1900, 2000};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+//     cout << findPlatform(arr, dep, n);
+//     return 0;
+// }
+
+//VALID PARENTHESIS STRING
+
 
 
