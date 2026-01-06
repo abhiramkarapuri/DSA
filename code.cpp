@@ -5001,7 +5001,6 @@ using namespace std;
 //   return s;
 // }
 
-//GREEDY
 //NON_OVERLAPPING INTERVALS TC = O(N), SC = O(1)
 // bool comparator(const vector<int>&a, const vector<int>&b){
 //   if (a[1] == b[1])
@@ -5010,7 +5009,6 @@ using namespace std;
 // }
 // int eraseOverlapIntervals(vector<vector<int>>& intervals) {
 // if (intervals.empty()) return 0;
-
 //   sort(intervals.begin(),intervals.end(),comparator);
 //   int count =1;
 //   int lastEndingTime = intervals[0][1];
@@ -5028,27 +5026,51 @@ using namespace std;
 // vector<vector<int>> result;
 //   int i = 0;
 //   int n = intervals.size();
-
-//   // 1️⃣ Add intervals before newInterval
+//   //    Add intervals before newInterval
 //   while (i < n && intervals[i][1] < newInterval[0]) {
 //       result.push_back(intervals[i]);
 //       i++;
 //   }
-
-//   // 2️⃣ Merge overlapping intervals
+//   // 2 Merge overlapping intervals
 //   while (i < n && intervals[i][0] <= newInterval[1]) {
 //       newInterval[0] = min(newInterval[0], intervals[i][0]);
 //       newInterval[1] = max(newInterval[1], intervals[i][1]);
 //       i++;
 //   }
 //   result.push_back(newInterval);
-
-//   // 3️⃣ Add remaining intervals
+//   //  Add remaining intervals
 //   while (i < n) {
 //       result.push_back(intervals[i]);
 //       i++;
 //   }
-
 //   return result;
 // }
+
+//MINIMUM PLATFORMS 
+int findPlatform(int arr[], int dep[], int n) {
+    sort(arr, arr + n);
+    sort(dep, dep + n);
+    int platforms = 1;      // platforms currently needed
+    int maxPlatforms = 1;   // result
+    int i = 1, j = 0;
+    while (i < n && j < n) {
+        if (arr[i] <= dep[j]) {
+            platforms++;
+            i++;
+        } else {
+            platforms--;
+            j++;
+        }
+        maxPlatforms = max(maxPlatforms, platforms);
+    }
+    return maxPlatforms;
+}
+int main() {
+    int arr[] = {900, 940, 950, 1100, 1500, 1800};
+    int dep[] = {910, 1200, 1120, 1130, 1900, 2000};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    cout << findPlatform(arr, dep, n);
+    return 0;
+}
+
 
