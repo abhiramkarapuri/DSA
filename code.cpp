@@ -5093,4 +5093,25 @@ using namespace std;
 //     }return (min ==0);
 // } 
 
-
+//CANDY TC = O(N) SC = O(1)
+// int candy(vector<int>& ratings) {
+//     int n = ratings.size();
+//     int i=1;
+//     int sum =1;
+// 	while(i<n){
+// 	if(ratings[i] == ratings[i-1]){ // equal means add 1 to sum and continue it
+// 		sum = sum+1;i++;continue;
+// 	}
+// 	int peak =1;
+// 	while(i<n && ratings[i] > ratings[i-1]){ // if upslope add peak to sum & peak++
+// 		peak+=1; sum +=peak; i++;
+// 	}
+// 	int down =1;
+// 	while(i<n && ratings[i]<ratings[i-1]){ // if downslope add down to sum & down++;
+// 		sum+=down;down++;i++;
+// 	}
+// 	if(peak < down){	// if peak is less add the difference to sum
+// 		sum = sum+(down-peak);
+// 	}
+// 	}return sum;
+//   }
