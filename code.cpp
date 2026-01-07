@@ -5115,3 +5115,43 @@ using namespace std;
 // 	}
 // 	}return sum;
 //   }
+
+//FRACTIONAL KNAPSACK
+class Item {
+public:
+    int value;
+    int weight;
+};
+bool cmp(const Item& a, const Item& b) {
+    // Avoid floating point division using cross multiplication
+    return (long long)a.value * b.weight > (long long)b.value * a.weight;
+}
+double fractionalKnapsack(int W, vector<Item>& items) {
+    sort(items.begin(), items.end(), cmp); // Sort items based on value/weight ratio
+    double totalValue = 0.0;  // Total value accumulated
+    int currentWeight = 0;    // Current weight in knapsack
+    for (auto& item : items) {
+        if (currentWeight + item.weight <= W) {// If we can take the whole item
+            currentWeight += item.weight;
+            totalValue += item.value;
+        }
+        else { // Otherwise take the fractional part
+            int remaining = W - currentWeight;
+            totalValue += (double)item.value * remaining / item.weight;
+            break; // Knapsack is full
+        }
+    }
+    return totalValue;
+}
+int main() {
+    int W = 50;  // Capacity of knapsack
+    vector<Item> items = {
+        {60, 10},
+        {100, 20},
+        {120, 30}
+    };
+    cout << "Maximum value in knapsack = "
+         << fractionalKnapsack(W, items) << endl;
+
+    return 0;
+}
