@@ -5181,4 +5181,24 @@ using namespace std;
 //   return (int) result;
 //   }
 
+//LONGEST COMMON PREFIX
+    // string longestCommonPrefix(vector<string>& strs) {
+    //     if (strs.empty()) return "";
+    //     string prefix = strs[0];
+    //     for (int i = 1; i < strs.size(); i++) {
+    //         int j = 0;
+    //         // Compare current prefix with strs[i]
+    //         while (j < prefix.size() &&
+    //                j < strs[i].size() &&
+    //                prefix[j] == strs[i][j]) {
+    //             j++;
+    //         }
+    //         // Shrink prefix
+    //         prefix = prefix.substr(0, j);
+    //         if (prefix.empty())
+    //             return "";
+    //     }
+    //     return prefix;
+    // }
+
 //g++ -std=c++11 code.cpp && a.exe
