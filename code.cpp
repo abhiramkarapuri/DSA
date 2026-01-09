@@ -5201,7 +5201,6 @@ using namespace std;
     //     return prefix;
     // }
 
-
 // ADD BINARY
 // string addBinary(string a, string b) {
 //   int i = a.size() - 1;
@@ -5218,16 +5217,17 @@ using namespace std;
 //   return result;
 //   }
 
-//LARGEST ODD NUM IN ARRAY
-string largestOddNumber(string num) {
-  int count = -1;
-    for(int i =num.size()-1;i>=0;i--){
-      if (num[i] == '1' || num[i] == '3' || num[i] == '5' || num[i] == '7' || num[i] == '9'){
-        count = i;
-        break;
-      }
-    }
-    if (count == -1) return "";
-    return num.substr(0, count + 1);
-}
+//LARGEST ODD NUM IN STRING
+// string largestOddNumber(string num) {
+//   int count = -1;
+//     for(int i =num.size()-1;i>=0;i--){
+//       if (num[i] == '1' || num[i] == '3' || num[i] == '5' || num[i] == '7' || num[i] == '9'){
+//         count = i;
+//         break;
+//       }
+//     }
+//     if (count == -1) return "";
+//     return num.substr(0, count + 1);
+// }
+
 //g++ -std=c++11 code.cpp && a.exe
