@@ -5230,4 +5230,24 @@ using namespace std;
 //     return num.substr(0, count + 1);
 // }
 
+//DP_FIBONACCI
+int fib(int n){
+  if( n <=1){
+    return n;
+  }
+  int prev = 1; // n-1
+  int prev2 = 0; //n-2 
+  int curr;
+  for(int i=2;i<=n;i++){
+    curr = prev + prev2;
+    prev2 = prev;
+    prev = curr;
+  }
+  return prev;
+}
+int main(){
+  int n =5;
+  cout<<fib(7);
+}
+
 //g++ -std=c++11 code.cpp && a.exe
