@@ -5328,4 +5328,20 @@ using namespace std;
 //     return 0;
 // }
 
+//MAXIMUM SUM OF NON-ADJACENT ELEMENTS
+int maxNonAdjacentSum(vector<int>& arr) {
+    int prev2 = 0;        // dp[i-2]
+    int prev1 = 0;        // dp[i-1]
+
+    for (int x : arr) {
+        int take = x + prev2;
+        int notTake = prev1;
+        int cur = max(take, notTake);
+
+        prev2 = prev1;
+        prev1 = cur;
+    }
+    return prev1;
+}
+
 //g++ -std=c++11 code.cpp && a.exe
