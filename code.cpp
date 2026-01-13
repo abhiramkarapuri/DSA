@@ -5385,4 +5385,5 @@ using namespace std;
 //     return prev[3];
 // }
 
+
 //g++ -std=c++11 code.cpp && a.exe
