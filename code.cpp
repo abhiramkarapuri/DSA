@@ -5361,4 +5361,28 @@ using namespace std;
 //     int case2 = robLinear(nums, 1, n - 1);
 //     return max(case1, case2);
 // }
+
+//NINJAS TRAINING
+// int ninjaTraining(int n, vector<vector<int>> &points) {
+//     vector<int> prev(4, 0), curr(4, 0);
+//     // Base case (day 0)
+//     prev[0] = max(points[0][1], points[0][2]);
+//     prev[1] = max(points[0][0], points[0][2]);
+//     prev[2] = max(points[0][0], points[0][1]);
+//     prev[3] = max({points[0][0], points[0][1], points[0][2]});
+//     for (int day = 1; day < n; day++) {
+//         for (int last = 0; last < 4; last++) {
+//             curr[last] = 0;
+//             for (int task = 0; task < 3; task++) {
+//                 if (task != last) {
+//                     curr[last] = max(curr[last],
+//                         points[day][task] + prev[task]);
+//                 }
+//             }
+//         }
+//         prev = curr;
+//     }
+//     return prev[3];
+// }
+
 //g++ -std=c++11 code.cpp && a.exe
