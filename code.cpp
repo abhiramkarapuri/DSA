@@ -5453,4 +5453,5 @@ using namespace std;
 //     }
 //     return *min_element(dp[n-1].begin(), dp[n-1].end());
 // }
+
 //g++ -std=c++11 code.cpp && a.exe
