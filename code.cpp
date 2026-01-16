@@ -5454,7 +5454,7 @@ using namespace std;
 //     return *min_element(dp[n-1].begin(), dp[n-1].end());
 // }
 
-//COC BANANA
+//COCO BANANA
 // long long time(vector<int>& piles, int h,int z){
 //       long long ans =0;
 //       for(int x : piles){
@@ -5481,4 +5481,5 @@ using namespace std;
 //           }
 //         } return answer;
 //     }
+
 //g++ -std=c++11 code.cpp && a.exe
