@@ -5455,30 +5455,30 @@ using namespace std;
 // }
 
 //COC BANANA
-long long time(vector<int>& piles, int h,int z){
-      long long ans =0;
-      for(int x : piles){
-        ans += ((x+z-1)/z);
-      }
-      return ans;
-    }
-    int minEatingSpeed(vector<int>& piles, int h) {
-      long long sum =0;
-      int maxi =0;
-      for(int c : piles){
-        sum +=c;
-        maxi = max(maxi,c);
-      }
-        int mini = 1;
-        int answer = 0;
-        while(mini <= maxi){   
-          int mid = mini + (maxi-mini)/2;
-          if(time(piles,h,mid) <= h){
-            answer = mid;
-            maxi = mid-1;
-          }else {
-            mini = mid+1;
-          }
-        } return answer;
-    }
+// long long time(vector<int>& piles, int h,int z){
+//       long long ans =0;
+//       for(int x : piles){
+//         ans += ((x+z-1)/z);
+//       }
+//       return ans;
+//     }
+//     int minEatingSpeed(vector<int>& piles, int h) {
+//       long long sum =0;
+//       int maxi =0;
+//       for(int c : piles){
+//         sum +=c;
+//         maxi = max(maxi,c);
+//       }
+//         int mini = 1;
+//         int answer = 0;
+//         while(mini <= maxi){   
+//           int mid = mini + (maxi-mini)/2;
+//           if(time(piles,h,mid) <= h){
+//             answer = mid;
+//             maxi = mid-1;
+//           }else {
+//             mini = mid+1;
+//           }
+//         } return answer;
+//     }
 //g++ -std=c++11 code.cpp && a.exe
