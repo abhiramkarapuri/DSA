@@ -5522,4 +5522,38 @@ using namespace std;
 //     return dp[m - 1][n - 1];
 // }
 
+//CHERRY PICKUP
+// int cherryPickup(vector<vector<int>>& grid) {
+//   int n = grid.size();
+//   const int NEG_INF = -1e9;
+//   vector<vector<vector<int>>> dp(
+//       2 * n - 1,
+//       vector<vector<int>>(n, vector<int>(n, NEG_INF))
+//   );
+//   dp[0][0][0] = grid[0][0];
+//   for (int k = 1; k < 2 * n - 1; k++) {
+//       for (int i = max(0, k - (n - 1)); i <= min(n - 1, k); i++) {
+//           for (int j = max(0, k - (n - 1)); j <= min(n - 1, k); j++) {
+//               int y1 = k - i;
+//               int y2 = k - j;
+//               if (grid[i][y1] == -1 || grid[j][y2] == -1) continue;
+//               int best = NEG_INF;
+//               for (int di = 0; di <= 1; di++) {
+//                   for (int dj = 0; dj <= 1; dj++) {
+//                       int pi = i - di;
+//                       int pj = j - dj;
+//                       if (pi >= 0 && pj >= 0)
+//                           best = max(best, dp[k - 1][pi][pj]);
+//                   }
+//               }
+//               if (best < 0) continue;
+//               int cherries = grid[i][y1];
+//               if (i != j) cherries += grid[j][y2];
+//               dp[k][i][j] = best + cherries;
+//           }
+//       }
+//   }
+//   return max(0, dp[2 * n - 2][n - 1][n - 1]);
+// }
+
 //g++ -std=c++11 code.cpp && a.exe
