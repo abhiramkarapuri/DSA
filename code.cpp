@@ -5557,16 +5557,15 @@ using namespace std;
 // }
 
 //SUBSET SUM EQUALS TO TARGET
-bool subsetSum(vector<int>& nums, int target) {
-    vector<bool> dp(target + 1, false);
-    dp[0] = true;
-
-    for (int num : nums) {
-        for (int s = target; s >= num; s--) {
-            dp[s] = dp[s] || dp[s - num];
-        }
-    }
-    return dp[target];
-}
+// bool subsetSum(vector<int>& nums, int target) {
+//     vector<bool> dp(target + 1, false);
+//     dp[0] = true;
+//     for (int num : nums) {
+//         for (int s = target; s >= num; s--) {
+//             dp[s] = dp[s] || dp[s - num];
+//         }
+//     }
+//     return dp[target];
+// }
 
 //g++ -std=c++11 code.cpp && a.exe
