@@ -5569,19 +5569,20 @@ using namespace std;
 // }
 
 //PARTITION EQUAL SUBSET SUM
-bool canPartition(vector<int>& nums) {
-    int total = accumulate(nums.begin(), nums.end(), 0);
-    // If total sum is odd, cannot partition
-    if (total % 2 != 0) return false;
-    int target = total / 2;
-    vector<bool> dp(target + 1, false);
-    dp[0] = true;
-    for (int num : nums) {
-        for (int s = target; s >= num; s--) {
-            dp[s] = dp[s] || dp[s - num];
-        }
-    }
-    return dp[target];
-}
+// bool canPartition(vector<int>& nums) {
+//     int total = accumulate(nums.begin(), nums.end(), 0);
+//     // If total sum is odd, cannot partition
+//     if (total % 2 != 0) return false;
+//     int target = total / 2;
+//     vector<bool> dp(target + 1, false);
+//     dp[0] = true;
+//     for (int num : nums) {
+//         for (int s = target; s >= num; s--) {
+//             dp[s] = dp[s] || dp[s - num];
+//         }
+//     }
+//     return dp[target];
+// }
 
+//
 //g++ -std=c++11 code.cpp && a.exe
