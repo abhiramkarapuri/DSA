@@ -5584,5 +5584,16 @@ using namespace std;
 //     return dp[target];
 // }
 
-//
+//COUNT SUBSETS WITH SUM K
+// int countSubsetsWithSumK(vector<int>& nums, int K) {
+//   vector<int> dp(K + 1, 0);
+//   dp[0] = 1;  // One way to make sum 0: empty subset
+//   for (int num : nums) {
+//       for (int s = K; s >= num; s--) {
+//           dp[s] += dp[s - num];
+//       }
+//   }
+//   return dp[K];
+// }
+
 //g++ -std=c++11 code.cpp && a.exe
