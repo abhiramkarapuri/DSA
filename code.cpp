@@ -13,6 +13,7 @@
 #include <cstring>
 #include <string>
 #include <cmath>
+#include <numeric>
 using namespace std;
 
 // int main()
@@ -5595,5 +5596,41 @@ using namespace std;
 //   }
 //   return dp[K];
 // }
+
+//COUNT PARTITIONS WITH GIVEN DIFFERENCE
+int countSubsetsWithSum(vector<int>& arr, int sum) {
+    int n = arr.size();
+    vector<vector<int>> dp(n + 1, vector<int>(sum + 1, 0));
+    // Base case: sum 0 can be formed with empty subset
+    for (int i = 0; i <= n; i++) {
+        dp[i][0] = 1;
+    }
+    for (int i = 1; i <= n; i++) {
+        for (int j = 0; j <= sum; j++) {
+            if (arr[i - 1] <= j) {
+                dp[i][j] = dp[i - 1][j - arr[i - 1]] + dp[i - 1][j];
+            } else {
+                dp[i][j] = dp[i - 1][j];
+            }
+        }
+    }
+    return dp[n][sum];
+}
+int countPartitionsWithGivenDifference(vector<int>& arr, int diff) {
+    int totalSum = accumulate(arr.begin(), arr.end(), 0);
+    // Invalid case
+    if (totalSum < diff || (totalSum + diff) % 2 != 0) {
+        return 0;
+    }
+    int target = (totalSum + diff) / 2;
+    return countSubsetsWithSum(arr, target);
+}
+int main() {
+    vector<int> arr = {1, 1, 2, 3};
+    int diff = 1;
+    cout << "Number of partitions: "
+         << countPartitionsWithGivenDifference(arr, diff) << endl;
+    return 0;
+}
 
 //g++ -std=c++11 code.cpp && a.exe
