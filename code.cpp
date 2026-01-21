@@ -5682,5 +5682,27 @@ using namespace std;
 //     return 0;
 // }
 
+//TARGET SUM
+// int main() {
+//     int n, target;
+//     cin >> n >> target;
+//     vector<int> a(n);
+//     for (int i = 0; i < n; i++)
+//         cin >> a[i];
+//     vector<vector<bool>> dp(n + 1, vector<bool>(target + 1, false));
+//     dp[0][0] = true;
+//     for (int i = 1; i <= n; i++) {
+//         for (int j = 0; j <= target; j++) {
+//             dp[i][j] = dp[i - 1][j];
+//             if (j >= a[i - 1])
+//                 dp[i][j] = dp[i][j] || dp[i - 1][j - a[i - 1]];
+//         }
+//     }
+//     if (dp[n][target])
+//         cout << "YES\n";
+//     else
+//         cout << "NO\n";
+//     return 0;
+// }
 
 //g++ -std=c++11 code.cpp && a.exe
