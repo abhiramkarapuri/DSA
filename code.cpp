@@ -5718,5 +5718,16 @@ using namespace std;
 //         return dp[amount];
 //     }
 
+//UNBOUNDED KNAPSACK
+// int unboundedKnapsack(int W, vector<int>& wt, vector<int>& val) {
+//     int n = wt.size();
+//     vector<int> dp(W + 1, 0);
+//     for (int i = 0; i < n; i++) {
+//         for (int w = wt[i]; w <= W; w++) {
+//             dp[w] = max(dp[w], val[i] + dp[w - wt[i]]);
+//         }
+//     }
+//     return dp[W];
+// }
 
 //g++ -std=c++11 code.cpp && a.exe
