@@ -5730,4 +5730,25 @@ using namespace std;
 //     return dp[W];
 // }
 
+//ROD CUTTING PROBLEM
+
+// int rodCutting(vector<int>& price, int n) {
+//     vector<int> dp(n + 1, 0);
+//     // Build the dp table
+//     for (int i = 1; i <= n; i++) {
+//         int maxVal = -1;
+//         for (int j = 0; j < i; j++) {
+//             maxVal = max(maxVal, price[j] + dp[i - j - 1]);
+//         }
+//         dp[i] = maxVal;
+//     }
+//     return dp[n];
+// }
+// int main() {
+//     vector<int> price = {1, 5, 8, 9, 10, 17, 17, 20};
+//     int n = price.size();
+
+//     cout << "Maximum obtainable value: " << rodCutting(price, n) << endl;
+//     return 0;
+// }
 //g++ -std=c++11 code.cpp && a.exe
