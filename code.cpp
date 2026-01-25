@@ -5792,5 +5792,23 @@ using namespace std;
 //     return ans;
 // }
 
+//LONGEST PALINDROMIC SUBSEQUENCE
+// int longestPalindromicSubsequence(string s) {
+//     int n = s.size();
+//     vector<int> dp(n, 0), prev(n, 0);
+//     for (int i = n - 1; i >= 0; i--) {
+//         dp[i] = 1;
+//         int prev_diag = 0;
+//         for (int j = i + 1; j < n; j++) {
+//             int temp = dp[j];
+//             if (s[i] == s[j])
+//                 dp[j] = 2 + prev_diag;
+//             else
+//                 dp[j] = max(dp[j], dp[j - 1]);
+//             prev_diag = temp;
+//         }
+//     }
+//     return dp[n - 1];
+// }
 
 //g++ -std=c++11 code.cpp && a.exe
