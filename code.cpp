@@ -5811,4 +5811,27 @@ using namespace std;
 //     return dp[n - 1];
 // }
 
+//MINIMUM INSERTIONS TO MAKE STRING PALINDROME
+// int minInsertions(string s) {
+//     int n = s.size();
+//     string rev = s;
+//     reverse(rev.begin(), rev.end());
+//     vector<vector<int>> dp(n + 1, vector<int>(n + 1, 0));
+//     for (int i = 1; i <= n; i++) {
+//         for (int j = 1; j <= n; j++) {
+//             if (s[i - 1] == rev[j - 1])
+//                 dp[i][j] = 1 + dp[i - 1][j - 1];
+//             else
+//                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+//         }
+//     }
+//     int lps = dp[n][n];
+//     return n - lps;
+// }
+// int main() {
+//     string s = "mbadm";
+//     cout << minInsertions(s) << endl; // Output: 2
+//     return 0;
+// }
+
 //g++ -std=c++11 code.cpp && a.exe
