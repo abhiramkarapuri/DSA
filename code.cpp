@@ -6015,4 +6015,31 @@ using namespace std;
 //     return 0;
 // }
 
+//LONGEST STRING CHAIN
+// int longestStrChain(vector<string>& words) {
+//     unordered_map<string, int> dp;
+//     // Sort by length
+//     sort(words.begin(), words.end(),
+//          [](const string& a, const string& b) {
+//              return a.size() < b.size();
+//          });
+//     int ans = 1;
+//     for (const string& word : words) {
+//         dp[word] = 1; // minimum chain length
+//         for (int i = 0; i < word.size(); i++) {
+//             string prev = word.substr(0, i) + word.substr(i + 1);
+//             if (dp.count(prev)) {
+//                 dp[word] = max(dp[word], dp[prev] + 1);
+//             }
+//         }
+//         ans = max(ans, dp[word]);
+//     }
+//     return ans;
+// }
+// int main() {
+//     vector<string> words = {"a", "b", "ba", "bca", "bda", "bdca"};
+//     cout << longestStrChain(words);
+//     return 0;
+// }
+
 //g++ -std=c++11 code.cpp && a.exe
