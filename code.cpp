@@ -5981,38 +5981,38 @@ using namespace std;
 // }
 
 //LONGEST DIVISIBLE SUBSET
-vector<int> longestDivisibleSubset(vector<int>& nums) {
-    int n = nums.size();
-    if (n == 0) return {};
-    sort(nums.begin(), nums.end());
-    vector<int> dp(n, 1), parent(n, -1);
-    int maxLen = 1, lastIndex = 0;
-    for (int i = 1; i < n; i++) {
-        for (int j = 0; j < i; j++) {
-            if (nums[i] % nums[j] == 0 && dp[j] + 1 > dp[i]) {
-                dp[i] = dp[j] + 1;
-                parent[i] = j;
-            }
-        }
-        if (dp[i] > maxLen) {
-            maxLen = dp[i];
-            lastIndex = i;
-        }
-    }
-    // Reconstruct the subset
-    vector<int> result;
-    while (lastIndex != -1) {
-        result.push_back(nums[lastIndex]);
-        lastIndex = parent[lastIndex];
-    }
-    reverse(result.begin(), result.end());
-    return result;
-}
-int main() {
-    vector<int> nums = {1, 2, 3, 8, 4, 16};
-    vector<int> ans = longestDivisibleSubset(nums);
-    for (int x : ans) cout << x << " ";
-    return 0;
-}
+// vector<int> longestDivisibleSubset(vector<int>& nums) {
+//     int n = nums.size();
+//     if (n == 0) return {};
+//     sort(nums.begin(), nums.end());
+//     vector<int> dp(n, 1), parent(n, -1);
+//     int maxLen = 1, lastIndex = 0;
+//     for (int i = 1; i < n; i++) {
+//         for (int j = 0; j < i; j++) {
+//             if (nums[i] % nums[j] == 0 && dp[j] + 1 > dp[i]) {
+//                 dp[i] = dp[j] + 1;
+//                 parent[i] = j;
+//             }
+//         }
+//         if (dp[i] > maxLen) {
+//             maxLen = dp[i];
+//             lastIndex = i;
+//         }
+//     }
+//     // Reconstruct the subset
+//     vector<int> result;
+//     while (lastIndex != -1) {
+//         result.push_back(nums[lastIndex]);
+//         lastIndex = parent[lastIndex];
+//     }
+//     reverse(result.begin(), result.end());
+//     return result;
+// }
+// int main() {
+//     vector<int> nums = {1, 2, 3, 8, 4, 16};
+//     vector<int> ans = longestDivisibleSubset(nums);
+//     for (int x : ans) cout << x << " ";
+//     return 0;
+// }
 
 //g++ -std=c++11 code.cpp && a.exe
