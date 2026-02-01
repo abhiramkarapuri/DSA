@@ -6042,4 +6042,38 @@ using namespace std;
 //     return 0;
 // }
 
+//LONGEST BITONIC SUBSEQUENCE
+// int longestBitonicSubsequence(vector<int>& arr) {
+//     int n = arr.size();
+//     vector<int> lis(n, 1);
+//     vector<int> lds(n, 1);
+//     // LIS (Longest Increasing Subsequence)
+//     for (int i = 0; i < n; i++) {
+//         for (int j = 0; j < i; j++) {
+//             if (arr[j] < arr[i]) {
+//                 lis[i] = max(lis[i], lis[j] + 1);
+//             }
+//         }
+//     }
+//     // LDS (Longest Decreasing Subsequence)
+//     for (int i = n - 1; i >= 0; i--) {
+//         for (int j = n - 1; j > i; j--) {
+//             if (arr[j] < arr[i]) {
+//                 lds[i] = max(lds[i], lds[j] + 1);
+//             }
+//         }
+//     }
+//     // Find maximum LBS
+//     int ans = 0;
+//     for (int i = 0; i < n; i++) {
+//         ans = max(ans, lis[i] + lds[i] - 1);
+//     }
+//     return ans;
+// }
+// int main() {
+//     vector<int> arr = {1, 11, 2, 10, 4, 5, 2, 1};
+//     cout << longestBitonicSubsequence(arr);
+//     return 0;
+// }
+
 //g++ -std=c++11 code.cpp && a.exe
