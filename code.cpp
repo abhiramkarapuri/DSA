@@ -6101,5 +6101,33 @@ using namespace std;
 //     return 0;
 // }
 
+//MINIMUM COST TO CUT THE STICK
+// int minCost(int n, vector<int>& cuts) {
+//   cuts.push_back(0);
+//   cuts.push_back(n);
+//   sort(cuts.begin(), cuts.end());
+//   int m = cuts.size();
+//   vector<vector<int>> dp(m, vector<int>(m, 0));
+//   // length of interval
+//   for (int len = 2; len < m; len++) {
+//       for (int i = 0; i + len < m; i++) {
+//           int j = i + len;
+//           dp[i][j] = INT_MAX;
+//           for (int k = i + 1; k < j; k++) {
+//               int cost = dp[i][k] + dp[k][j]
+//                           + (cuts[j] - cuts[i]);
+//               dp[i][j] = min(dp[i][j], cost);
+//           }
+//       }
+//   }
+//   return dp[0][m - 1];
+// }
+// int main() {
+//   int n = 7;
+//   vector<int> cuts = {1, 3, 4, 5};
+//   cout << "Minimum cost to cut the stick: "
+//         << minCost(n, cuts) << endl;
+//   return 0;
+// }
 
 //g++ -std=c++11 code.cpp && a.exe
