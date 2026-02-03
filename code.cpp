@@ -6130,4 +6130,30 @@ using namespace std;
 //   return 0;
 // }
 
+//BURST BALLOONS
+// int maxCoins(vector<int>& nums) {
+//     int n = nums.size();        
+//     // Add 1 at both ends
+//     nums.insert(nums.begin(), 1);
+//     nums.push_back(1);
+//     // dp[l][r] = max coins from (l, r)
+//     vector<vector<int>> dp(n + 2, vector<int>(n + 2, 0));       
+//     // Length of interval
+//     for (int len = 1; len <= n; len++) {
+//         for (int left = 1; left <= n - len + 1; left++) {
+//             int right = left + len - 1;   
+//             // Choose last balloon to burst
+//             for (int k = left; k <= right; k++) {
+//                 dp[left][right] = max(
+//                     dp[left][right],
+//                     dp[left][k - 1] +
+//                     nums[left - 1] * nums[k] * nums[right + 1] +
+//                     dp[k + 1][right]
+//                 );
+//             }
+//         }
+//     }
+//     return dp[1][n];
+// }
+
 //g++ -std=c++11 code.cpp && a.exe
