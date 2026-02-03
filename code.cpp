@@ -6156,5 +6156,43 @@ using namespace std;
 //     return dp[1][n];
 // }
 
+//EVALUATE BOOLEAN EXPRESSION TO TRUE
+// int countWays(int n, string s) {
+//   const int MOD = 1003;       
+//   vector<vector<vector<int>>> dp(
+//       n, vector<vector<int>>(n, vector<int>(2, 0))
+//   );       
+//   // Base cases
+//   for (int i = 0; i < n; i += 2) {
+//       dp[i][i][1] = (s[i] == 'T');
+//       dp[i][i][0] = (s[i] == 'F');
+//   }     
+//   // Length of expression
+//   for (int len = 3; len <= n; len += 2) {
+//     for (int i = 0; i + len - 1 < n; i += 2) {
+//       int j = i + len - 1;
+//       for (int k = i + 1; k < j; k += 2) {
+//         char op = s[k];
+//         int lt = dp[i][k - 1][1];
+//         int lf = dp[i][k - 1][0];
+//         int rt = dp[k + 1][j][1];
+//         int rf = dp[k + 1][j][0];
+//         if (op == '&') {
+//             dp[i][j][1] = (dp[i][j][1] + lt * rt) % MOD;
+//             dp[i][j][0] = (dp[i][j][0] + lt * rf + lf * rt + lf * rf) % MOD;
+//         }
+//         else if (op == '|') {
+//             dp[i][j][1] = (dp[i][j][1] + lt * rt + lt * rf + lf * rt) % MOD;
+//             dp[i][j][0] = (dp[i][j][0] + lf * rf) % MOD;
+//         }
+//         else if (op == '^') {
+//             dp[i][j][1] = (dp[i][j][1] + lt * rf + lf * rt) % MOD;
+//             dp[i][j][0] = (dp[i][j][0] + lt * rt + lf * rf) % MOD;
+//         }
+//       }
+//       }
+//   }     
+//   return dp[0][n - 1][1];
+// }
 
 //g++ -std=c++11 code.cpp && a.exe
