@@ -6195,4 +6195,36 @@ using namespace std;
 //   return dp[0][n - 1][1];
 // }
 
+//PALINDROME PARTITIONING 2
+// int minCut(string s) {
+//   int n = s.size();       
+//   // Step 1: Palindrome DP table
+//   vector<vector<bool>> isPal(n, vector<bool>(n, false));      
+//   for (int len = 1; len <= n; len++) {
+//       for (int i = 0; i + len - 1 < n; i++) {
+//           int j = i + len - 1;
+//           if (s[i] == s[j]) {
+//               if (len <= 2)
+//                   isPal[i][j] = true;
+//               else
+//                   isPal[i][j] = isPal[i+1][j-1];
+//           }
+//       }
+//   }      
+//   // Step 2: Min cut DP
+//   vector<int> dp(n, INT_MAX);        
+//   for (int i = 0; i < n; i++) {
+//       if (isPal[0][i]) {
+//           dp[i] = 0;
+//       } else {
+//           for (int j = 1; j <= i; j++) {
+//               if (isPal[j][i]) {
+//                   dp[i] = min(dp[i], dp[j-1] + 1);
+//               }
+//           }
+//       }
+//   }      
+//   return dp[n-1];
+// }
+
 //g++ -std=c++11 code.cpp && a.exe
