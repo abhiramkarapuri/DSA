@@ -6227,4 +6227,5 @@ using namespace std;
 //   return dp[n-1];
 // }
 
+
 //g++ -std=c++11 code.cpp && a.exe
