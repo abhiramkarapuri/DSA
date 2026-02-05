@@ -6292,5 +6292,40 @@ using namespace std;
 //     return 0;
 // }
 
+//COUNT SQUARE SUB-MATRICES WITH ALL 1'S
+// int countSquares(vector<vector<int>>& matrix) {
+//     int rows = matrix.size();
+//     int cols = matrix[0].size();
+//     vector<vector<int>> dp(rows, vector<int>(cols, 0));
+//     int totalSquares = 0;
+//     for (int i = 0; i < rows; i++) {
+//         for (int j = 0; j < cols; j++) {
+//             if (matrix[i][j] == 1) {
+//                 // First row or first column
+//                 if (i == 0 || j == 0) {
+//                     dp[i][j] = 1;
+//                 } else {
+//                     dp[i][j] = 1 + min({
+//                         dp[i-1][j],      // top
+//                         dp[i][j-1],      // left
+//                         dp[i-1][j-1]     // diagonal
+//                     });
+//                 }
+//                 totalSquares += dp[i][j];
+//             }
+//         }
+//     }
+//     return totalSquares;
+// }
+// int main() {
+//     vector<vector<int>> matrix = {
+//         {0,1,1,1},
+//         {1,1,1,1},
+//         {0,1,1,1}
+//     };
+//     cout << "Total square submatrices with all 1's: "
+//          << countSquares(matrix) << endl;
+//     return 0;
+// }
 
 //g++ -std=c++11 code.cpp && a.exe
