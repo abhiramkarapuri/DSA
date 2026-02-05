@@ -6244,4 +6244,52 @@ using namespace std;
 //   return dp[0];
 // }
 
+//MAXIMUM RECTANGLE AREA WITH ALL 1'S
+// int largestRectangleArea(vector<int>& heights) {
+//     stack<int> st;
+//     int maxArea = 0;
+//     int n = heights.size();
+//     for (int i = 0; i <= n; i++) {
+//         int h = (i == n ? 0 : heights[i]);
+//         while (!st.empty() && h < heights[st.top()]) {
+//             int height = heights[st.top()];
+//             st.pop();
+//             int width = st.empty() ? i : i - st.top() - 1;
+//             maxArea = max(maxArea, height * width);
+//         }
+//         st.push(i);
+//     }
+//     return maxArea;
+// }
+// // Function to find maximum rectangle of 1's
+// int maximalRectangle(vector<vector<int>>& matrix) {
+//     if (matrix.empty()) return 0;
+//     int rows = matrix.size();
+//     int cols = matrix[0].size();
+//     vector<int> heights(cols, 0);
+//     int maxArea = 0;
+//     for (int i = 0; i < rows; i++) {
+//         // Update histogram heights
+//         for (int j = 0; j < cols; j++) {
+//             if (matrix[i][j] == 1)
+//                 heights[j] += 1;
+//             else
+//                 heights[j] = 0;
+//         }
+//         // Compute max rectangle for this histogram
+//         maxArea = max(maxArea, largestRectangleArea(heights));
+//     }
+//     return maxArea;
+// }
+// int main() {
+//     vector<vector<int>> matrix = {
+//         {1, 0, 1, 0, 0},
+//         {1, 0, 1, 1, 1},
+//         {1, 1, 1, 1, 1},
+//         {1, 0, 0, 1, 0}
+//     };
+//     cout << "Maximum rectangle area: " << maximalRectangle(matrix) << endl;
+//     return 0;
+// }
+
 //g++ -std=c++11 code.cpp && a.exe
